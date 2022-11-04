@@ -14,7 +14,7 @@ for host, config in pairs(wezterm.enumerate_ssh_hosts()) do
   table.insert(
     launch_menu,
     {
-        label = "SSH " .. config["hostname"] .. " (" .. config["user"] .. ")",
+        label = "💻(SSH)  " .. config["hostname"] .. " (" .. config["user"] .. ")",
         args = {"ssh", host}
     }
   )
@@ -60,11 +60,11 @@ local key_bindings = {
 }
 
 -- startup event
-local mux = wezterm.mux
-wezterm.on('gui-startup', function(cmd)
-  local tab, pane, window = mux.spawn_window(cmd or {})
-  window:gui_window():set_inner_size(1000, 600)
-end)
+-- local mux = wezterm.mux
+-- wezterm.on('gui-startup', function(cmd)
+--   local tab, pane, window = mux.spawn_window(cmd or {})
+--   window:gui_window():set_inner_size(1000, 600)
+-- end)
 
 return {
 
