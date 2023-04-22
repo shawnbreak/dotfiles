@@ -1,12 +1,37 @@
+-- Pull in the wezterm API
 local wezterm = require 'wezterm'
 
--- default prog
-local defaut_prog = nil
+-- This table will hold the configuration.
+local config = {}
+
+-- In newer versions of wezterm, use the config_builder which will
+-- help provide clearer error messages
+if wezterm.config_builder then
+  config = wezterm.config_builder()
+end
+
 local os = os.getenv("os")
 if os ~= nil and string.match(os, "Windows*") then
   print("current os is " .. os)
-  defaut_prog = {"pwsh.exe", "--nologo"}
+  config.defaut_prog = {"pwsh.exe", "--nologo"}
 end
+
+
+-- This is where you actually apply your config choices
+
+-- For example, changing the color scheme:
+config.color_scheme = 'Dracula'
+config.enable_tab_bar = true
+config.use_fancy_tab_bar = true
+config.hide_tab_bar_if_only_one_tab = true
+config.tab_bar_at_bottom = false
+config.tab_max_width = 20
+config.window_background_opacity = 1.0
+config.scrollback_lines = 3500
+config.window_decorations = "RESIZE" -- "TITLE | RESIZE", "RESIZE", "TITLE", "NONE"
+config.color_scheme='Dracula'
+config.font_size = 14
+
 
 -- launch menu
 local launch_menu = {}
@@ -19,6 +44,8 @@ for host, config in pairs(wezterm.enumerate_ssh_hosts()) do
     }
   )
 end
+config.launch_menu = launch_menu
+
 
 -- mouse binding
 local mouse_bindings = {
@@ -42,16 +69,17 @@ local mouse_bindings = {
         action = "OpenLinkAtMouseCursor"
     }
 }
+config.mouse_bindings = mouse_bindings
 
 -- window padding
-local window_padding = {
+config.window_padding = {
     left = '1.2cell',
     right = '0.5cell',
     top = '0.5cell',
     bottom = '0.5cell',
 }
 
-local key_bindings = {
+config.keys = {
     { key = 'l', mods = 'ALT', action = wezterm.action.ShowLauncher },
     { key = 'F9', mods = 'ALT', action = wezterm.action.ShowTabNavigator },
     { key = '9', mods = 'ALT', action = wezterm.action.ShowLauncherArgs { flags = 'FUZZY|WORKSPACES' }, },
@@ -59,29 +87,6 @@ local key_bindings = {
     { key = 'p', mods = 'CTRL|ALT', action = wezterm.action.SwitchWorkspaceRelative(-1) },
 }
 
--- startup event
--- local mux = wezterm.mux
--- wezterm.on('gui-startup', function(cmd)
---   local tab, pane, window = mux.spawn_window(cmd or {})
---   window:gui_window():set_inner_size(1000, 600)
--- end)
+-- and finally, return the configuration to wezterm
+return config
 
-return {
-
-  use_fancy_tab_bar = true,
-  enable_tab_bar = true,
-  hide_tab_bar_if_only_one_tab = true,
-  tab_bar_at_bottom = false,
-  tab_max_width = 20,
-  window_background_opacity = 0.8,
-  scrollback_lines = 3500,
-  window_decorations = "RESIZE", -- "TITLE | RESIZE", "RESIZE", "TITLE", "NONE"
-  color_scheme='Dracula',
-
-  default_prog = defaut_prog,
-  mouse_bindings = mouse_bindings,
-  window_padding = window_padding,
-  launch_menu = launch_menu,
-  keys = key_bindings,
-
-}
