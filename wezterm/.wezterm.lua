@@ -26,11 +26,13 @@ config.use_fancy_tab_bar = true
 config.hide_tab_bar_if_only_one_tab = true
 config.tab_bar_at_bottom = false
 config.tab_max_width = 20
-config.window_background_opacity = 1.0
+config.window_background_opacity = 0.9
 config.scrollback_lines = 3500
 config.window_decorations = "RESIZE" -- "TITLE | RESIZE", "RESIZE", "TITLE", "NONE"
 config.color_scheme='Dracula'
 config.font_size = 14
+config.initial_rows = 36
+config.initial_cols = 120
 
 
 -- launch menu
