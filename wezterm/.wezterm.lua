@@ -13,7 +13,7 @@ end
 local os = os.getenv("os")
 if os ~= nil and string.match(os, "Windows*") then
   print("current os is " .. os)
-  config.defaut_prog = {"pwsh.exe", "--nologo"}
+  config.default_prog = {"pwsh.exe", "--nologo"}
 end
 
 
