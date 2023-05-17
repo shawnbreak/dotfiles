@@ -31,8 +31,8 @@ config.scrollback_lines = 3500
 config.window_decorations = "RESIZE" -- "TITLE | RESIZE", "RESIZE", "TITLE", "NONE"
 config.color_scheme='Dracula'
 config.font_size = 14
-config.initial_rows = 36
-config.initial_cols = 120
+config.initial_rows = 35
+config.initial_cols = 140
 
 
 -- launch menu
@@ -89,6 +89,12 @@ config.keys = {
     { key = 'p', mods = 'CTRL|ALT', action = wezterm.action.SwitchWorkspaceRelative(-1) },
 }
 
+wezterm.on('gui-startup', function(cmd) -- set startup Window position
+  local tab, pane, window = wezterm.mux.spawn_window(cmd or{
+    position = {x=50, y=60}
+  })
+  -- window:gui_window():set_position(50, -50)
+end)
 -- and finally, return the configuration to wezterm
 return config
 

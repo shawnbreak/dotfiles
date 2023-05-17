@@ -9,5 +9,5 @@ vim.opt.shiftwidth = 2
 vim.opt.cursorline = true
 vim.opt.number = true
 vim.opt.numberwidth = 2
-vim.opt.signcolumn = "no"
+vim.opt.signcolumn = "yes"
 vim.o.termguicolors = true
