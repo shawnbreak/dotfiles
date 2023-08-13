@@ -26,7 +26,7 @@ config.use_fancy_tab_bar = true
 config.hide_tab_bar_if_only_one_tab = true
 config.tab_bar_at_bottom = false
 config.tab_max_width = 20
-config.window_background_opacity = 0.9
+config.window_background_opacity = 0.94
 config.scrollback_lines = 3500
 config.window_decorations = "RESIZE" -- "TITLE | RESIZE", "RESIZE", "TITLE", "NONE"
 config.color_scheme='Dracula'
@@ -91,7 +91,7 @@ config.keys = {
 
 wezterm.on('gui-startup', function(cmd) -- set startup Window position
   local tab, pane, window = wezterm.mux.spawn_window(cmd or{
-    position = {x=50, y=60}
+    position = {x=60, y=60}
   })
   -- window:gui_window():set_position(50, -50)
 end)
