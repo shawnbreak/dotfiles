@@ -11,7 +11,7 @@ return {
       local wk = require("which-key")
       wk.register({
           ["<leader>"] = {
-        n = {"<cmd>NeoTreeFocusToggle<cr>", "Toggle neotree"},
+        n = {"<cmd>Neotree toggle<cr>", "Toggle neotree"},
         f =  {
             name = "Telescope",
             f = { "<cmd>Telescope find_files<cr>", "Find File" }, -- create a binding with label
