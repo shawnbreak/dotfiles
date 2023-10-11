@@ -1,0 +1,10 @@
+[font]
+size = 16.0
+
+[window]
+opacity = 0.85
+decorations = "Full"
+
+
+[selection]
+save_to_clipboard = false
