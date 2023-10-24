@@ -117,7 +117,7 @@ style = "bold dimmed green"
 disabled = false
 
 [cmd_duration]
-diabled = true
+disabled = true
 
 [hostname]
 ssh_only = true
