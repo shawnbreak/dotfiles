@@ -28,10 +28,10 @@ config.tab_bar_at_bottom = false
 config.tab_max_width = 20
 config.window_background_opacity = 0.94
 config.scrollback_lines = 3500
-config.window_decorations = "TITLE | RESIZE" -- "TITLE | RESIZE", "RESIZE", "TITLE", "NONE"
+config.window_decorations = "RESIZE" -- "TITLE | RESIZE", "RESIZE", "TITLE", "NONE"
 config.color_scheme='Dracula'
 config.font = wezterm.font 'FiraCode Nerd Font'
-config.font_size = 14
+config.font_size = 16
 config.initial_rows = 35
 config.initial_cols = 140
 
@@ -79,7 +79,7 @@ config.window_padding = {
     left = '1.2cell',
     right = '0.5cell',
     top = '0.5cell',
-    bottom = '0.5cell',
+    bottom = '0cell',
 }
 
 config.keys = {

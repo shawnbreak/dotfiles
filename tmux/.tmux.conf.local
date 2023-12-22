@@ -447,3 +447,5 @@ tmux_conf_uninstall_plugins_on_reload=true
 #
 # "$@"
 # # /!\ do not remove the previous line
+
+bind "l" run-shell "/Users/shawn/toggle-tmux-popup"
