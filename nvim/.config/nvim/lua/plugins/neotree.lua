@@ -10,7 +10,11 @@ return {
 
     config = function()
         require("tokyonight").setup({
-            transparent = true
+            transparent = true,
+            styles = {
+              sidebars = "transparent",
+              floats = "transparent"
+            }
         })
 
         vim.cmd([[colorscheme tokyonight]])
