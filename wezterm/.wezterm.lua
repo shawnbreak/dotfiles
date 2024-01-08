@@ -30,7 +30,10 @@ config.window_background_opacity = 0.94
 config.scrollback_lines = 3500
 config.window_decorations = "RESIZE" -- "TITLE | RESIZE", "RESIZE", "TITLE", "NONE"
 config.color_scheme='Dracula'
-config.font = wezterm.font 'FiraCode Nerd Font'
+config.font = wezterm.font {
+  family = 'FiraCode Nerd Font',
+  harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0'}  -- disalbe ligature
+}
 config.font_size = 16
 config.initial_rows = 35
 config.initial_cols = 140
