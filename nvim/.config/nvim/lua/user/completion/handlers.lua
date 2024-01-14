@@ -96,6 +96,11 @@ local function lsp_keymaps(bufnr)
 end
 
 M.on_attach = function(client, bufnr)
+  require("nvim-navic").attach(client, bufnr)
+  require("nvim-navbuddy").attach(client, bufnr)
+
+  -- vim.o.winbar = "%=%m %{%v:lua.require(lspsaga.symbol.winbar).get_bar()%}"
+
   if client.name == "tsserver" then
     client.resolved_capabilities.document_formatting = false
   end

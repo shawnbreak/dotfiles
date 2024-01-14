@@ -8,6 +8,14 @@ local keymap = vim.api.nvim_set_keymap
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+
+keymap("i", "jk", "<esc>", opts)
+keymap("v", "jk", "<esc>", opts)
+
+-- Navitage tabs
+keymap("n", "<TAB>", "gt", opts)
+keymap("n", "<S-TAB>", "gt", opts)
+
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bpre<CR>", opts)

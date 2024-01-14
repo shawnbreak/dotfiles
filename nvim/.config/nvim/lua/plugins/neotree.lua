@@ -9,16 +9,6 @@ return {
     },
 
     config = function()
-        require("tokyonight").setup({
-            transparent = true,
-            styles = {
-              sidebars = "transparent",
-              floats = "transparent"
-            }
-        })
-
-        vim.cmd([[colorscheme tokyonight]])
-
         require("neo-tree").setup({
         close_if_last_window = false, -- Close Neo-tree if it is the last window left in the tab
         popup_border_style = "rounded",

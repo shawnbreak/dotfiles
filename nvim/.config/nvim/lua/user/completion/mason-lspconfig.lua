@@ -1,4 +1,6 @@
-require("mason-lspconfig").setup()
+require("mason-lspconfig").setup({
+  ensure_installed = { "clangd", "rust_analyzer", "pyright", "lua_ls", "gopls" },
+})
 
 require("mason-lspconfig").setup_handlers {
     -- The first entry (without a key) will be the default handler

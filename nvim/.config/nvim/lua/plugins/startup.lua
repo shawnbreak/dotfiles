@@ -1,8 +1,9 @@
 return {
     'echasnovski/mini.nvim', 
+    enabled = false,
     version = false,
-    lazy = false,
+    lazy = true,
     config = function()
-        require("mini.starter").setup({})
+        -- require("mini.starter").setup({})
     end
 }

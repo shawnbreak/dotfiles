@@ -11,3 +11,9 @@ vim.opt.number = true
 vim.opt.numberwidth = 2
 vim.opt.signcolumn = "yes"
 vim.o.termguicolors = true
+-- vim.o.statusline = "%{%v:lua.require'nvim-navic'.get_location()%}"
+vim.o.winbar = "%=%m %f %{%v:lua.require'nvim-navic'.get_location()%}"
+
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.foldenable = false
