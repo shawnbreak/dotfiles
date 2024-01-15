@@ -6,6 +6,6 @@ return {
     })
   end,
   dependencies = {
-      'neovim/nvim-lspconfig',
+    'neovim/nvim-lspconfig',
   }
 }
