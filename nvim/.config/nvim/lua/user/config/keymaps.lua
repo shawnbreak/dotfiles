@@ -8,19 +8,25 @@ local keymap = vim.api.nvim_set_keymap
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-
+-- navigate line head and line end
 keymap("n", "H", "^", opts)
 keymap("n", "L", "$", opts)
-
 keymap("v", "H", "^", opts)
 keymap("v", "L", "$", opts)
 
+-- jk to escape
 keymap("i", "jk", "<esc>", opts)
 keymap("v", "jk", "<esc>", opts)
 
 -- Navitage tabs
 keymap("n", "<TAB>", "gt", opts)
 keymap("n", "<S-TAB>", "gt", opts)
+
+-- next error
+keymap("n", "cp", ":cpre<cr>", opts)
+-- previous error
+keymap("n", "cn", ":cnext<cr>", opts)
+
 
 -- Navigate buffers
 -- keymap("n", "<S-l>", ":bnext<CR>", opts)
