@@ -9,6 +9,12 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 
+keymap("n", "H", "^", opts)
+keymap("n", "L", "$", opts)
+
+keymap("v", "H", "^", opts)
+keymap("v", "L", "$", opts)
+
 keymap("i", "jk", "<esc>", opts)
 keymap("v", "jk", "<esc>", opts)
 
@@ -17,8 +23,8 @@ keymap("n", "<TAB>", "gt", opts)
 keymap("n", "<S-TAB>", "gt", opts)
 
 -- Navigate buffers
-keymap("n", "<S-l>", ":bnext<CR>", opts)
-keymap("n", "<S-h>", ":bpre<CR>", opts)
+-- keymap("n", "<S-l>", ":bnext<CR>", opts)
+-- keymap("n", "<S-h>", ":bpre<CR>", opts)
 
 -- Visual --
 -- Stay in indent mode
