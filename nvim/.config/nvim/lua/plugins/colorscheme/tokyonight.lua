@@ -11,7 +11,6 @@ return {
               -- floats = "transparent"
             }
         })
-
         vim.cmd([[colorscheme tokyonight]])
 
     end
