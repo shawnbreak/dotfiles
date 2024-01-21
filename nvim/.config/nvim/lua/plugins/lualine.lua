@@ -246,7 +246,7 @@ function default_lualine()
         lualine_a = {'mode'},
         lualine_b = {'branch', 'diff', 'diagnostics'},
         -- lualine_c = {'filename'},
-        lualine_c = {'%f%m' },
+        lualine_c = {'%=%f%m' },
         lualine_x = {'encoding', 'fileformat', 'filetype'},
         lualine_y = {'progress'},
         lualine_z = {'location'}
