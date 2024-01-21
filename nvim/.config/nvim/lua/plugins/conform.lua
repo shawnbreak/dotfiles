@@ -8,7 +8,8 @@ return {
         python = { "isort", "black" },
         -- Use a sub-list to run only the first available formatter
         javascript = { { "prettierd", "prettier" } },
-        c = { "clang-format" },
+        c = { "clang_format" },
+        cpp = { "clang-format" },
         json = { "jq" }
       },
       -- format_on_save = {
@@ -42,7 +43,7 @@ return {
         }
       end
       local bufnr = vim.api.nvim_get_current_buf()
-      require("conform").format({ async = true, lsp_fallback = true, bufnr=bufnr })
+      require("conform").format({ async = true, lsp_fallback = false, bufnr=bufnr })
     end, { range = true })
   end,
 }
