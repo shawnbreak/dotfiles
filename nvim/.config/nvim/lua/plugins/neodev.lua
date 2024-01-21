@@ -4,8 +4,5 @@ return {
     require("neodev").setup({
 
     })
-  end,
-  dependencies = {
-    'neovim/nvim-lspconfig',
-  }
+  end
 }
