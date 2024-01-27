@@ -14,4 +14,3 @@ vim.opt.rtp:prepend(lazypath)
 require("user.config.keymaps")
 require("lazy").setup("plugins")
 require("user.config.options")
-
