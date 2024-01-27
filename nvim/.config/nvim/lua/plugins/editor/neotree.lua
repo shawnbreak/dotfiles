@@ -2,6 +2,7 @@ return {
     "nvim-neo-tree/neo-tree.nvim",
     branch = "v3.x",
     lazy = false,
+    enabled = true,
     dependencies = {
         "nvim-lua/plenary.nvim",
         "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
@@ -104,7 +105,7 @@ return {
           commands = {},
           window = {
             position = "left",
-            width = 40,
+            width = 30,
             mapping_options = {
               noremap = true,
               nowait = true,
@@ -193,8 +194,8 @@ return {
               --               -- the current file is changed while the tree is open.
               leave_dirs_open = false, -- `false` closes auto expanded dirs, such as with `:Neotree reveal`
             },
-            group_empty_dirs = false, -- when true, empty folders will be grouped together
-            hijack_netrw_behavior = "open_default", -- netrw disabled, opening a directory opens neo-tree
+            group_empty_dirs = true, -- when true, empty folders will be grouped together
+            hijack_netrw_behavior =  "open_default", -- netrw disabled, opening a directory opens neo-tree
                                                     -- in whatever position is specified in window.position
                                   -- "open_current",  -- netrw disabled, opening a directory opens within the
                                                     -- window like netrw would, regardless of window.position
@@ -231,7 +232,8 @@ return {
               },
             },
 
-            commands = {} -- Add a custom command or override a global one using the same function name
+            commands = {
+            } -- Add a custom command or override a global one using the same function name
           },
           buffers = {
             follow_current_file = {

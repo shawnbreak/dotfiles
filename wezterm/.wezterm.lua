@@ -31,10 +31,12 @@ config.scrollback_lines = 3500
 config.window_decorations = "RESIZE" -- "TITLE | RESIZE", "RESIZE", "TITLE", "NONE"
 config.color_scheme = 'Dracula'
 config.font = wezterm.font {
-  family = 'FiraCode Nerd Font',
+  -- family = 'FiraCode Nerd Font',
+  family = '3270 Nerd Font',
+  -- family = 'BigBlueTerm437 Nerd Font',
   harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' } -- disalbe ligature
 }
-config.font_size = 16
+config.font_size = 20
 config.initial_rows = 35
 config.initial_cols = 140
 
@@ -79,10 +81,10 @@ config.mouse_bindings = mouse_bindings
 
 -- window padding
 config.window_padding = {
-  left = 2,
-  right = 2,
-  top = 0,
-  bottom = 0,
+  left = "1cell",
+  right = "1cell",
+  top = "1cell",
+  bottom = "0cell",
 }
 
 config.keys = {
