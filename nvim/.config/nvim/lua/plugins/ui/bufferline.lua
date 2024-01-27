@@ -10,7 +10,7 @@ return {
             options = {
                 mode = "tabs", -- set to "tabs" to only show tabpages instead
                 always_show_bufferline = false,
-                numbers =  "ordinal", 
+                numbers =  "none",
                 -- close_command = "bdelete! %d",       -- can be a string | function, | false see "Mouse actions"
                 close_command = "tabclose",       -- can be a string | function, | false see "Mouse actions"
                 diagnostics =  "nvim_lsp",
