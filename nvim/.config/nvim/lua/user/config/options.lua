@@ -12,6 +12,7 @@ vim.opt.numberwidth = 2
 vim.opt.relativenumber = true
 vim.opt.signcolumn = "yes"
 vim.opt.termguicolors = true
+vim.opt.mouse = "a"
 
 -- vim.o.statusline = "%{%v:lua.require'nvim-navic'.get_location()%}"
 -- vim.opt.winbar = "%=%m %f %{%v:lua.require'nvim-navic'.get_location()%}"
