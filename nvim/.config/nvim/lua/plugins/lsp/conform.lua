@@ -1,5 +1,6 @@
 return {
-  "stevearc/conform.nvim", opts = {},
+  "stevearc/conform.nvim",
+  opts = {},
   config = function()
     require("conform").setup({
       formatters_by_ft = {
@@ -37,7 +38,7 @@ return {
 
     vim.api.nvim_create_user_command("Format", function(args)
       local bufnr = vim.api.nvim_get_current_buf()
-      require("conform").format({ async = true, lsp_fallback = true, bufnr=bufnr })
+      require("conform").format({ async = true, lsp_fallback = true, bufnr = bufnr })
     end, { range = true })
   end,
 }
