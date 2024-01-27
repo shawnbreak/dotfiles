@@ -20,6 +20,10 @@ return {
             g = { "<cmd>Telescope live_grep<cr>", "Live grep" }, -- create a binding with label
             b = { "<cmd>Telescope buffers<cr>", "Buffers" }, -- create a binding with label
             h = { "<cmd>Telescope help_tags<cr>", "Help Tags" }, -- create a binding with label
+            d = { "<cmd>Telescope diagnostics<cr>", "Diagnostics" }, -- create a binding with label
+            m = { "<cmd>Telescope man_pages<cr>", "Man Pages" }, -- create a binding with label
+            o = { "<cmd>Telescope vim_options<cr>", "Vim options" }, -- create a binding with label
+            a = { "<cmd>Telescope autocommands<cr>", "auto commands" }, -- create a binding with label
         }
     }
       })
