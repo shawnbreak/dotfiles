@@ -14,7 +14,8 @@ vim.opt.signcolumn = "yes"
 vim.opt.termguicolors = true
 
 -- vim.o.statusline = "%{%v:lua.require'nvim-navic'.get_location()%}"
-vim.opt.winbar = "%=%m %f %{%v:lua.require'nvim-navic'.get_location()%}"
+-- vim.opt.winbar = "%=%m %f %{%v:lua.require'nvim-navic'.get_location()%}"
+vim.opt.winbar = "%{%v:lua.require'user.config.customwinbar'.get_winbar()%}"
 
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
