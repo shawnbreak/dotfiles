@@ -1,7 +1,7 @@
 local M = {}
 
 -- TODO: backfill this to template
-M.setup = function()
+M.sjtup = function()
   local signs = {
     { name = "DiagnosticSignError", text = "" },
     { name = "DiagnosticSignWarn", text = "" },
