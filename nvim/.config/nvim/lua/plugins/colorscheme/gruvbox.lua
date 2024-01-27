@@ -2,7 +2,7 @@ return {
   "ellisonleao/gruvbox.nvim",
     lazy = false,
     priority = 1000,
-    enabled = false,
+    enabled = true,
     config = function()
     -- Default options:
       require("gruvbox").setup({
@@ -30,6 +30,6 @@ return {
         transparent_mode = false,
       })
 
-      vim.cmd([[colorscheme gruvbox]])
+      -- vim.cmd([[colorscheme gruvbox]])
     end
 }

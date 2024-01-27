@@ -3,7 +3,7 @@ return {
    "catppuccin/nvim",
     lazy = false,
     priority = 1000,
-    enabled = false,
+    enabled = true,
     config = function(opts)
         require("catppuccin").setup({
             flavour = "macchiato", -- latte, frappe, macchiato, mocha
@@ -51,7 +51,6 @@ return {
                 -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
             },
         })
-        vim.cmd([[colorscheme catppuccin]])
-
+        -- vim.cmd([[colorscheme catppuccin]])
     end
 }

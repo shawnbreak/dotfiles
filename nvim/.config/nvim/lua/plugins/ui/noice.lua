@@ -5,8 +5,11 @@ return {
   opts = {
     -- add any options here
     notify = {
-      enabled = false,
+      enabled = true,
       view = 'notify'
+    },
+    messages = {
+      enabled = true
     }
   },
   dependencies = {
