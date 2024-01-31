@@ -24,6 +24,12 @@ return {
           m = { "<cmd>Telescope man_pages<cr>", "Man Pages" },          -- create a binding with label
           o = { "<cmd>Telescope vim_options<cr>", "Vim options" },      -- create a binding with label
           a = { "<cmd>Telescope autocommands<cr>", "auto commands" },   -- create a binding with label
+        },
+        t = {
+          name = "Trouble",
+          e = { "<cmd>Trouble document_diagnostics<cr>", "document diagnostics" },
+          a = { "<cmd>Trouble workspace_diagnostics<cr>", "document diagnostics" },
+
         }
       }
     })
