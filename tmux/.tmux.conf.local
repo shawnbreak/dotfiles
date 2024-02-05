@@ -348,7 +348,7 @@ tmux_conf_theme_clock_style="24"
 #   - disabled
 # on macOS, this requires installing reattach-to-user-namespace, see README.md
 # on Linux, this requires xsel, xclip or wl-copy
-tmux_conf_copy_to_os_clipboard=false
+tmux_conf_copy_to_os_clipboard=true
 
 
 # -- user customizations -------------------------------------------------------
@@ -376,9 +376,18 @@ set -g mode-keys vi
 # bind c new-window -c '#{pane_current_path}' #!important
 
 # move status line to top
-#set -g status-position top
+# set -g status-position top
 
 bind "l" run-shell "/Users/shawn/toggle-tmux-popup"
+
+bind h select-pane -L  # move left
+bind j select-pane -D  # move down
+bind k select-pane -U  # move up
+bind l select-pane -R  # move right
+bind P choose-buffer -F '#{buffer_id} #{buffer_sample}'
+bind m run-shell 'tmux setw synchronize-panes; if [ "$(tmux display -p "#{pane_synchronized}")" -eq 1 ]; then tmux display-message "Synchronize pane off"; else tmux display-message "Synchronize pane on"; fi'
+
+#bind m run-shell 'tmux setw synchronize-panes; [[ $(tmux display -p "#{pane_synchronized}") -eq 1 ]]  && tmux display "synchronize pane on" || tmux display "synchronize pane off"'
 
 # -- tpm -----------------------------------------------------------------------
 
