@@ -32,7 +32,6 @@ return {
         })
         require('vscode').load()
 
-        vim.cmd([[colorscheme vscode]])
     end
 
 }

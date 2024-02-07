@@ -26,3 +26,4 @@ vim.opt.laststatus = 3
 
 vim.api.nvim_set_hl(0, 'WinSeparator', { fg = 'gray', bold = true })
 
+vim.cmd([[colorscheme onedark]])
