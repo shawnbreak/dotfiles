@@ -22,8 +22,8 @@ vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldenable = false
 
+vim.cmd([[colorscheme onedark]])
 vim.opt.laststatus = 3
 
 vim.api.nvim_set_hl(0, 'WinSeparator', { fg = 'gray', bold = true })
 
-vim.cmd([[colorscheme onedark]])
