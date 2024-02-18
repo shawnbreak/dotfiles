@@ -16,26 +16,33 @@ vim.opt.mouse = "a"
 
 -- vim.o.statusline = "%{%v:lua.require'nvim-navic'.get_location()%}"
 -- vim.opt.winbar = "%=%m %f %{%v:lua.require'nvim-navic'.get_location()%}"
-vim.opt.winbar = "%{%v:lua.require'user.config.customwinbar'.get_winbar()%}"
+-- vim.opt.winbar = "%{%v:lua.require'user.config.customwinbar'.get_winbar()%}"
 
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldenable = false
 
--- vim.cmd([[colorscheme default]])
--- vim.cmd([[hi SignColumn guibg=none]])
+local function default_colorscheme()
+  vim.cmd([[colorscheme default]])
+  vim.cmd([[hi SignColumn guibg=none]])
+  vim.cmd([[hi Pmenu guibg=none]])
+end
 
-vim.cmd([[colorscheme tokyonight]])
-vim.cmd([[hi Statement gui=bold]])
-vim.cmd([[hi Type gui=bold]])
-vim.cmd([[hi Keyword gui=bold]])
-vim.cmd([[hi Special gui=bold]])
-vim.cmd([[hi Operator gui=bold]])
-vim.cmd([[hi @keyword gui=bold]])
--- vim.cmd([[hi @keyword.conditional gui=bold]])
--- vim.cmd([[hi @keyword.repeat gui=bold]])
-vim.cmd([[hi @type gui=bold]])
-vim.cmd([[hi @type.builtin gui=bold]])
+local function tokyonight_colorscheme()
+  vim.cmd([[colorscheme tokyonight]])
+  vim.cmd([[hi Statement gui=bold]])
+  vim.cmd([[hi Type gui=bold]])
+  vim.cmd([[hi Keyword gui=bold]])
+  vim.cmd([[hi Special gui=bold]])
+  vim.cmd([[hi Operator gui=bold]])
+  vim.cmd([[hi @keyword gui=bold]])
+  -- vim.cmd([[hi @keyword.conditional gui=bold]])
+  -- vim.cmd([[hi @keyword.repeat gui=bold]])
+  vim.cmd([[hi @type gui=bold]])
+  vim.cmd([[hi @type.builtin gui=bold]])
+end
+
+default_colorscheme()
 
 vim.opt.laststatus = 3
 
