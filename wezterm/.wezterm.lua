@@ -26,7 +26,7 @@ config.use_fancy_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = true
 config.tab_bar_at_bottom = false
 config.tab_max_width = 20
-config.window_background_opacity = 0.9
+config.window_background_opacity = 1
 config.scrollback_lines = 3500
 config.window_decorations = "RESIZE" -- "TITLE | RESIZE", "RESIZE", "TITLE", "NONE"
 config.color_scheme = 'Dracula'
@@ -81,9 +81,9 @@ config.mouse_bindings = mouse_bindings
 
 -- window padding
 config.window_padding = {
-  left = "1cell",
-  right = "1cell",
-  top = "1cell",
+  left = "0cell",
+  right = "0cell",
+  top = "0.5cell",
   bottom = "0cell",
 }
 
