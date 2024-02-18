@@ -22,17 +22,20 @@ vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldenable = false
 
-vim.cmd([[colorscheme onedark]])
-vim.cmd([[hi Statement gui=bold]])
-vim.cmd([[hi Type gui=bold]])
-vim.cmd([[hi Keyword gui=bold]])
-vim.cmd([[hi Special gui=bold]])
-vim.cmd([[hi Operator gui=bold]])
-vim.cmd([[hi @keyword gui=bold]])
-vim.cmd([[hi @keyword.conditional gui=bold]])
-vim.cmd([[hi @keyword.repeat gui=bold]])
-vim.cmd([[hi @type gui=bold]])
-vim.cmd([[hi @type.builtin gui=bold]])
+vim.cmd([[colorscheme default]])
+vim.cmd([[hi SignColumn guibg=none]])
+
+-- vim.cmd([[colorscheme tokyonight]])
+-- vim.cmd([[hi Statement gui=bold]])
+-- vim.cmd([[hi Type gui=bold]])
+-- vim.cmd([[hi Keyword gui=bold]])
+-- vim.cmd([[hi Special gui=bold]])
+-- vim.cmd([[hi Operator gui=bold]])
+-- vim.cmd([[hi @keyword gui=bold]])
+-- vim.cmd([[hi @keyword.conditional gui=bold]])
+-- vim.cmd([[hi @keyword.repeat gui=bold]])
+-- vim.cmd([[hi @type gui=bold]])
+-- vim.cmd([[hi @type.builtin gui=bold]])
 
 vim.opt.laststatus = 3
 
