@@ -70,7 +70,6 @@ return {
         --   end
         -- end, { "i", "s" }),
       }),
-
       sources = cmp.config.sources({
         { name = 'nvim_lsp' },
         -- { name = 'vsnip' }, -- For vsnip users.
