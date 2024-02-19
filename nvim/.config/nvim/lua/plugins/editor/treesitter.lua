@@ -1,7 +1,6 @@
 return {
   "nvim-treesitter/nvim-treesitter",
   build = ":TSUpdate",
-  enabled = true,
   config = function()
     require'nvim-treesitter.configs'.setup {
       ignore_install = {},

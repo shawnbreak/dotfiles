@@ -1,4 +1,4 @@
-function eval_lualine()
+local function evil_lualine()
   -- Eviline config for lualine
   -- Author: shadmansaleh
   -- Credit: glepnir
@@ -222,14 +222,16 @@ function eval_lualine()
   lualine.setup(config)
 end
 
-function default_lualine()
+local function default_lualine()
     require("lualine").setup{
     options = {
         icons_enabled = true,
         -- theme = 'base16',
         -- theme = 'vscode',
         -- theme = 'dracula-nvim',
-        theme = 'onedark',
+        -- theme = 'onedark',
+        -- theme = 'codedark',
+        theme = 'everforest',
         component_separators = { left = '', right = ''},
         section_separators = { left = '', right = ''},
         disabled_filetypes = {
@@ -273,7 +275,7 @@ return {
   'nvim-lualine/lualine.nvim',
   dependencies = { 'nvim-tree/nvim-web-devicons' },
   config = function()
-    -- eval_lualine()
+    -- evil_lualine()
     default_lualine()
   end
 }
