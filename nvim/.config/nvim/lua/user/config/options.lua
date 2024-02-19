@@ -48,3 +48,9 @@ vim.opt.laststatus = 3
 
 vim.api.nvim_set_hl(0, 'WinSeparator', { fg = 'gray', bold = true })
 
+vim.cmd([[
+augroup winbar
+  autocmd!
+  autocmd WinResized * exe winnr('$')>1 ? "set winbar=%=%m%f%=" : "set winbar="
+augroup END
+]])
