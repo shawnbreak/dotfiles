@@ -49,9 +49,21 @@ vim.opt.laststatus = 3
 
 vim.api.nvim_set_hl(0, 'WinSeparator', { fg = 'gray', bold = true })
 
-vim.cmd([[
-augroup winbar
-  autocmd!
-  autocmd WinResized * exe winnr('$')>1 ? "set winbar=%=%m%f%=" : "set winbar="
-augroup END
-]])
+-- vim.cmd([[
+-- augroup winbar
+--   autocmd!
+--   autocmd WinResized * exe winnr('$')>1 ? "set winbar=%=%m%f%=" : "set winbar="
+-- augroup END
+-- ]])
+
+-- auto change input method
+if vim.loop.os_uname().sysname == "Linux" then
+  vim.cmd( [[
+  augroup imselect
+    autocmd InsertLeave * :silent !fcitx-remote -c
+    autocmd BufCreate *  :silent !fcitx-remote -c
+    autocmd BufEnter *  :silent !fcitx-remote -c
+    autocmd BufLeave *  :silent !fcitx-remote -c
+  augroup END
+  ]])
+end
