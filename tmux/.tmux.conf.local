@@ -389,6 +389,10 @@ bind m run-shell 'tmux setw synchronize-panes; if [ "$(tmux display -p "#{pane_s
 
 #bind m run-shell 'tmux setw synchronize-panes; [[ $(tmux display -p "#{pane_synchronized}") -eq 1 ]]  && tmux display "synchronize pane on" || tmux display "synchronize pane off"'
 
+# prevent exit copy-mode after mouse selecting
+unbind -T copy-mode-vi MouseDragEnd1Pane
+#bind -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-selection -x
+
 # -- tpm -----------------------------------------------------------------------
 
 # while I don't use tpm myself, many people requested official support so here
