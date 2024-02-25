@@ -32,11 +32,12 @@ config.window_decorations = "RESIZE" -- "TITLE | RESIZE", "RESIZE", "TITLE", "NO
 config.color_scheme = 'Dracula'
 config.font = wezterm.font {
   -- family = 'FiraCode Nerd Font',
-  family = '3270 Nerd Font',
+  -- family = '3270 Nerd Font',
+  family = 'JetBrainsMono Nerd Font',
   -- family = 'BigBlueTerm437 Nerd Font',
   harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' } -- disalbe ligature
 }
-config.font_size = 20
+config.font_size = 18
 config.initial_rows = 35
 config.initial_cols = 140
 

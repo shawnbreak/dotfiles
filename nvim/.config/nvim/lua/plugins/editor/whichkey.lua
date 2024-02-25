@@ -13,6 +13,7 @@ return {
       ["<leader>"] = {
         -- n = {'<cmd>lua require("neo-tree.command").execute({ toggle = true, dir = "./" })<cr>', "Toggle neotree"},
         n = { "<cmd>Neotree toggle<cr>", "Toggle neotree" },
+        a = { "<cmd>AerialToggle<cr>", "AerialToggle" },
         -- n = {"<cmd>NvimTreeToggle<cr>", "Toggle neotree"},
         f = {
           name = "Telescope",
