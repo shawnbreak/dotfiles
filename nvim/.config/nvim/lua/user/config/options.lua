@@ -45,7 +45,7 @@ end
 
 tokyonight_colorscheme()
 
-vim.opt.laststatus = 3
+vim.opt.laststatus = 2
 
 vim.api.nvim_set_hl(0, 'WinSeparator', { fg = 'gray', bold = true })
 
@@ -58,16 +58,16 @@ vim.api.nvim_set_hl(0, 'WinSeparator', { fg = 'gray', bold = true })
 -- augroup END
 -- ]])
 
-local winbar_augroup = vim.api.nvim_create_augroup("winbar", { clear = false })
-vim.api.nvim_create_autocmd({"WinResized"}, {
-  command = "exe winnr('$')>1 ? \"set winbar=%=%m%f%=\" : \"set winbar=\"",
-  group = winbar_augroup
-})
+-- local winbar_augroup = vim.api.nvim_create_augroup("winbar", { clear = false })
+-- vim.api.nvim_create_autocmd({"WinResized"}, {
+--   command = "exe winnr('$')>1 ? \"set winbar=%=%m%f%=\" : \"set winbar=\"",
+--   group = winbar_augroup
+-- })
 ---------------- end create set winbar autocmd --------------------
 
 -- auto change input method
 if vim.loop.os_uname().sysname == "Linux" then
-  vim.cmd( [[
+  vim.cmd([[
   augroup imselect
     autocmd InsertLeave * :silent !fcitx-remote -c
     autocmd BufCreate *  :silent !fcitx-remote -c
@@ -77,3 +77,12 @@ if vim.loop.os_uname().sysname == "Linux" then
   ]])
 end
 
+-- vim.api.nvim_create_user_command("ToggleLastStatus",
+--   function()
+--     if vim.opt.laststatus._value == 2 then
+--       vim.opt.laststatus = 0
+--     else
+--       vim.opt.laststatus = 2
+--     end
+--   end,
+  -- {})

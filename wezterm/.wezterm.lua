@@ -22,7 +22,7 @@ end
 -- For example, changing the color scheme:
 config.color_scheme = 'Dracula'
 config.enable_tab_bar = true
-config.use_fancy_tab_bar = false
+config.use_fancy_tab_bar = true
 config.hide_tab_bar_if_only_one_tab = true
 config.tab_bar_at_bottom = false
 config.tab_max_width = 20
@@ -37,7 +37,7 @@ config.font = wezterm.font {
   -- family = 'BigBlueTerm437 Nerd Font',
   harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' } -- disalbe ligature
 }
-config.font_size = 18
+config.font_size = 16
 config.initial_rows = 35
 config.initial_cols = 140
 
