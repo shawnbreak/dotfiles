@@ -51,7 +51,7 @@
     //     },
     // },
     "hyprland/window": {
-        "format": "{class}"
+        "format": "{title}"
     },
     "hyprland/submap": {
         "format": "{}",
