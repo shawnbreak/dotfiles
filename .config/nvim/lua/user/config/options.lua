@@ -30,7 +30,9 @@ local function default_colorscheme()
 end
 
 local function tokyonight_colorscheme()
-  vim.cmd([[colorscheme tokyonight]])
+  -- vim.cmd([[colorscheme tokyonight]])
+  vim.cmd([[colorscheme vscode]])
+  vim.cmd([[hi LineNr guifg=#5c6370]])
   vim.cmd([[hi Statement gui=bold]])
   vim.cmd([[hi Type gui=bold]])
   vim.cmd([[hi Keyword gui=bold]])

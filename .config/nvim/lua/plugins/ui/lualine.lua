@@ -227,11 +227,11 @@ local function default_lualine()
     options = {
       icons_enabled = true,
       -- theme = 'base16',
-      -- theme = 'vscode',
+      theme = 'vscode',
       -- theme = 'dracula-nvim',
       -- theme = 'onedark',
       -- theme = 'codedark',
-      theme = 'everforest',
+      -- theme = 'everforest',
       -- component_separators = { left = '', right = '' },
       -- section_separators = { left = '', right = '' },
       component_separators = '',
