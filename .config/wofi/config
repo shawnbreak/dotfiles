@@ -1,6 +1,6 @@
 mode=drun
 allow_images=true
 image_size=26
-width=800
+width=400
 lines=8
 
