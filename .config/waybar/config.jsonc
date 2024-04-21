@@ -17,21 +17,22 @@
         "hyprland/window"
     ],
     "modules-right": [
+        "tray",
         "mpd",
         // "idle_inhibitor",
         "pulseaudio",
         "network",
         // "power-profiles-daemon",
-        "cpu",
-        "memory",
-        "temperature",
+        // "cpu",
+        // "memory",
+        // "temperature",
         "backlight",
         "keyboard-state",
         // "hyprland/language",
         // "battery",
         // "battery#bat2",
-        "clock",
-        "tray"
+        "clock"
+
     ],
     // Modules configuration
     // "hyprland/workspaces": {
@@ -117,6 +118,7 @@
         "spacing": 10
     },
     "clock": {
+        "format": "{:%a %b %d %H:%M}",
         // "timezone": "America/New_York",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%Y-%m-%d}"
@@ -172,7 +174,7 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "({signalStrength}%) ",
+        "format-wifi": "({signalStrength}%)  ",
         "format-ethernet": "{ipaddr}/{cidr} ",
         "tooltip-format": "{essid}: {ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
