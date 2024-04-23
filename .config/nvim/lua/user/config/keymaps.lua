@@ -27,6 +27,9 @@ keymap("n", "cp", ":cpre<cr>", opts)
 -- previous error
 keymap("n", "cn", ":cnext<cr>", opts)
 
+-- Format
+keymap("n", "<C-S-l>", ":Format<cr>", opts)
+
 
 -- Navigate buffers
 -- keymap("n", "<S-l>", ":bnext<CR>", opts)

@@ -1,8 +1,14 @@
 return {
   'nvimdev/lspsaga.nvim',
-  enabled = false,
+  enabled = true,
   config = function()
-      require('lspsaga').setup({})
+      require('lspsaga').setup({
+        outline = {
+            auto_preview = false,
+            detail = true,
+            layout = "normal" -- normal, float
+        }
+      })
   end,
   dependencies = {
       'nvim-treesitter/nvim-treesitter', -- optional

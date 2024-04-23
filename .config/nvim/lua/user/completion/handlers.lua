@@ -87,14 +87,13 @@ local function lsp_keymaps(bufnr)
   vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
   -- vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
   vim.keymap.set('n', 'gr', "<cmd>Trouble lsp_references<cr>", bufopts)
-  vim.keymap.set('n', '<space>f', vim.lsp.buf.formatting, bufopts)
-
-  vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
+  -- vim.keymap.set('n', '<C-S-l>', vim.lsp.buf.formatting, bufopts)
+  -- vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
 end
 
 M.on_attach = function(client, bufnr)
-  require("nvim-navic").attach(client, bufnr)
-  require("nvim-navbuddy").attach(client, bufnr)
+  -- require("nvim-navic").attach(client, bufnr)
+  -- require("nvim-navbuddy").attach(client, bufnr)
 
   -- vim.o.winbar = "%=%m %{%v:lua.require(lspsaga.symbol.winbar).get_bar()%}"
 

@@ -96,6 +96,7 @@ source $ZSH/oh-my-zsh.sh
 # export ARCHFLAGS="-arch x86_64"
 export EDITOR=nvim
 export TERM=xterm-256color
+export PATH=$PATH:~/.local/share/nvim/mason/bin
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -111,3 +112,4 @@ alias ll="exa --long --icons --color -I .git"
 alias v="nvim"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+eval "$(starship init zsh)"

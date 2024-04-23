@@ -1,5 +1,5 @@
-
 return {
+  enabled = false,
   "SmiteshP/nvim-navic",
   -- config = function()
   --   require('dashboard').setup {

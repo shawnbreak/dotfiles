@@ -14,10 +14,6 @@ vim.opt.signcolumn = "yes"
 vim.opt.termguicolors = true
 vim.opt.mouse = "a"
 
--- vim.o.statusline = "%{%v:lua.require'nvim-navic'.get_location()%}"
--- vim.opt.winbar = "%=%m %f %{%v:lua.require'nvim-navic'.get_location()%}"
--- vim.opt.winbar = "%{%v:lua.require'user.config.customwinbar'.get_winbar()%}"
-
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldenable = false
@@ -47,7 +43,7 @@ end
 
 tokyonight_colorscheme()
 
-vim.opt.laststatus = 2
+vim.opt.laststatus = 3
 
 vim.api.nvim_set_hl(0, 'WinSeparator', { fg = 'gray', bold = true })
 
