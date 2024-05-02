@@ -46,6 +46,8 @@ return {
     -- vim.cmd([[hi @keyword.repeat gui=bold]])
     vim.cmd([[hi @type gui=bold]])
     vim.cmd([[hi @type.builtin gui=bold]])
+    vim.cmd([[hi LspInlayHint guifg=#5c6370]])
+    vim.cmd([[hi WhiteSpace guifg=#5c6370]])
   end
 
 }
