@@ -1,8 +1,7 @@
 return {
   "nvim-treesitter/nvim-treesitter",
   build = ":TSUpdate",
-  config = function()
-    require'nvim-treesitter.configs'.setup {
+  opts = {
       ignore_install = {},
       -- A list of parser names, or "all" (the five listed parsers should always be installed)
       ensure_installed = { "c", "lua", "python", "bash" },
@@ -35,6 +34,9 @@ return {
             node_decremental = "grm",
           },
       },
-    }
+  },
+  config = function(_, opts)
+    require("nvim-treesitter.install").prefer_git = true
+    require'nvim-treesitter.configs'.setup(opts)
   end
 }

@@ -8,7 +8,7 @@ return {
         local bufferline = require('bufferline')
         bufferline.setup {
             options = {
-                mode = "tabs", -- set to "tabs" to only show tabpages instead
+                mode = "tabs",  -- buffers, tabs
                 always_show_bufferline = false,
                 numbers =  "none",
                 -- close_command = "bdelete! %d",       -- can be a string | function, | false see "Mouse actions"

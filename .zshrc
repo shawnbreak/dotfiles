@@ -113,3 +113,4 @@ alias v="nvim"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 eval "$(starship init zsh)"
+. "$HOME/.cargo/env"

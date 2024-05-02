@@ -1,6 +1,9 @@
 return {
   'nvimdev/lspsaga.nvim',
-  enabled = true,
+  dependencies = {
+      'nvim-treesitter/nvim-treesitter', -- optional
+      'nvim-tree/nvim-web-devicons'     -- optional
+  },
   config = function()
       require('lspsaga').setup({
         outline = {
@@ -9,9 +12,5 @@ return {
             layout = "normal" -- normal, float
         }
       })
-  end,
-  dependencies = {
-      'nvim-treesitter/nvim-treesitter', -- optional
-      'nvim-tree/nvim-web-devicons'     -- optional
-  }
+  end
 }
