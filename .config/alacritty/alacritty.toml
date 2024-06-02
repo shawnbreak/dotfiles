@@ -6,14 +6,14 @@
 
 
 [font]
-size = 16.0
-normal = { "family" = "Rec Mono Custom" }
+size = 14.0
+normal = { family = "Rec Mono Custom", style = "Regular" }
 
 [window]
 opacity = 1
+blur = true
 decorations = "Full"
 padding = { x = 5, y = 0 }
-blur = true
 resize_increments = true
 
 
@@ -25,7 +25,8 @@ hide_when_typing = true
 
 [keyboard]
 bindings = [
-  { key = "+", mods = "Control|Shift", action = "IncreaseFontSize" },
-  { key = "0", mods = "Control|Shift", action = "ResetFontSize" },
-  { key = "_", mods = "Control|Shift", action = "DecreaseFontSize" },
+  { key = "N", mods = "Control|Shift", action = "CreateNewWindow" },
+  { key = "N", mods = "Control", action = "SpawnNewInstance" },
+  { key = "Enter", mods = "Alt|Shift", action = "ToggleFullScreen" },
+  { key = "Enter", mods = "Alt", action = "ToggleMaximized" },
 ]
