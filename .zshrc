@@ -110,7 +110,9 @@ export PATH=$PATH:~/.local/share/nvim/mason/bin
 alias ls="exa --icons --color -I .git"
 alias ll="exa --long --icons --color -I .git"
 alias v="nvim"
+alias open="xdg-open"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 eval "$(starship init zsh)"
 . "$HOME/.cargo/env"
+
