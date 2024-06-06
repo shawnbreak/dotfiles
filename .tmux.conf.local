@@ -389,6 +389,8 @@ bind l select-pane -R  # move right
 bind P choose-buffer -F '#{buffer_id} #{buffer_sample}'
 bind m run-shell 'tmux setw synchronize-panes; if [ "$(tmux display -p "#{pane_synchronized}")" -eq 1 ]; then tmux display-message "Synchronize pane off"; else tmux display-message "Synchronize pane on"; fi'
 
+bind u run-shell "tmux set status"
+
 #bind m run-shell 'tmux setw synchronize-panes; [[ $(tmux display -p "#{pane_synchronized}") -eq 1 ]]  && tmux display "synchronize pane on" || tmux display "synchronize pane off"'
 
 # prevent exit copy-mode after mouse selecting

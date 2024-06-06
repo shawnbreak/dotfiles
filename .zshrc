@@ -116,3 +116,5 @@ alias open="xdg-open"
 eval "$(starship init zsh)"
 . "$HOME/.cargo/env"
 
+
+[ -f "/home/shawn/.ghcup/env" ] && . "/home/shawn/.ghcup/env" # ghcup-env

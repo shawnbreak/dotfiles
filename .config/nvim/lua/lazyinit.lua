@@ -14,9 +14,11 @@ vim.opt.rtp:prepend(lazypath)
 
 -- require("lazy").setup("plugins")
 require("lazy").setup({
-  require("plugins.colorscheme.vscode"),
+  -- require("plugins.colorscheme.vscode"),
   -- require("plugins.colorscheme.default"),
   -- require("plugins.colorscheme.tokyonight"),
+  -- require("plugins.colorscheme.kanagawa"),
+  require("plugins.colorscheme.onedark"),
 
   require("plugins.ui.lualine"),
   require("plugins.ui.bufferline"),
