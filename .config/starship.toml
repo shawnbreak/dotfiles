@@ -93,6 +93,8 @@ $character"""
 add_newline = false
 #format = '$all$directory$character'
 
+command_timeout = 1000
+
 
 # Replace the "❯" symbol in the prompt with "➜"
 
