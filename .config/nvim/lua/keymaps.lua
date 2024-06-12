@@ -29,8 +29,8 @@ keymap("i", "jk", "<esc>")
 keymap("v", "jk", "<esc>")
 
 -- Navitage tabs
-keymap("n", "<TAB>", "gt")
-keymap("n", "<S-TAB>", "gt")
+--keymap("n", "<TAB>", "gt")
+--keymap("n", "<S-TAB>", "gt")
 
 -- next error
 keymap("n", "cp", ":cpre<cr>", { desc = "quickfix previous" })
