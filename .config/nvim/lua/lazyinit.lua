@@ -42,6 +42,8 @@ require("lazy").setup({
   require("plugins.editor.colorizer"),
   require("plugins.editor.treesitter"),
   require("plugins.editor.illumincate"),
+  require("plugins.editor.autotag"),
+  require("plugins.editor.oil"),
 
 
   require("plugins.lsp.lspconfig"),
