@@ -8,10 +8,10 @@ return {
       -- Id is automatically added at the beginning, and name at the end
       -- See :help oil-columns
       columns = {
-        "icon",
-        "permissions",
-        "size",
-        "mtime",
+        -- "icon",
+        -- "permissions",
+        -- "size",
+        -- "mtime",
       },
       view_options = {
         -- Show files and directories that start with "."
