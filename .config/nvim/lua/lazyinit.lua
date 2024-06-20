@@ -29,7 +29,7 @@ require("lazy").setup({
   require("plugins.editor.todo-comments"),
   require("plugins.editor.autopairs"),
 
-  require("plugins.editor.neorg"),
+  -- require("plugins.editor.neorg"),
   require("plugins.editor.cscope"),
   require("plugins.editor.harpoon"),
 
