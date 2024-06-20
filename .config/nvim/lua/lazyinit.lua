@@ -19,6 +19,8 @@ require("lazy").setup({
   -- require("plugins.colorscheme.tokyonight"),
   -- require("plugins.colorscheme.kanagawa"),
   require("plugins.colorscheme.onedark"),
+  -- require("plugins.colorscheme.cyperdream"),
+  -- require("plugins.colorscheme.sonokai"),
 
   require("plugins.ui.lualine"),
   require("plugins.ui.bufferline"),
