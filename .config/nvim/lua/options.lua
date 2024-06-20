@@ -56,7 +56,7 @@ vim.opt.splitbelow = true
 --  See `:help 'list'`
 --  and `:help 'listchars'`
 vim.opt.list = false
-vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣', eol = '⏎' }
 
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = 'split'
@@ -81,6 +81,10 @@ vim.opt.termguicolors = true
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldenable = false
+vim.opt.foldcolumn = "auto"
+
+
+vim.opt.suffixesadd = {""}
 
 
 vim.opt.laststatus = 0
