@@ -44,7 +44,11 @@ require("lazy").setup({
   require("plugins.editor.illumincate"),
   require("plugins.editor.autotag"),
   require("plugins.editor.oil"),
-
+  -- require("plugins.editor.toggleterm"),
+  -- require("plugins.editor.hardtime"),
+  -- require("plugins.editor.hardtime"),
+  -- require("plugins.editor.neoscroll"),
+  require("plugins.editor.markdownpreview"),
 
   require("plugins.lsp.lspconfig"),
   require("plugins.lsp.lspsaga"),
