@@ -18,7 +18,8 @@ require("lazy").setup({
   -- require("plugins.colorscheme.default"),
   -- require("plugins.colorscheme.tokyonight"),
   -- require("plugins.colorscheme.kanagawa"),
-  require("plugins.colorscheme.onedark"),
+  -- require("plugins.colorscheme.onedark"),
+  require("plugins.colorscheme.solarized-osaka"),
   -- require("plugins.colorscheme.cyperdream"),
   -- require("plugins.colorscheme.sonokai"),
 
@@ -47,10 +48,15 @@ require("lazy").setup({
   require("plugins.editor.autotag"),
   require("plugins.editor.oil"),
   -- require("plugins.editor.toggleterm"),
-  -- require("plugins.editor.hardtime"),
-  -- require("plugins.editor.hardtime"),
+  -- require("plugins.editor.hardtime"), -- hint for shortcut key
   -- require("plugins.editor.neoscroll"),
   require("plugins.editor.markdownpreview"),
+  -- require("plugins.editor.headline"), --  markdonw headline
+  -- require("plugins.editor.indent-blankline"),
+  require("plugins.editor.smart-split"),
+  -- require("plugins.editor.leap"),
+  require("plugins.editor.flash"),
+
 
   require("plugins.lsp.lspconfig"),
   require("plugins.lsp.lspsaga"),

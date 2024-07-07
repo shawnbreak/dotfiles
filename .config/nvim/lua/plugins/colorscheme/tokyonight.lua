@@ -5,7 +5,7 @@ return {
     enabled = true,
     config = function(opts)
         require("tokyonight").setup({
-            transparent = true,
+            transparent = false,
             styles = {
               sidebars = "transparent",
               -- floats = "transparent"
@@ -29,5 +29,8 @@ return {
     vim.cmd([[hi @type.builtin gui=bold]])
     vim.cmd([[hi LspInlayHint guifg=#5c6370]])
     vim.cmd([[hi WhiteSpace guifg=#5c6370]])
+
+    vim.api.nvim_set_hl(0, 'WinSeparator', { fg = 'gray', bold = true })
+
     end
 }

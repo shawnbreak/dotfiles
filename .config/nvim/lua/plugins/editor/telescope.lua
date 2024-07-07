@@ -16,6 +16,7 @@ return {
     require("telescope").setup {
       defaults = {
         layout_strategy = "horizontal",
+        -- layout_strategy = "bottom_pane",
         layout_config = {
           -- prompt_position = "top"
         }
