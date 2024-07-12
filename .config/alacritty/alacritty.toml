@@ -10,9 +10,9 @@ size = 14.0
 normal = { family = "Rec Mono Custom", style = "Regular" }
 
 [window]
-opacity = 1
-blur = true
-decorations = "Full"
+opacity = 0.9
+blur = false
+decorations = "Full" # Full None Transparent Buttonless
 padding = { x = 5, y = 0 }
 resize_increments = true
 

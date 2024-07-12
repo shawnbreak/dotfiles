@@ -118,3 +118,5 @@ eval "$(starship init zsh)"
 
 
 [ -f "/home/shawn/.ghcup/env" ] && . "/home/shawn/.ghcup/env" # ghcup-env
+eval "$(zoxide init zsh)"
+alias e="emacsclient -n"
