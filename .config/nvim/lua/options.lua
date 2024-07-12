@@ -55,8 +55,14 @@ vim.opt.splitbelow = true
 -- Sets how neovim will display certain whitespace characters in the editor.
 --  See `:help 'list'`
 --  and `:help 'listchars'`
-vim.opt.list = false
-vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣', eol = '⏎' }
+--  ⤶ U+2936 ARROW POINTING DOWNWARDS THEN CURVING LEFTWARDS
+-- ↵ U+21B5 DOWNWARDS ARROW WITH CORNER LEFTWARDS
+-- ⏎ U+23CE RETURN SYMBOL
+-- ↲ U+21B2 DOWNWARDS ARROW WITH TIP LEFTWARDS
+-- ↩ U+21A9 LEFTWARDS ARROW WITH HOOK
+-- vim.opt.list = false
+vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣', eol = '↵' }
+
 
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = 'split'
@@ -81,7 +87,7 @@ vim.opt.termguicolors = true
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldenable = false
-vim.opt.foldcolumn = "auto"
+vim.opt.foldcolumn = "0"
 
 
 vim.opt.suffixesadd = {""}

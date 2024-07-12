@@ -17,8 +17,9 @@ require("lazy").setup({
   -- require("plugins.colorscheme.vscode"),
   -- require("plugins.colorscheme.default"),
   -- require("plugins.colorscheme.tokyonight"),
+  require("plugins.colorscheme.solarized-osaks"),
   -- require("plugins.colorscheme.kanagawa"),
-  require("plugins.colorscheme.onedark"),
+  -- require("plugins.colorscheme.onedark"),
   -- require("plugins.colorscheme.cyperdream"),
   -- require("plugins.colorscheme.sonokai"),
 
