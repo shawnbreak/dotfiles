@@ -18,8 +18,8 @@ require("lazy").setup({
   -- require("plugins.colorscheme.default"),
   -- require("plugins.colorscheme.tokyonight"),
   -- require("plugins.colorscheme.kanagawa"),
-  -- require("plugins.colorscheme.onedark"),
-  require("plugins.colorscheme.solarized-osaka"),
+  require("plugins.colorscheme.onedark"),
+  -- require("plugins.colorscheme.solarized-osaka"),
   -- require("plugins.colorscheme.cyperdream"),
   -- require("plugins.colorscheme.sonokai"),
 
@@ -33,7 +33,7 @@ require("lazy").setup({
   require("plugins.editor.autopairs"),
 
   -- require("plugins.editor.neorg"),
-  require("plugins.editor.cscope"),
+  -- require("plugins.editor.cscope"),
   require("plugins.editor.harpoon"),
 
   require("plugins.editor.neotree"),
@@ -44,7 +44,7 @@ require("lazy").setup({
   require("plugins.editor.telescope"),
   require("plugins.editor.colorizer"),
   require("plugins.editor.treesitter"),
-  require("plugins.editor.illumincate"),
+  -- require("plugins.editor.illumincate"),
   require("plugins.editor.autotag"),
   require("plugins.editor.oil"),
   -- require("plugins.editor.toggleterm"),
