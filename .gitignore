@@ -1,0 +1,6 @@
+.emacs.d/elpa
+.emacs.d/.cache
+.emacs.d/snippets
+.emacs.d/projects
+.emacs.d/auto-save-list
+.emacs.d/.lsp-session-v1

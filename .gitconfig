@@ -3,3 +3,5 @@
 [user]
 	email = thezhxin@gmail.com
 	name = shawnbreak
+[diff]
+	tool = /home/shawn/Downloads/p4v-2024.2.2619912/bin/p4merge
