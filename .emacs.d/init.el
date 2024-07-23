@@ -261,13 +261,27 @@
 
 
 (use-package expand-region
-  :bind ("C-=" . er/expand-region))
+  :bind ("C-=" . er/expand-region)
+  ("C--". er/contract-region))
 
 
 (use-package lsp-java :config (add-hook 'java-mode-hook 'lsp))
 (use-package dap-java :ensure nil)
 (use-package magit
   :ensure t)
+
+;;; Minor-mode to add space between Chinese and English characters.
+(use-package pangu-spacing
+  :ensure t
+  :config
+  (add-hook 'markdown-mode-hook (lambda()
+				  (global-pangu-spacing-mode))))
+
+
+(use-package vlf
+  :ensure t)
+
+;; (use-package smartparens)
 
 (server-start)
 
