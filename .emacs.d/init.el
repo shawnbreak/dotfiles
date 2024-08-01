@@ -200,7 +200,7 @@
   :config
   (add-hook 'after-init-hook #'global-flycheck-mode))
 
-
+0
 ;; lsp mode optimize
 (setq gc-cons-threshold (* 1024 1024 100)) ;; 100 MiB
 (setq read-process-output-max (* 1024 1024)) ;; 1mb
@@ -239,10 +239,14 @@
 (use-package yasnippet-snippets
   :ensure t)
 
-(use-package org-bullets
-  :ensure t
+;; (use-package org-bullets
+;;   :ensure t
+;;   :config
+;;   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+
+(use-package org-superstar
   :config
-  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+  (add-hook 'org-mode-hook (lambda () (org-superstar-mode 1))))
 
 ;; (use-package org-modern
 ;;   :ensure t

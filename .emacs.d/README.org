@@ -1,0 +1,152 @@
+#+TITLE: My Emacs Config
+#+AUTHOR: zhangxin
+#+DATE: 2024-08-01T19:54:45+08:00
+
+* 常用操作
+
+** Movement
+
+- C-f, C-b: move by charactor
+- C-p, C-n, C-a, C-e: move by line
+- M-f, M-b: move by word
+- M-a, M-b: move by setence
+- M-{, M-}: move by paragraph
+- C-M-a, C-M-e: move by defun
+- C-M-f, C-M-b: move by sexp
+
+
+** mark
+
+- C-SPC or C-@: set and unset mark
+- M-@: mark word
+- M-h: mark paragraph
+- C-M-h: mark defun
+- C-x p: mark whole buffer
+p- C-M-@: mark sexp
+
+** copy and paste
+
+-  C-w: cut or kill-region
+-  M-w: copy or kill-ring-save
+-  C-y: paste or yank
+-  M-y : yank-popup
+
+
+* 重要概念
+
+** kill ring
+
+save text to kill ring
+- C-w: kill-region
+- M-w: kill-ring-save
+- M-d: kill-word
+- M-k: kill-sentence
+- C-M-<backspace>: kill-whole-line
+- C-k: kill-line
+- C-M-k: kill-sexp
+- C-x r k: kill-rectangle
+
+yank from kill ring
+- C-y: yank the last kill ring text
+- M-y: yank-pop, cycle kill ring
+
+** mark ring
+- fasd
+- fasdf
+- C-x C-SPC: pop-global-mark
+- C-u C-SPC
+
+** registers
+
+- C-x r s R: copy-to-register R
+- C-x r i R: insert-register R
+- C-x r C-SPC R: point-to-registger
+- C-x r j R: jump-to-register
+
+** rectangle
+
+- C-x SPC, C-x r t: rectanle-mark-mode, string-rectangle
+
+
+* Pacakges
+
+** which key
+
+** ivy, swiper, counsel
+
+** markdown-mode
+
+** auto complete
+- lsp-mode,
+- lsp-ui
+- lsp-ivy
+- ls-treemacs
+- dap-mode
+- company
+- company-box
+- flycheck
+- yasnippets
+- yasnippets-snippets
+
+** ggtags
+
+command line usage
+#+begin_src shell
+  gtags # execute in source code root directory
+  global func1
+  global  -r func1
+
+#+end_src
+
+globash usage
+
+#+begin_src shell
+  globaash
+  x func1
+  r func1
+  show 1 # editor specified by environment EDITOR
+#+end_src
+
+emacs ggtags command
+- ggtags-find-definition
+- ggtags-find-reference
+
+** multiple-cursors
+C-S->: mc/mark-next-like-this
+C-S-<: mc/mark-previous-like-this
+
+** popup-kill-ring
+
+** browse-kill-ring
+
+** imenu-list
+
+
+** expand-region
+
+- C-=: expand-region
+- C--: contract-region
+
+** magit
+
+git client
+
+** vlf
+
+open very larg file
+
+** pangu-spacing
+
+pangu-spacing-mode，自动在中文和英文单词之间添加空格
+
+** emacs-rime
+
+rime input method
+
+** org-download
+
+org-download-clipboard
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
