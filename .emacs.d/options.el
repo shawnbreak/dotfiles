@@ -35,6 +35,16 @@
 
 (electric-pair-mode)
 
+(setq backup-directory-alist `(("." . "~/.saves")))
+
+;; recent files
+(recentf-mode 1)
+(setq recentf-max-menu-items 25)
+(setq recentf-max-saved-items 25)
+(global-set-key "\C-x\ \C-r" 'recentf-open-files)
 
 (setq custom-file "~/.emacs.d/emacs-custom.el")
 (load custom-file)
+
+
+(setq set-mark-command-repeat-pop t)

@@ -275,13 +275,33 @@
   :ensure t
   :config
   (add-hook 'markdown-mode-hook (lambda()
-				  (global-pangu-spacing-mode))))
-
+				  (pangu-spacing-mode))))
 
 (use-package vlf
   :ensure t)
 
 ;; (use-package smartparens)
+ 	
+(use-package tex
+  :ensure auctex)
+
+(use-package org-download
+  :ensure t
+  ;; Drag-and-drop to `dired`
+  :config
+  (setq-default org-download-image-dir "./assets")
+  (setq-default org-download-heading-lvl nil)
+  (add-hook 'dired-mode-hook 'org-download-enable))
+
+(global-set-key (kbd "C-'") 'avy-goto-char-2)
+(global-set-key (kbd "M-g f") 'avy-goto-line)
+
+
+(use-package rime
+  :custom
+  (default-input-method "rime"))
+
+(setq-default org-startup-with-inline-images t)
 
 (server-start)
 
