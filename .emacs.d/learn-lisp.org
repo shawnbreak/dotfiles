@@ -1,0 +1,117 @@
+#+TITLE: Learn Elisp
+#+AUTHOR: zhangxin
+
+* 数据类型
+
+** Lisp 编程类型
+
+*** Integer Type
+
+
+*** Floating-Point Type
+
+
+*** Character Type
+
+*** Symbol Type
+ An object with a name.
+ a variable, a function name, a list
+ 
+
+*** Sequence Type
+
+lists
+arrays
+
+*** Cons Cell Type
+
+包含两个 slot， 名字叫 CAR 和 CDR
+(CAR . CDR)
+
+A list is a series of cons cells.
+
+*** Array Type
+
+Arrasy 是 sequence 类型的子类型
+
+四种类型的Array
+- strings: 包含一串char的数组
+- vectors： 包含任意类型的数组
+- bool-vectors： 包含 t 或者 nil 的数组
+- char-tables
+
+
+*** String Type
+
+*** Vector Type
+
+#+begin_src lisp
+  [1 "tow" (three)]
+#+end_src
+
+*** Char-Table Type
+
+
+*** Bool-Vector Type
+
+
+*** Hash Table Type
+
+
+*** Function Type
+
+*** Macro Type
+
+*** Primitive Function Type
+
+*** Byte-Code Type
+
+*** Record Type
+
+*** Type Descriptors
+
+*** Autoload Type
+
+*** Finalizer Type
+
+
+** Emacs 编辑器相关类型
+
+*** Buffer Type
+
+*** Marker Type
+
+*** Window Type
+
+*** Frame Type
+
+
+*** Terminal Type
+
+*** Window Configuration Type
+
+
+*** Frame Configuration Type
+
+
+*** Process Type
+
+*** Thread Type
+
+
+*** Mutext Type
+
+
+*** Condition Variable Type
+
+
+*** Stream Type
+
+
+*** Keymap Type
+
+*** Overlay Type
+
+*** Font Type
+
+*** Xwidget Type
