@@ -14,9 +14,9 @@
 *** Character Type
 
 *** Symbol Type
+
  An object with a name.
- a variable, a function name, a list
- 
+ a variable, a function name, a list 
 
 *** Sequence Type
 
@@ -79,39 +79,277 @@ Arrasy 是 sequence 类型的子类型
 
 *** Buffer Type
 
+Buffer 对象。大部分 buffer 对应一个文件，也有一其它类型的 buffer。
+buffer 可以展示在 window 中。buffer 有一个 point。大多数编辑命令作用在
+当前 buffer 的 point 附近。
+
+一些跟 buffer 相关的结构
++ syntax table
++ keymap
++ buffer-local variable bindings
++ overlays
++ text properties
+
+  #+begin_src lisp
+    (current-buffer)
+  #+end_src
+
 *** Marker Type
+
+marker 用于标记 buffer 中的位置
+
+#+begin_src lisp
+  (point-marker)
+#+end_src
 
 *** Window Type
 
+每个 window 有一个关联的 buffer。一个 buffer 可以出现一个 window 或者
+几个 window 中，或者不出现在任何 window 中。
+
+#+begin_src lisp
+  (selected-window)
+#+end_src
+
 *** Frame Type
 
+#+begin_src lisp
+  (selected-frame)
+#+end_src
 
 *** Terminal Type
+#+begin_src lisp
+  (get-device-terminal nil)
+#+end_src
 
 *** Window Configuration Type
 
+windown configuration 存储 window 的位置、大小和内容等信息。
 
 *** Frame Configuration Type
 
+存储 frame 中所有 window 的信息。
 
 *** Process Type
 
+运行在 emacs 中的进程，比如 shells, GDB, ftp, compilers。
+
+#+begin_src lisp
+  (process-list)
+#+end_src
+
 *** Thread Type
 
+thread 代表 Emacs Lisp 的一个执行线程，执行一段 lisp 代码，有自己的
+current buffer，可以锁定到 processes。
+
+#+begin_src lisp
+  (all-threads)
+#+end_src
 
 *** Mutext Type
 
+互斥锁，用于同步线程执行。
+
+#+begin_src lisp
+  (make-mutex "my-mutex")
+  (make-mutex)
+#+end_src
 
 *** Condition Variable Type
 
+条件变量用于更复杂的线程同步，一个线程可以等待条件来唤醒并执行，另一个
+线程来触发这个条件变量。
+
+#+begin_src lisp
+  (make-condition-variable (make-mutex))
+#+end_src
 
 *** Stream Type
 
+stream 用于 input 或者 output， 可以用于 stream 的类型有：markers,
+buffers, strings, functions。
+
+常见的，input stream 从键盘、buffer、文件获取字符输入，output stream
+输出字符到 buffer。
+
+nil 对象可用于 standart-input 或者 standard-ouput。t 可用于 minibuffer
+或者 echo area 的输入。
 
 *** Keymap Type
 
+keymap 映射按键到命令。
+
 *** Overlay Type
+
+overlay 临时代表 buffer 一部分的内容样式。
 
 *** Font Type
 
+font 指定如何展示文本。
+
 *** Xwidget Type
+
+xwidget 是一个特殊的展示元素，比如一个可以嵌入 buffer 的浏览器。
+
+
+* misc
+
+定义函数
+
+#+begin_src elisp
+  (defun multiply-by-seven (number)
+    "Multiply by seven."
+    ;; interactive 是可选的，可以让命令使用M-x的方式被调用
+    (interactive "p")
+    (message "The result is %d" (* 7 number)))
+#+end_src
+
+设置快捷键
+#+begin_src elisp
+  (global-unset-key "\C-x2")
+  (global-set-key "\C-x2" split-window-quietly)
+#+end_src
+
+加载别的 lisp 文件
+#+begin_src elisp
+  (load "~/.emacs.d/test.el")
+#+end_src
+
+
+加载整个文件夹的 lisp 文件，追加路径到 load-path
+#+begin_src elisp
+  (setq load-path (cons "~/emacs" load-path))
+#+end_src
+
+可以使用 load-library 交互式的添加路径到 load-path，load-libray 函数的
+定义如下：
+#+begin_src elisp
+       (defun load-library (library)
+       "Load the Emacs Lisp library named LIBRARY.
+     This is an interface to the function `load'.  LIBRARY is searched
+     for in `load-path', both with and without `load-suffixes' (as
+     well as `load-file-rep-suffixes').
+
+     See Info node `(emacs)Lisp Libraries' for more details.
+     See `load-file' for a different interface to `load'."
+       (interactive
+        (list (completing-read "Load library: "
+                               (apply-partially 'locate-file-completion-table
+                                                load-path
+                                                (get-load-suffixes)))))
+       (load library))
+#+end_src
+
+或者使用 load-file 交互式的添加文件到 load-path。
+
+let 绑定 symbol 到 value，定义本地变量，可以掩盖外地的同名变量
+
+示例， 将 zebra 的值绑定到 "strinipes"， 将 tiger 的值绑定到 "firece"。
+#+begin_src lisp
+  (let ((zebra "strinipes")	
+	(tiger "fierce"))
+    (message "One kind of animal has %s and another is %s."
+	     zebra tiger))
+#+end_src
+
+
+if
+#+begin_src elisp
+  (if (> 5 4)				; if-part
+      (message "5 is greater than 4!"))	; then-part
+#+end_src
+
+if-else
+#+begin_src elisp
+  (if (> 4 5)				; if-part
+      (message "4 falsely greater than 5!") ; then-part
+      (message "4 is not greater than 5!")) ; else-part
+#+end_src
+
+
+save-excursion 保存 buffer 中 point 的位置，执行完一系列 lisp 代码后，
+无论是否正常执行完，最后回到保存的 buffer 中 point 的位置。在 Emacs 中
+一般用在 let 块中。
+#+begin_src elisp
+  (let VARLIST
+    (save-excursion
+      BODY...))
+#+end_src
+
+
+simplified-beginning-of-buffer
+#+begin_src elisp
+  (defun simplified-beginning-of-buffer ()
+    "Move point to the beginning of the buffer;
+  lear mark at preview position"
+    (interactive)
+    (push-mark)
+    (goto-char (point-min)))
+#+end_src
+
+
+my-mark-whole-buffer
+#+begin_src elisp
+  (defun my-mark-whole-buffer ()
+    "Put point at the beginning and mark at end of buffer.
+      You probably should not use this function in Lisp programs;
+    it is usually a mistake for a Lisp function to use any aubroutine
+  that uses or sets the mark."
+    (interactive)
+    (push-mark (point))
+    (push-mark (point-max) nil t)
+    (goto-char (point-min)))
+#+end_src
+
+my-append-to-buffer
+
+#+begin_src elisp
+  (defun my-append-to-buffer (buffer start end)
+    "Append to specified buffer the text of the region.
+  It is inserted into that buffer before its point.
+
+       When calling from a program, give three arguments:
+     BUFFER (or buffer name), START and END.
+   START and END specify the portion of the current buffer to be copied."
+    (interactive
+     (list (read-buffer "Append to buffer: " (other-buffer
+					      (current-buffer) t))
+	   (region-beginning) (region-end)))
+    (let ((oldbuf (current-buffer)))
+      (save-excursion
+	(let * ((append-to (get-buffer-create buffer))
+		(windows (get-buffer-window-list append-to t t))
+		point)
+	     (set-buffer append-to)
+	     (setq point (point))
+	     (barf-if-buffer-read-only)
+	     (insert-buffer-substring oldbuf start end)
+	     (dolist (window windows)
+	       (when (= (window-point window) point)
+		 (set-window-point window point)))))))
+#+end_src
+
+simplified-end-of-buffer
+#+begin_src elisp
+  (defun simplified-end-of-buffer ()
+    "Go to the end of the buffer"
+    (interactive)
+    (push-mark)
+    (goto-char (point-max)))
+#+end_src
+
+
+if-buffer-exists
+#+begin_src elisp
+  (defun if-buffer-exists (buffer)x
+    "Check if BUFFER exists"
+    (interactive "MBuffer name: ")
+    (if (get-buffer buffer)
+	(message "buffer exists")
+      (message "buffer not exists")))
+#+end_src
+
+#+begin_src elisp
+    (xref-find-definitions "copy-to-buffer")
+#+end_src

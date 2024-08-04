@@ -1,5 +1,5 @@
 ;;; basic config
-(load "~/.emacs.d/options.el")
+(load "~/.emacs.d/lisp/options.el")
 
 ;;(load "~/.emacs.d/gtags.el")
 
@@ -246,7 +246,8 @@
 
 (use-package org-superstar
   :config
-  (add-hook 'org-mode-hook (lambda () (org-superstar-mode 1))))
+  (add-hook 'org-mode-hook (lambda () (org-superstar-mode 1)))
+  (setq org-superstar-leading-bullet ?\s))
 
 ;; (use-package org-modern
 ;;   :ensure t
@@ -284,7 +285,7 @@
 (use-package vlf
   :ensure t)
 
-;; (use-package smartparens)
+(use-package smartparens)
  	
 (use-package tex
   :ensure auctex)
@@ -300,7 +301,6 @@
 (global-set-key (kbd "C-'") 'avy-goto-char-2)
 (global-set-key (kbd "M-g f") 'avy-goto-line)
 
-
 (use-package rime
   :custom
   (default-input-method "rime"))
@@ -308,4 +308,3 @@
 (setq-default org-startup-with-inline-images t)
 
 (server-start)
-
