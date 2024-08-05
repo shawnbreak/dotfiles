@@ -225,20 +225,20 @@ xwidget 是一个特殊的展示元素，比如一个可以嵌入 buffer 的浏�
 可以使用 load-library 交互式的添加路径到 load-path，load-libray 函数的
 定义如下：
 #+begin_src elisp
-       (defun load-library (library)
-       "Load the Emacs Lisp library named LIBRARY.
-     This is an interface to the function `load'.  LIBRARY is searched
-     for in `load-path', both with and without `load-suffixes' (as
-     well as `load-file-rep-suffixes').
+  (defun load-library (library)
+    "Load the Emacs Lisp library named LIBRARY.
+  This is an interface to the function `load'.  LIBRARY is searched
+  for in `load-path', both with and without `load-suffixes' (as
+  well as `load-file-rep-suffixes').
 
-     See Info node `(emacs)Lisp Libraries' for more details.
-     See `load-file' for a different interface to `load'."
-       (interactive
-        (list (completing-read "Load library: "
-                               (apply-partially 'locate-file-completion-table
-                                                load-path
-                                                (get-load-suffixes)))))
-       (load library))
+  See Info node `(emacs)Lisp Libraries' for more details.
+  See `load-file' for a different interface to `load'."
+    (interactive
+     (list (completing-read "Load library: "
+			    (apply-partially 'locate-file-completion-table
+					     load-path
+					     (get-load-suffixes)))))
+    (load library))
 #+end_src
 
 或者使用 load-file 交互式的添加文件到 load-path。
