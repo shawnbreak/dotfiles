@@ -13,6 +13,7 @@
   (global-set-key (kbd "C-c C-/") #'company-files)
   (global-company-mode t))
 
+(add-hook 'after-init-hook 'global-company-mode)
 
 (use-package company-box
   :diminish
