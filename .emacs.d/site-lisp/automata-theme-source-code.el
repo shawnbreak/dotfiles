@@ -1,3 +1,7 @@
+;;; automata --- automata
+;;; Commentary:
+;;; Code:
+
 (require 'autothemer)
 
 (autothemer-deftheme
@@ -49,3 +53,4 @@
   ))
 2
 (provide-theme 'automata)
+;;; automata-theme-source-code.el ends here

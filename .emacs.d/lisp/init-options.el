@@ -1,4 +1,7 @@
-;; basice config
+;;; init-options --- options
+;;; Commentary:
+;;; Code:
+
 (setq inhibit-startup-message t)
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
@@ -33,6 +36,9 @@
 
 ;; (set-face-attribute 'default nil :font "Rec Mono Custom" :height 120)
 (set-face-attribute 'default nil :font "JetBrainsMono Nerd Font" :height 120)
+;;; options --- emacs basic options
+;;; Commentary:
+;;; Code
 
 (electric-pair-mode)
 
@@ -47,5 +53,8 @@
 (setq custom-file "~/.emacs.d/emacs-custom.el")
 (load custom-file)
 
-
 (setq set-mark-command-repeat-pop t)
+(setq dired-dwim-target t)
+
+(provide 'init-options)
+;;; init-options.el ends here
