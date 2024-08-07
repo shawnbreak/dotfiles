@@ -7,6 +7,7 @@
 (add-to-list 'load-path (expand-file-name "site-lisp" user-emacs-directory))
 
 (require 'init-options)
+(require 'init-misc)
 (require 'init-elpa)
 (require 'init-evil)
 (require 'init-theme)
@@ -21,7 +22,6 @@
 (require 'init-company)
 (require 'init-multiple-cursor)
 (require 'init-yas)
-(require 'init-misc)
 (require 'init-treemacs)
 (require 'init-git)
 

@@ -10,6 +10,7 @@
   :config
   (setq company-idle-delay 0.3)
   (setq company-tooltip-align-annotations t)
+  (setq company-show-quick-access 'left)
   (global-set-key (kbd "C-c C-/") #'company-files)
   (global-company-mode t))
 

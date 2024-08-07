@@ -2,6 +2,9 @@
 ;;; Commentary:
 ;;; Code:
 
+(use-package diminish
+  :ensure t)
+
 (use-package flycheck
   :ensure t
   :config
