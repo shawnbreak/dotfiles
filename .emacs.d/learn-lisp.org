@@ -237,7 +237,7 @@ xwidget 是一个特殊的展示元素，比如一个可以嵌入 buffer 的浏�
      (list (completing-read "Load library: "
 			    (apply-partially 'locate-file-completion-table
 					     load-path
-					     (get-load-suffixes)))))
+	j				     (get-load-suffixes)))))
     (load library))
 #+end_src
 

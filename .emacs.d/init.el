@@ -51,8 +51,9 @@
 
 (use-package zenburn-theme
   :ensure t
-  :config
-  (load-theme 'zenburn t))
+  )
+;;  :config
+  ;;(load-theme 'zenburn t))
 
 (use-package doom-themes
   :ensure t
@@ -411,6 +412,7 @@
   :hook (dired-mode . treemacs-icons-dired-enable-once)
   :ensure t)
 
+
 (use-package treemacs-magit
   :after (treemacs magit)
   :ensure t)
@@ -429,5 +431,20 @@
   :config
   (treemacs-load-theme "nerd-icons"))
 ;;(treemacs-start-on-boot)
+
+
+;;(use-package diff-hl
+;;  :ensure t
+;;  )
+  ;; :config
+  ;; (global-diff-hl-mode))
+
+
+;; automata theme
+(use-package autothemer
+  :ensure t
+  :config
+  (load "~/.emacs.d/lisp/automata-theme-source-code.el")
+  (enable-theme 'automata))
 
 (server-start)
