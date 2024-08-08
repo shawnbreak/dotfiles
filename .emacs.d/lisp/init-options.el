@@ -77,5 +77,10 @@
 
 (set-frame-size-according-to-resolution)
 
+(setq mac-option-key-is-meta nil
+      mac-command-key-is-meta t
+      mac-option-modifier 'none
+      mac-command-modifier 'meta)
+
 (provide 'init-options)
 ;;; init-options.el ends here
