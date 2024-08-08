@@ -31,8 +31,6 @@
 (use-package dap-mode :after lsp-mode :config (dap-auto-configure-mode))
 ;; (use-package dap-LANGUAGE) to load the dap adapter for your language
 
-(use-package dap-java :ensure nil)
-
 (add-hook 'python-mode-hook #'lsp)
 (add-hook 'c-mode-hook #'lsp)
 
