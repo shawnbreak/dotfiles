@@ -32,6 +32,8 @@
   :ensure t)
 
 (use-package smartparens)
+
+(use-package edit-indirect :ensure t)
  	
 (use-package tex
   :ensure auctex)

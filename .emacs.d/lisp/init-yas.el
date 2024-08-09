@@ -9,6 +9,7 @@
   (yas-global-mode 1))
 
 (use-package yasnippet-snippets
+  :diminish
   :ensure t)
 
 (provide 'init-yas)
