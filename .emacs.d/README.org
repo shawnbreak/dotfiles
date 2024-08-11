@@ -149,4 +149,9 @@ org-download-clipboard
 
 
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+* Misc
+- C-u M-!: 将shell命令结果添加到buffer中
+
+* Emacs grep rgrep
+
+* Emacs integrate fzf rg
