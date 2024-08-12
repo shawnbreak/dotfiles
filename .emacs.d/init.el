@@ -25,6 +25,8 @@
 (require 'init-treemacs)
 (require 'init-git)
 
+(require 'md-download)
+
 ;; start emacs in server mode
 (server-start)
 
