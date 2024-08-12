@@ -2,6 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
+;; Don't show minor mode in mode line.
 (use-package diminish
   :ensure t)
 
@@ -36,7 +37,6 @@
 (use-package tex
   :ensure auctex)
 
-
 (use-package rime
   :custom
   (default-input-method "rime"))
@@ -44,10 +44,19 @@
 (use-package avy
   :ensure t
   :config
-  (global-set-key (kbd "C-'") 'avy-goto-char-2)
+  (global-set-key (kbd "C-;") 'avy-goto-char)
+  (global-set-key (kbd "C-:") 'avy-goto-char-2)
   (global-set-key (kbd "M-g f") 'avy-goto-line))
 
 (use-package command-log-mode)
+
+(use-package projectile
+  :ensure t
+  :init
+  (projectile-mode +1)
+  :bind (:map projectile-mode-map
+	      ("s-p" . projectile-command-map)
+	      ("C-c p" . projectile-command-map)))
 
 (provide 'init-misc)
 ;;; init-misc.el ends here

@@ -342,7 +342,7 @@ simplified-end-of-buffer
 
 if-buffer-exists
 #+begin_src elisp
-  (defun if-buffer-exists (buffer)x
+  (defun if-buffer-exists (buffer)
     "Check if BUFFER exists"
     (interactive "MBuffer name: ")
     (if (get-buffer buffer)
@@ -351,5 +351,5 @@ if-buffer-exists
 #+end_src
 
 #+begin_src elisp
-    (xref-find-definitions "copy-to-buffer")
+  (xref-find-definitions "copy-to-buffer")
 #+end_src

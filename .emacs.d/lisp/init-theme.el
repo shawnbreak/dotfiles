@@ -35,8 +35,8 @@
 ;;   :custom ((doom-modeline-height 15)))
 
 
-(enable-theme 'automata)
-;; (load-theme 'zenburn t)
+;; (enable-theme 'automata)
+(load-theme 'zenburn t)
 
 
 (use-package rainbow-delimiters
