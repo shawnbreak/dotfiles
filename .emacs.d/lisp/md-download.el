@@ -64,7 +64,7 @@
                "Please install the \"pngpaste\" program from Homebrew.")))))
 	(md-download-filename
 	 (concat "./assets/"
-		 (format-time-string "screenshot%Y-%m-%d-%H-%M-%S.png"))))
+		 (format-time-string "screenshot_%Y-%m-%d-%H-%M-%S.png"))))
     (make-directory "./assets" t)
     (shell-command-to-string
      (format md-download-screenshot-method md-download-filename))

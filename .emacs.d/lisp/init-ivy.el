@@ -1,4 +1,4 @@
-;;; init-ivy --- ivy counsel swiper
+x;;; init-ivy --- ivy counsel swiper
 ;;; Commentary:
 ;;; Code:
 (use-package ivy
@@ -37,6 +37,16 @@
 	 ("C-r" . counsel-minibuffer-history))
   :config
   (counsel-mode 1))
+
+
+(use-package orderless
+  :ensure t
+  :custom
+  (completion-styles '(orderless basic))
+  (completion-category-overrides '((file (styles basic partial-completion)))))
+
+(setq ivy-re-builders-alist '((t . orderless-ivy-re-builder)))
+(add-to-list 'ivy-highlight-functions-alist '(orderless-ivy-re-builder . orderless-ivy-highlight))
 
 (global-set-key (kbd "C-M-j") 'counsel-switch-buffer)
 

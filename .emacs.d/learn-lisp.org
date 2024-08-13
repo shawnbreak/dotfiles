@@ -353,3 +353,57 @@ if-buffer-exists
 #+begin_src elisp
   (xref-find-definitions "copy-to-buffer")
 #+end_src
+
+* dynamical binding vs lexical binding
+
+dynamical bniding： 变量在变量赋值后的整个函数调用栈都是有意义的
+#+begin_src elisp
+(setq x 10)
+
+(defun print-x ()
+  (message "x is %d" x))
+
+(defun test-dynamic-binding ()
+  (let ((x 20))
+    (print-x)))
+
+;; 调用 test-dynamic-binding 会输出 "x is 20"
+(test-dynamic-binding)  
+#+end_src
+
+#+RESULTS:
+: x is 20
+
+
+lexical binding： 变量的只在定义它的那个代码块或函数块可用
+#+begin_src elisp :lexical t
+  ;; -*- lexical-binding: t; -*-
+
+  (setq x 10)
+
+  (defun print-x ()
+    (message "x is %d" x))
+
+  (defun test-lexical-binding ()
+    (let ((x 20))
+      (print-x)))
+
+  ;; 如果使用 lexical-binding, 调用 test-lexical-binding 会输出 "x is 10"
+  (test-lexical-binding)
+#+end_src
+
+#+RESULTS:
+: x is 10
+
+启用 lexical binding 的方法
+1. 在文件头 src_elisp{;; -*- lexical-binding: t; -*-}
+2. let 局部使用
+   #+begin_src elisp
+     (let ((lexical-binding t))
+       ;; 这里的代码块使用 lexical binding
+       )
+   #+end_src
+
+
+defcustom 定义的变量不受 lexical binding 的影响，lexcical binding 只影响局部变量，defcustom
+定义的是全局变量

@@ -32,7 +32,10 @@
 (use-package vlf
   :ensure t)
 
-(use-package smartparens)
+(use-package smartparens
+  :ensure t
+  :config
+  (smartparens-global-mode))
  	
 (use-package tex
   :ensure auctex)
@@ -57,6 +60,16 @@
   :bind (:map projectile-mode-map
 	      ("s-p" . projectile-command-map)
 	      ("C-c p" . projectile-command-map)))
+
+(use-package diff-hl
+  :ensure t
+  :config
+  (global-diff-hl-mode))
+
+(use-package rg
+  :ensure t
+  :config
+  (rg-enable-default-bindings))
 
 (provide 'init-misc)
 ;;; init-misc.el ends here

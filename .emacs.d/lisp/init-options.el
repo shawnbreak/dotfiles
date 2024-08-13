@@ -34,13 +34,10 @@
 		eshell-mode-hook_))
   (add-hook mode (lambda ()  (display-line-numbers-mode 0))))
 
-;; (set-face-attribute 'default nil :font "Rec Mono Custom" :height 120)
-(set-face-attribute 'default nil :font "JetBrainsMono Nerd Font" :height 120)
-;;; options --- emacs basic options
-;;; Commentary:
-;;; Code
+(set-face-attribute 'default nil :font "Rec Mono Custom4" :height 120)
+(set-face-attribute 'fixed-pitch nil :font "Rec Mono Custom4" :height 120)
 
-(electric-pair-mode)
+;; (electric-pair-mode)
 
 (setq backup-directory-alist `(("." . "~/.saves")))
 
@@ -58,6 +55,7 @@
 
 ;;;  set default frame size
 (defun set-frame-size-according-to-resolution ()
+  "Set default frame size."
   (interactive)
   (if window-system
   (progn
