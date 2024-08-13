@@ -80,5 +80,9 @@
       mac-option-modifier 'none
       mac-command-modifier 'meta)
 
+
+;; typed text replaces the selection if selection is avtive
+(delete-selection-mode 1)
+
 (provide 'init-options)
 ;;; init-options.el ends here

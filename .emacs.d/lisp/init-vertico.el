@@ -14,6 +14,7 @@
 
 ;; Persist history over Emacs restarts. Vertico sorts by history position.
 (use-package savehist
+  :ensure nil
   :init
   (savehist-mode))
 
@@ -186,7 +187,8 @@
 
   :bind
   (("C-." . embark-act)         ;; pick some comfortable binding
-   ("C-;" . embark-dwim)        ;; good alternative: M-.
+   ;; ("C-;" . embark-dwim)        ;; good alternative: M-.
+   ("M-." . embark-dwim)        ;; good alternative: M-.
    ("C-h B" . embark-bindings)) ;; alternative for `describe-bindings'
 
   :init

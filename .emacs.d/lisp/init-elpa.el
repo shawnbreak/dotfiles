@@ -3,9 +3,14 @@
 
 ;;; Code:
 ;; set package archives for emacs default package manager
+;; (setq package-archives
+;; '(("gnu" . "http://elpa.gnu.org/packages/")
+;;   ("melpa" . "http://melpa.org/packages/")))
+
 (setq package-archives
-'(("gnu" . "http://elpa.gnu.org/packages/")
-  ("melpa" . "http://melpa.org/packages/")))
+      '(("gnu"    . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
+        ("nongnu" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/nongnu/")
+        ("melpa"  . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")))
 
 ;; Set up package.el to work with MELPA
 ;; (require 'package)

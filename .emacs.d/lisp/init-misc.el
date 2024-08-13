@@ -71,5 +71,12 @@
   :config
   (rg-enable-default-bindings))
 
+(use-package restart-emacs
+  :ensure t)
+
+(use-package saveplace
+  :ensure nil
+  :hook (after-init . save-place-mode))
+
 (provide 'init-misc)
 ;;; init-misc.el ends here
