@@ -2,7 +2,14 @@
 ;;; Commentary:
 ;;; Code:
 (use-package zenburn-theme
-  :ensure t)
+  :ensure t
+  :config
+  ;; use variable-pitch fonts for some headings and titles
+  (setq zenburn-use-variable-pitch t)
+  ;; scale headings in org-mode
+  (setq zenburn-scale-org-headlines t)
+  ;; scale headings in outline-mode
+  (setq zenburn-scale-outline-headlines t))
 
 ;; automata theme
 (use-package autothemer

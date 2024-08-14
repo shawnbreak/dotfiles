@@ -78,5 +78,11 @@
   :ensure nil
   :hook (after-init . save-place-mode))
 
+(use-package editorconfig
+  :ensure t
+  :diminish
+  :config
+  (editorconfig-mode 1))
+
 (provide 'init-misc)
 ;;; init-misc.el ends here
