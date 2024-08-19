@@ -4,7 +4,13 @@
 
 ;; Enable Evil
 (use-package evil
-  :ensure t)
+  :ensure t
+  )
+;;  :init
+;;  (setq evil-want-keybinding nil)
+;;  (setq evil-want-C-u-scroll t)
+;;  (setq evil-insert-state-map nil))
+
 ;; (evil-mode 1)
 
 (provide 'init-evil)

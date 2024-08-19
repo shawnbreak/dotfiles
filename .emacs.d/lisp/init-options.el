@@ -84,5 +84,15 @@
 ;; typed text replaces the selection if selection is avtive
 (delete-selection-mode 1)
 
+;; transparent emacs
+;; require emacs 29
+;; (set-frame-parameter nil 'alpha-background 90)
+;; (add-to-list 'default-frame-alist '(alpha-background . 70))
+0
+(defun toggle-transpraent-background ()
+  "Toggle transparent background."
+  (interactive)
+  ())
+
 (provide 'init-options)
 ;;; init-options.el ends here
