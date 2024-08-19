@@ -84,5 +84,9 @@
 ;; typed text replaces the selection if selection is avtive
 (delete-selection-mode 1)
 
+(global-set-key (kbd "M-n") (kbd "C-u 10 C-n"))
+(global-set-key (kbd "M-p") (kbd "C-u 10 C-p"))
+
+
 (provide 'init-options)
 ;;; init-options.el ends here
