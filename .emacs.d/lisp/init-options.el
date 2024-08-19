@@ -88,11 +88,15 @@
 ;; require emacs 29
 ;; (set-frame-parameter nil 'alpha-background 90)
 ;; (add-to-list 'default-frame-alist '(alpha-background . 70))
-0
+
 (defun toggle-transpraent-background ()
   "Toggle transparent background."
   (interactive)
   ())
+
+(global-set-key (kbd "M-n") (kbd "C-u 10 C-n"))
+(global-set-key (kbd "M-p") (kbd "C-u 10 C-p"))
+
 
 (provide 'init-options)
 ;;; init-options.el ends here
