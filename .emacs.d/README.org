@@ -175,3 +175,16 @@ org-download-clipboard
 
 + lsp-mode: 功能更全
 + eglot: emacs 2.29 内置,配置方便
+
+* editorconfig
+
+lsp-mode 配置 indent-region-function 使用language server 的
+textDocument/rangeFormat 来格式化。
+
+所以 .editorconfig 会被忽略，除非language server 本身支持.editorconfig。可以使用
+如下配置来忽略此问题。
+
+#+begin_src elisp
+  (setq lsp-enable-indentation nil)
+#+end_src
+
