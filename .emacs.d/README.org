@@ -6,27 +6,38 @@
 
 ** Movement
 
-- C-f, C-b: move by charactor
-- C-p, C-n, C-a, C-e: move by line
-- M-f, M-b: move by word
-- M-a, M-b: move by setence
-- M-{, M-}: move by paragraph
-- C-M-a, C-M-e: move by defun
-- C-M-f, C-M-b: move by sexp
+- C-f, C-b: forward-char, backward-char
+- C-p, C-n, C-a, C-e: previous-line, next-line, beginning-of-line, end-of-line
+- C-v, M-v: scroll-up-command, scroll-down-command
+- M-m: back-to-indentation
+- M-f, M-b: forward-word, backward-word
+- M-a, M-e: forward-sentence, backward-sentence
+- M-{, M-}: forward-paragraph, backward-paragraph
+- C-M-a, C-M-e: beginning-of-defun, end-of-defun
+- C-M-f, C-M-b: forward-sexp, backward-sexp
+- M-g g: goto-line
 
+  avy
+- C-;: avy-goto-char
+- C-:: avy-goto-char2
 
 ** mark
 
-- C-SPC or C-@: set and unset mark
-- M-@: mark word
-- M-h: mark paragraph
-- C-M-h: mark defun
-- C-x p: mark whole buffer
-p- C-M-@: mark sexp
+- C-SPC or C-@: set-mark-command
+- M-@: mark-word
+- M-h: mark-paragraph
+- C-M-h: mark-defun
+- C-x p: mark-whole-buffer
+- C-M-@: mark-sexp
+- C-x C-x: exchange-point-and-mark
 
+  expand-region
+- C-=: er/expand-region
+- C--: er/contract-region
+  
 ** copy and paste
 
--  C-w: cut or kill-region
+-  C-w: kill-region
 -  M-w: copy or kill-ring-save
 -  C-y: paste or yank
 -  M-y : yank-popup
@@ -51,8 +62,7 @@ yank from kill ring
 - M-y: yank-pop, cycle kill ring
 
 ** mark ring
-- fasd
-- fasdf
+
 - C-x C-SPC: pop-global-mark
 - C-u C-SPC
 
@@ -67,6 +77,7 @@ yank from kill ring
 
 - C-x SPC, C-x r t: rectanle-mark-mode, string-rectangle
 
+  
 
 * Pacakges
 
