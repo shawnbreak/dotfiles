@@ -96,7 +96,7 @@
 
 (global-set-key (kbd "M-n") (kbd "C-u 10 C-n"))
 (global-set-key (kbd "M-p") (kbd "C-u 10 C-p"))
-
+(define-key Info-mode-map (kbd "M-n") (kbd "C-u 10 C-n"))
 
 (provide 'init-options)
 ;;; init-options.el ends here

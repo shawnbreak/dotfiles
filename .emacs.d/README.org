@@ -42,6 +42,15 @@
 -  C-y: paste or yank
 -  M-y : yank-popup
 
+** comment
+- M-;: comment-dwim
+- C-u M-;: uncomment
+- C-x C-;: comment line
+
+** align
+- M-x align
+- C-u M-x align  
+
 
 * 重要概念
 
