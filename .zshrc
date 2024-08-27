@@ -107,8 +107,8 @@ export PATH=$PATH:~/.local/share/nvim/mason/bin
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias ls="exa --icons --color -I .git"
-alias ll="exa --long --icons --color -I .git"
+alias ls="exa --color -I .git"
+alias ll="exa --long --color -I .git"
 alias v="nvim"
 alias open="xdg-open"
 

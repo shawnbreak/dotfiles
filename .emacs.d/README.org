@@ -4,7 +4,7 @@
 
 * 常用操作
 
-** Movement
+** Movementsc
 
 - C-f, C-b: forward-char, backward-char
 - C-p, C-n, C-a, C-e: previous-line, next-line, beginning-of-line, end-of-line

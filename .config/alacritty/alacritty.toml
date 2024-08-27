@@ -7,7 +7,7 @@
 
 [font]
 size = 14.0
-normal = { family = "Rec Mono Custom", style = "Regular" }
+normal = { family = "Rec Mono Custom3", style = "Regular" }
 
 [window]
 opacity = 0.9
