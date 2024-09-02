@@ -86,7 +86,7 @@
 
 ;; transparent emacs
 ;; require emacs 29
-;; (set-frame-parameter nil 'alpha-background 90)
+;; (set-frame-parameter nil 'alpha-background 70)
 ;; (add-to-list 'default-frame-alist '(alpha-background . 70))
 
 (defun toggle-transpraent-background ()
