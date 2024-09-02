@@ -1,1 +1,0 @@
-("~/dotfiles/" "~/projects/linux/")
