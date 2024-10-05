@@ -42,7 +42,9 @@
 
 (use-package rime
   :custom
-  (default-input-method "rime"))
+  (default-input-method "rime")
+  :config
+  (setq-default rime-show-candidate 'popup))
 
 (use-package avy
   :ensure t
