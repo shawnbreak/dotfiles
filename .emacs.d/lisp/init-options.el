@@ -31,7 +31,8 @@
 		term-mode-hook
 		treemacs-mode-hook
 		shell-mode-hook
-		eshell-mode-hook_))
+		vterm-mode-hook
+		eshell-mode-hook))
   (add-hook mode (lambda ()  (display-line-numbers-mode 0))))
 
 (set-face-attribute 'default nil :font "Rec Mono Custom3" :height 140)
