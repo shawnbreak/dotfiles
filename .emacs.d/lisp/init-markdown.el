@@ -5,7 +5,7 @@
 (use-package markdown-mode
   :ensure t
   :mode ("README\\.md\\'" . gfm-mode)
-  :init (setq markdown-command "multimarkdown")
+  :init (setq markdown-command "pandoc")
   :config
   (setq markdown-fontify-code-blocks-natively t))
 
