@@ -43,8 +43,8 @@
 
 
 ;; (enable-theme 'automata)
-(load-theme 'zenburn t)
-
+;; (load-theme 'zenburn t)
+(load-theme 'doom-solarized-dark t)
 
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))

@@ -31,10 +31,11 @@
 		term-mode-hook
 		treemacs-mode-hook
 		shell-mode-hook
-		eshell-mode-hook_))
+		vterm-mode-hook
+		eshell-mode-hook))
   (add-hook mode (lambda ()  (display-line-numbers-mode 0))))
 
-(set-face-attribute 'default nil :font "Rec Mono Custom4" :height 140)
+(set-face-attribute 'default nil :font "Rec Mono Custom3" :height 140)
 (set-face-attribute 'fixed-pitch nil :font "Rec Mono Custom4" :height 140)
 
 ;; (electric-pair-mode)
@@ -86,7 +87,7 @@
 
 ;; transparent emacs
 ;; require emacs 29
-;; (set-frame-parameter nil 'alpha-background 90)
+;; (set-frame-parameter nil 'alpha-background 70)
 ;; (add-to-list 'default-frame-alist '(alpha-background . 70))
 
 (defun toggle-transpraent-background ()
@@ -97,6 +98,8 @@
 (global-set-key (kbd "M-n") (kbd "C-u 10 C-n"))
 (global-set-key (kbd "M-p") (kbd "C-u 10 C-p"))
 (define-key Info-mode-map (kbd "M-n") (kbd "C-u 10 C-n"))
+
+(put 'upcase-region 'disabled nil)
 
 (provide 'init-options)
 ;;; init-options.el ends here

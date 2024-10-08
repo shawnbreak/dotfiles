@@ -42,7 +42,9 @@
 
 (use-package rime
   :custom
-  (default-input-method "rime"))
+  (default-input-method "rime")
+  :config
+  (setq-default rime-show-candidate 'popup))
 
 (use-package avy
   :ensure t
@@ -58,7 +60,7 @@
   :init
   (projectile-mode +1)
   :bind (:map projectile-mode-map
-	      ("s-p" . projectile-command-map)
+	      ;;("s-p" . projectile-command-map)
 	      ("C-c p" . projectile-command-map)))
 
 (use-package diff-hl
@@ -83,6 +85,12 @@
   :diminish
   :config
   (editorconfig-mode 1))
+
+(use-package vterm
+  :ensure t)
+
+(use-package multi-vterm
+  :ensure t)
 
 (provide 'init-misc)
 ;;; init-misc.el ends here
