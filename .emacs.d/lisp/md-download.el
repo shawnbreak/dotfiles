@@ -62,9 +62,10 @@
                 "pngpaste %s"
               (user-error
                "Please install the \"pngpaste\" program from Homebrew.")))))
+	(md-download-dir (concat "./assets/" (file-name-base buffer-file-name)))
 	(md-download-filename
-	 (concat "./assets/" image_name)))
-    (make-directory "./assets" t)
+	 (concat "./assets/" (file-name-base buffer-file-name) "/" image_name)))
+    (make-directory md-download-dir t)
     (shell-command-to-string
      (format md-download-screenshot-method md-download-filename))
     (insert (format "![](%s)" md-download-filename))
