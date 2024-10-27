@@ -37,9 +37,9 @@
           (function :tag "Custom function")))
 
 
-(defun md-download-clipboard (&optional basename)
+(defun md-download-clipboard (image_name)
   "Capture the image from the clipboard and insert the resulting file."
-  (interactive)
+  (interactive "Mimage_name: ")
   (let ((md-download-screenshot-method
          (cl-case system-type
            (gnu/linux
@@ -62,10 +62,10 @@
                 "pngpaste %s"
               (user-error
                "Please install the \"pngpaste\" program from Homebrew.")))))
+	(md-download-dir (concat "./assets/" (file-name-base buffer-file-name)))
 	(md-download-filename
-	 (concat "./assets/"
-		 (format-time-string "screenshot_%Y-%m-%d-%H-%M-%S.png"))))
-    (make-directory "./assets" t)
+	 (concat "./assets/" (file-name-base buffer-file-name) "/" image_name)))
+    (make-directory md-download-dir t)
     (shell-command-to-string
      (format md-download-screenshot-method md-download-filename))
     (insert (format "![](%s)" md-download-filename))

@@ -45,7 +45,7 @@
 ;; (enable-theme 'automata)
 ;; (load-theme 'zenburn t)
 ;; (load-theme 'doom-solarized-dark t)
-(load-theme  'doom-Iosvkem t)
+(load-theme 'doom-Iosvkem t)
 
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))

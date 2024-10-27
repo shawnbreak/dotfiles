@@ -55,6 +55,9 @@
   (global-set-key (kbd "C-:") 'avy-goto-char-2)
   (global-set-key (kbd "M-g f") 'avy-goto-line))
 
+(use-package crux
+  :ensure t)
+
 (use-package command-log-mode)
 
 (use-package projectile
