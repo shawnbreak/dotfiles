@@ -20,7 +20,9 @@
 
 (use-package expand-region
   :bind ("C-=" . er/expand-region)
-  ("C--". er/contract-region))
+  ("C--". er/contract-region)
+  :config
+  (setq er/try-expand-list '(er/mark-word er/mark-symbol er/mark-symbol-with-prefix er/mark-next-accessor er/mark-method-call er/mark-inside-quotes er/mark-outside-quotes er/mark-inside-pairs er/mark-outside-pairs er/mark-comment er/mark-url er/mark-email er/mark-defun er/mark-sentence er/mark-paragraph)))
 
 ;;; Minor-mode to add space between Chinese and English characters.
 (use-package pangu-spacing

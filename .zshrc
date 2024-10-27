@@ -8,7 +8,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="kolo" # set by `omz`
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -73,6 +73,12 @@ ZSH_THEME="robbyrussell"
 plugins=(
 	git
         zsh-autosuggestions
+	sudo
+	web-search
+	copybuffer
+	copypath
+	dirhistory
+	copyfile
 	zsh-syntax-highlighting
 )
 
@@ -94,7 +100,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
-export EDITOR=nvim
+export EDITOR=emacsclient
 export TERM=xterm-256color
 export PATH=$PATH:~/.local/share/nvim/mason/bin
 
@@ -107,13 +113,13 @@ export PATH=$PATH:~/.local/share/nvim/mason/bin
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias ls="exa --color -I .git"
-alias ll="exa --long --color -I .git"
+alias ll="exa -lhgb --git"
+#alias ll="exa --long --color -I .git"
 alias v="nvim"
 alias open="xdg-open"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-eval "$(starship init zsh)"
+#eval "$(starship init zsh)"
 . "$HOME/.cargo/env"
 
 
