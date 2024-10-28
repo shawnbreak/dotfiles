@@ -8,11 +8,9 @@
 (menu-bar-mode -1)
 (tooltip-mode -1)
 (set-fringe-mode 10 )
-
  
 ;; sort apropos result by relevancy
 (setq apropos-sort-by-scores 1)
-
 
 ;; relavent to C-x o, switch to other window
 (global-set-key (kbd "M-o") 'other-window)
@@ -36,20 +34,22 @@
   (add-hook mode (lambda ()  (display-line-numbers-mode 0))))
 
 (set-face-attribute 'default nil :font "Rec Mono Custom3" :height 140)
-(set-face-attribute 'fixed-pitch nil :font "Rec Mono Custom4" :height 140)
+(set-face-attribute 'fixed-pitch nil :font "Rec Mono Custom3" :height 140)
 
-;; (electric-pair-mode)
+(electric-pair-mode)
 
 (setq backup-directory-alist `(("." . "~/.saves")))
 
 ;; recent files
+(require 'recentf)
 (recentf-mode 1)
 (setq recentf-max-menu-items 25)
 (setq recentf-max-saved-items 25)
-(global-set-key "\C-x\ \C-r" 'recentf-open-files)
+(global-set-key (kbd "C-x C-r") 'recentf-open-files)
 
 (setq custom-file "~/.emacs.d/emacs-custom.el")
-(load custom-file)
+(when (file-exists-p custom-file)
+  (load custom-file))
 
 (setq set-mark-command-repeat-pop t)
 (setq dired-dwim-target t)
@@ -89,11 +89,6 @@
 ;; require emacs 29
 (set-frame-parameter nil 'alpha-background 100)
 ;; (add-to-list 'default-frame-alist '(alpha-background . 70))
-
-(defun toggle-transpraent-background ()
-  "Toggle transparent background."
-  (interactive)
-  ())
 
 (global-set-key (kbd "M-n") (kbd "C-u 10 C-n"))
 (global-set-key (kbd "M-p") (kbd "C-u 10 C-p"))

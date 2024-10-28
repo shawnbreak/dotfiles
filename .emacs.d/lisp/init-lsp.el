@@ -23,18 +23,16 @@
 ;; if you are helm user
 ;; (use-package helm-lsp :commands helm-lsp-workspace-symbol)
 ;; if you are ivy user
-(use-package lsp-ivy :commands lsp-ivy-workspace-symbol)
-(use-package lsp-treemacs :commands lsp-treemacs-errors-list)
+;; (use-package lsp-ivy :commands lsp-ivy-workspace-symbol)
+;; (use-package lsp-treemacs :commands lsp-treemacs-errors-list)
 
 ;; optionally if you want to use debugger
 ;; (use-package dap-mode)
-(use-package dap-mode :after lsp-mode :config (dap-auto-configure-mode))
+;; (use-package dap-mode :after lsp-mode :config (dap-auto-configure-mode))
 ;; (use-package dap-LANGUAGE) to load the dap adapter for your language
 
 (add-hook 'python-mode-hook #'lsp)
 (add-hook 'c-mode-hook #'lsp)
-
-
 
 (provide 'init-lsp)
 ;;; init-lsp.el ends here

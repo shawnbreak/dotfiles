@@ -12,11 +12,13 @@
   (add-hook 'after-init-hook #'global-flycheck-mode))
 
 ;; use acw-window
-(global-set-key (kbd "M-o") 'ace-window)
+(use-package ace-window
+  :ensure t
+  :config
+  (global-set-key (kbd "M-o") 'ace-window))
 
 (use-package imenu-list
   :ensure t)
-
 
 (use-package expand-region
   :bind ("C-=" . er/expand-region)
@@ -26,28 +28,37 @@
 
 ;;; Minor-mode to add space between Chinese and English characters.
 (use-package pangu-spacing
+  :diminish
   :ensure t
   :config
-  (add-hook 'markdown-mode-hook (lambda()
-				  (pangu-spacing-mode))))
+  (global-pangu-spacing-mode)
+  ;; (dolist (mode '(markdown-mode-hook
+  ;; 		  text-mode-hook
+  ;; 		  fundamental-mode-hook
+  ;; 		  org-mode-hook))
+  ;;   (add-hook mode (lambda() (pangu-spacing-mode))))
+  )
 
+;; open very larg file
 (use-package vlf
   :ensure t)
 
-(use-package smartparens
-  :ensure t
-  :config
-  (smartparens-global-mode))
+;; like electric-pair-mode
+;; (use-package smartparens
+;;   :ensure t
+;;   :config
+;;   (smartparens-global-mode))
  	
-(use-package tex
-  :ensure auctex)
+;; (use-package tex
+;;   :ensure auctex)
 
-(use-package rime
-  :custom
-  (default-input-method "rime")
-  :config
-  (setq-default rime-show-candidate 'popup))
+;; (use-package rime
+;;   :custom
+;;   (default-input-method "rime")
+;;   :config
+;;   (setq-default rime-show-candidate 'popup))
 
+;; like easymotion
 (use-package avy
   :ensure t
   :config
@@ -55,10 +66,12 @@
   (global-set-key (kbd "C-:") 'avy-goto-char-2)
   (global-set-key (kbd "M-g f") 'avy-goto-line))
 
+
+;; some useful utils
 (use-package crux
   :ensure t)
 
-(use-package command-log-mode)
+;; (use-package command-log-mode)
 
 (use-package projectile
   :ensure t
@@ -91,11 +104,11 @@
   :config
   (editorconfig-mode 1))
 
-(use-package vterm
-  :ensure t)
+;;(use-package vterm
+;;  :ensure t)
 
-(use-package multi-vterm
-  :ensure t)
+;; (use-package multi-vterm
+;;  :ensure t)
 
 (provide 'init-misc)
 ;;; init-misc.el ends here
