@@ -6,10 +6,11 @@
 (use-package diminish
   :ensure t)
 
-(use-package flycheck
-  :ensure t
-  :config
-  (add-hook 'after-init-hook #'global-flycheck-mode))
+;; built-in alternative is flymake
+;; (use-package flycheck
+;;   :ensure t
+;;   :config
+;;   (add-hook 'after-init-hook #'global-flycheck-mode))
 
 ;; use acw-window
 (use-package ace-window
@@ -43,7 +44,7 @@
 (use-package vlf
   :ensure t)
 
-;; like electric-pair-mode
+;; electric-pair-mode alternative 
 ;; (use-package smartparens
 ;;   :ensure t
 ;;   :config
@@ -58,6 +59,7 @@
 ;;   :config
 ;;   (setq-default rime-show-candidate 'popup))
 
+
 ;; like easymotion
 (use-package avy
   :ensure t
@@ -66,25 +68,24 @@
   (global-set-key (kbd "C-:") 'avy-goto-char-2)
   (global-set-key (kbd "M-g f") 'avy-goto-line))
 
-
 ;; some useful utils
 (use-package crux
   :ensure t)
 
 ;; (use-package command-log-mode)
 
+
 (use-package projectile
   :ensure t
   :init
   (projectile-mode +1)
   :bind (:map projectile-mode-map
-	      ;;("s-p" . projectile-command-map)
+	      ;; ("s-p" . projectile-command-map)
 	      ("C-c p" . projectile-command-map)))
 
-(use-package diff-hl
-  :ensure t
-  :config
-  (global-diff-hl-mode))
+
+(use-package wgrep
+  :ensure t)
 
 (use-package rg
   :ensure t
@@ -103,6 +104,13 @@
   :diminish
   :config
   (editorconfig-mode 1))
+
+(use-package multiple-cursors
+  :ensure t
+  :config
+  (global-set-key (kbd "C->") 'mc/mark-next-like-this)
+  (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+  (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this))
 
 ;;(use-package vterm
 ;;  :ensure t)

@@ -15,6 +15,9 @@
 ;; relavent to C-x o, switch to other window
 (global-set-key (kbd "M-o") 'other-window)
 
+;; ibuffer
+(global-set-key (kbd "C-x C-b") 'ibuffer)
+
 ;; directional window selection: S-<left> S-<right> S-<up> S<down>
 (windmove-default-keybindings)
 
@@ -33,7 +36,7 @@
 		eshell-mode-hook))
   (add-hook mode (lambda ()  (display-line-numbers-mode 0))))
 
-(set-face-attribute 'default nil :font "Rec Mono Custom3" :height 140)
+(set-face-attribute 'default nil :font "Rec Mono Custom" :height 140)
 (set-face-attribute 'fixed-pitch nil :font "Rec Mono Custom3" :height 140)
 
 (electric-pair-mode)
@@ -45,7 +48,7 @@
 (recentf-mode 1)
 (setq recentf-max-menu-items 25)
 (setq recentf-max-saved-items 25)
-(global-set-key (kbd "C-x C-r") 'recentf-open-files)
+(global-set-key (kbd "C-x C-r") 'recentf-open)
 
 (setq custom-file "~/.emacs.d/emacs-custom.el")
 (when (file-exists-p custom-file)

@@ -5,11 +5,11 @@
 (use-package magit
   :ensure t)
 
-;;(use-package diff-hl
-;;  :ensure t
-;;  )
-  ;; :config
-  ;; (global-diff-hl-mode))
+(use-package diff-hl
+  :ensure t
+  :config
+  (global-diff-hl-mode))
+
 
 (provide 'init-git)
 ;;; init-git.el ends here

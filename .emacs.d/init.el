@@ -7,15 +7,24 @@
 (add-to-list 'load-path (expand-file-name "site-lisp" user-emacs-directory))
 
 (require 'init-options)
+
 (require 'init-elpa)
+
 (require 'init-misc)
+
 ;; (require 'init-evil)
+
 (require 'init-theme)
+
 (require 'init-which-key)
+
 (require 'init-kill-ring)
 
 ;; (require 'init-ivy)
 (require 'init-vertico)
+
+;; eglot
+(require 'init-eglot)
 
 (require 'init-org)
 (require 'init-markdown)
@@ -25,15 +34,11 @@
 ;; (require 'init-c)
 ;; (require 'init-python)
 
-;; eglot
-(require 'init-eglot)
-
+;; company completion
 ;;(require 'init-company)
 ;;(require 'init-yas)
 
-(require 'init-multiple-cursor)
-
-(require 'init-treemacs)
+;; (require 'init-treemacs)
 (require 'init-git)
 
 (require 'md-download)
