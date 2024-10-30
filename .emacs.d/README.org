@@ -2,6 +2,31 @@
 #+AUTHOR: zhangxin
 #+DATE: 2024-08-01T19:54:45+08:00
 
+* native compile emacs
+
+[[https://www.masteringemacs.org/article/speed-up-emacs-libjansson-native-elisp-compilation][Speed up Emacs with libjansson and native elisp compilation]]
+
+#+begin_src shell
+  sudo apt install libgccjit0 libgccjit-8-dev libjansson4 libjansson-dev
+  ./configure --with-native-compilation=yes   --with-json --without-compress-install
+  make -j$(nproc)
+#+end_src
+
+检查是否支持native compile 和 native json
+
+#+begin_src elisp
+  (if (and (fboundp 'native-comp-available-p)
+	   (native-; commentmp-available-p))
+	    (message "Native compilation is available")
+	    (message "Native complation is *not* available"))
+#+end_src
+
+#+begin_src elisp
+  (if (functionp 'json-serialize)
+      (message "Native JSON is available")
+    (message "Native JSON is *not* available"))
+#+end_src
+
 * 常用操作
 
 ** Movementsc
@@ -51,7 +76,6 @@
 - M-x align
 - C-u M-x align  
 
-
 * 重要概念
 
 ** kill ring
@@ -65,7 +89,7 @@ save text to kill ring
 - C-k: kill-line
 - C-M-k: kill-sexp
 - C-x r k: kill-rectangle
-
+  
 yank from kill ring
 - C-y: yank the last kill ring text
 - M-y: yank-pop, cycle kill ring
@@ -86,12 +110,8 @@ yank from kill ring
 
 - C-x SPC, C-x r t: rectanle-mark-mode, string-rectangle
 
-  
-
 * Pacakges
-
 ** which key
-
 ** ivy, swiper, counsel
 
 ** markdown-mode
@@ -167,16 +187,13 @@ rime input method
 
 org-download-clipboard
 
-
-
 * Misc
 - C-u M-!: 将shell命令结果添加到buffer中
 
-
 * 调整窗口大小
+
 调整当前buffer的字体大小：C-x C--, C-x C-=, C-x C-0, C-<mouse-wheel>
 调整emacs字体大小：C-x C-M--, C-x C-M-=, C-x C-M-0, C-M-<mouse-wheel>
-
 
 * Minibuffer 补全插件
 
@@ -184,12 +201,10 @@ org-download-clipboard
 + ivy/swiper/counsel： 快，小而精
 + vertico/marginalia/consult/orderless： 基于native completion，模块化
 
-
 * In buffer 补全
 
 + compnay
 + corfu
-
 
 * LSP client
 
@@ -207,4 +222,6 @@ textDocument/rangeFormat 来格式化。
 #+begin_src elisp
   (setq lsp-enable-indentation nil)
 #+end_src
+
+
 

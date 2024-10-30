@@ -2,8 +2,8 @@
 ;;; Commentary:
 ;;; Code:
 
-(use-package popup-kill-ring
-  :ensure t)
+;; (use-package popup-kill-ring
+;;  :ensure t)
 
 (use-package browse-kill-ring
   :ensure t
