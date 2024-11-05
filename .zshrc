@@ -102,7 +102,7 @@ source $ZSH/oh-my-zsh.sh
 # export ARCHFLAGS="-arch x86_64"
 export EDITOR=emacsclient
 export TERM=xterm-256color
-export PATH=$PATH:~/.local/share/nvim/mason/bin
+#export PATH=$PATH:~/.local/share/nvim/mason/bin
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh

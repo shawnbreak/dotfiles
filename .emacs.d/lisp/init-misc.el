@@ -6,9 +6,9 @@
 (use-package diminish
   :ensure t
   :config
+  (diminish 'yas-minor-mode)
   (diminish 'auto-revert-mode)
-  (diminish 'eldoc-mode)
-  )
+  (diminish 'eldoc-mode))
 
 ;; built-in alternative is flymake
 ;; (use-package flycheck

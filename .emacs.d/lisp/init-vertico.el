@@ -295,11 +295,11 @@
   ;; ...
   )
 
-(use-package yasnippet-capf
-  :ensure t
-  :after cape
-  :config
-  (add-to-list 'completion-at-point-functions #'yasnippet-capf))
+;; (use-package yasnippet-capf
+;;   :ensure t
+;;   :after cape
+;;   :config
+;;   (add-to-list 'completion-at-point-functions #'yasnippet-capf))
 
 (provide 'init-vertico)
 ;;; init-vertico.el ends here
