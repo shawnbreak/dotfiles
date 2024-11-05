@@ -8,6 +8,8 @@
 
 (use-package eglot
   :ensure t
+  :custom
+  (eglot-autoshutdown t)
   :init
   (add-hook 'c-mode-hook 'eglot-ensure)
   (add-hook 'c++-mode-hook 'eglot-ensure)

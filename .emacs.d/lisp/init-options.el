@@ -36,8 +36,8 @@
 		eshell-mode-hook))
   (add-hook mode (lambda ()  (display-line-numbers-mode 0))))
 
-(set-face-attribute 'default nil :font "Rec Mono Custom" :height 140)
-(set-face-attribute 'fixed-pitch nil :font "Rec Mono Custom3" :height 140)
+(set-face-attribute 'default nil :font "JetBrainsMono Nerd Font" :height 140)
+(set-face-attribute 'fixed-pitch nil :font "JetBrainsMono Nerd Font" :height 140)
 
 (electric-pair-mode)
 

@@ -4,7 +4,11 @@
 
 ;; Don't show minor mode in mode line.
 (use-package diminish
-  :ensure t)
+  :ensure t
+  :config
+  (diminish 'auto-revert-mode)
+  (diminish 'eldoc-mode)
+  )
 
 ;; built-in alternative is flymake
 ;; (use-package flycheck
