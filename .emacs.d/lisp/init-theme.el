@@ -78,6 +78,13 @@
 
 (define-key global-map (kbd "<f5>") #'modus-themes-toggle)
 
+(setq modus-themes-common-palette-overrides
+      '(
+	;; borderless mode line
+	(border-mode-line-active bg-mode-line-active)
+        (border-mode-line-inactive bg-mode-line-inactive)
+	)
+
 (setq modus-vivendi-palette-overrides
       '(
 	(fg-main "#cccccc")
