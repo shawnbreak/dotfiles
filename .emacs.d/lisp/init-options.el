@@ -8,6 +8,9 @@
 (menu-bar-mode -1)
 (tooltip-mode -1)
 (set-fringe-mode 10 )
+
+;; disable ring bell
+(setq ring-bell-function 'ignore)
  
 ;; sort apropos result by relevancy
 (setq apropos-sort-by-scores 1)
