@@ -53,23 +53,37 @@
 
 (use-package all-the-icons)
 
-;; config modus themes
-(setq modus-themes-org-blocks 'gray-background
-      modus-themes-mode-line  '(borderless)
-      modus-themes-paren-match '(bold)
-      modus-themes-syntax '(green-strings)
-      modus-themes-mixed-fonts t
-      modus-themes-bold-constructs t  ;; bold keyword
-      modus-themes-italic-constructs t  ;;  italic comment
-      modus-themes-headings
-      '((1 . (variable-pitch 1.5))
-        (2 . (1.3))
-	(3 . (1.2))
-        (agenda-date . (1.3))
-        (agenda-structure . (variable-pitch light 1.8))
-        (t . (1.1))))
+(use-package modus-themes
+  :ensure t
+  :config
+  ;; config modus themes
+  (setq modus-themes-mode-line  '(borderless)
+	modus-themes-paren-match '(bold)
+	modus-themes-syntax '(green-strings yellow-comment)
+	modus-themes-mixed-fonts t
+	modus-themes-bold-constructs t  ;; bold keyword
+	modus-themes-italicp-constructs t  ;;  italic comment
+	modus-themes-completions
+	(quote ((matches . (extrabold))
+		(selection . (extrabold accented intense))
+		(popup . (accented intense))))
+	modus-themes-headings
+	'((1 . (variable-pitch 1.5))
+	  (2 . (1.3))
+	  (3 . (1.2))
+	  (agenda-date . (1.3))
+	  (agenda-structure . (variable-pitch light 1.8))
+	  (t . (1.1))))
+  )
 
-(load-theme 'modus-operandi)
+(define-key global-map (kbd "<f5>") #'modus-themes-toggle)
+
+(setq modus-vivendi-palette-overrides
+      '(
+	(fg-main "#cccccc")
+	))
+
+(load-theme 'modus-vivendi :no-confirm)
 
 (provide 'init-theme)
 ;;; init-theme.el ends here
