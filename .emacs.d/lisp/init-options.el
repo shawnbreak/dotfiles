@@ -37,7 +37,7 @@
   (add-hook mode (lambda ()  (display-line-numbers-mode 0))))
 
 (set-face-attribute 'default nil :font "JetBrainsMono Nerd Font" :height 140)
-(set-face-attribute 'fixed-pitch nil :font "JetBrainsMono Nerd Font" :height 140)
+(set-face-attribute 'fixed-pitch nil :font "JetBrainsMono Nerd Font" :height 135)
 
 (electric-pair-mode)
 

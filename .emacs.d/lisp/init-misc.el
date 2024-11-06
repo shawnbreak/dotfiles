@@ -122,5 +122,8 @@
 ;; (use-package multi-vterm
 ;;  :ensure t)
 
+(use-package dockerfile-mode
+  :ensure t)
+
 (provide 'init-misc)
 ;;; init-misc.el ends here

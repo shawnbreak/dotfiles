@@ -18,7 +18,8 @@
   (add-hook 'go-mode-hook 'eglot-ensure)
   (setq eglot-ignored-server-capabilities '(:inlayHintProvider))
   :config
-  (setq eglot-events-buffer-size 0)
+  (setq eglot-events-buffer-size 100)
+  (setq eldoc-echo-area-prefer-doc-buffer t)
   (define-key eglot-mode-map (kbd "C-c r") 'eglot-rename)
   (define-key eglot-mode-map (kbd "C-c o") 'eglot-code-action-organize-imports)
   (define-key eglot-mode-map (kbd "C-c h") 'eldoc)
