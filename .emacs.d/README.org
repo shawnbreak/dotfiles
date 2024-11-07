@@ -190,16 +190,16 @@ org-download-clipboard
 * Misc
 - C-u M-!: 将shell命令结果添加到buffer中
 
-* 调整窗口大小
-
-调整当前buffer的字体大小：C-x C--, C-x C-=, C-x C-0, C-<mouse-wheel>
-调整emacs字体大小：C-x C-M--, C-x C-M-=, C-x C-M-0, C-M-<mouse-wheel>
-
 * Minibuffer 补全插件
 
 + helm: 使用独立的buffer。功能多。
 + ivy/swiper/counsel： 快，小而精
 + vertico/marginalia/consult/orderless： 基于native completion，模块化
+
+* 调整窗口大小
+
+调整当前buffer的字体大小：C-x C--, C-x C-=, C-x C-0, C-<mouse-wheel>
+调整emacs字体大小：C-x C-M--, C-x C-M-=, C-x C-M-0, C-M-<mouse-wheel>
 
 * In buffer 补全
 
@@ -222,6 +222,3 @@ textDocument/rangeFormat 来格式化。
 #+begin_src elisp
   (setq lsp-enable-indentation nil)
 #+end_src
-
-
-

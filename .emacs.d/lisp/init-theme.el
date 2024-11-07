@@ -83,7 +83,7 @@
 	;; borderless mode line
 	(border-mode-line-active bg-mode-line-active)
         (border-mode-line-inactive bg-mode-line-inactive)
-	)
+	))
 
 (setq modus-vivendi-palette-overrides
       '(

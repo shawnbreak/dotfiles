@@ -125,5 +125,14 @@
 (use-package dockerfile-mode
   :ensure t)
 
+(use-package visual-fill-column
+  :ensure t
+  :config
+  (setq-default visual-fill-column-center-text t)
+  (dolist (mode '(markdown-mode-hook
+		  org-mode-hook))
+    (add-hook mode (lambda() (visual-line-fill-column-mode))))
+  )
+
 (provide 'init-misc)
 ;;; init-misc.el ends here

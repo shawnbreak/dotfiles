@@ -15,6 +15,8 @@
 ;; sort apropos result by relevancy
 (setq apropos-sort-by-scores 1)
 
+(setq-default fill-column 120)
+
 ;; relavent to C-x o, switch to other window
 (global-set-key (kbd "M-o") 'other-window)
 
@@ -36,11 +38,13 @@
 		treemacs-mode-hook
 		shell-mode-hook
 		vterm-mode-hook
+		imenu-list-major-mode-hook
 		eshell-mode-hook))
   (add-hook mode (lambda ()  (display-line-numbers-mode 0))))
 
 (set-face-attribute 'default nil :font "JetBrainsMono Nerd Font" :height 140)
 (set-face-attribute 'fixed-pitch nil :font "JetBrainsMono Nerd Font" :height 135)
+
 
 (electric-pair-mode)
 
