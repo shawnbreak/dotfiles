@@ -6,7 +6,7 @@
   :ensure t
   :custom
   (markdown-hide-urls t)
-  (markdown-hide-markup t)
+  ;; (markdown-hide-markup t)
   (markdown-enable-math t)
   ;; :mode ("README\\.md\\'" . gfm-mode)
   :init (setq markdown-command "pandoc")

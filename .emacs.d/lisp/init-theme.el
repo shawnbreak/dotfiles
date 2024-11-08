@@ -51,12 +51,16 @@
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
 
+(use-package rainbow-mode
+  :ensure t
+  :hook (prog-mode .rainbow-mode))
+
 (use-package all-the-icons)
 
 (use-package modus-themes
   :ensure t
+  ;; :disabled t
   :config
-  ;; config modus themes
   (setq modus-themes-mode-line  '(borderless)
 	modus-themes-paren-match '(bold)
 	;; modus-themes-syntax '(green-strings yellow-comment)
@@ -64,33 +68,43 @@
 	modus-themes-bold-constructs t  ;; bold keyword
 	modus-themes-italicp-constructs t  ;;  italic comment
 	modus-themes-completions
+
 	(quote ((matches . (extrabold))
 		(selection . (extrabold accented intense))
 		(popup . (accented intense))))
+	
 	modus-themes-headings
 	'((1 . (variable-pitch 1.5))
 	  (2 . (1.3))
 	  (3 . (1.2))
 	  (agenda-date . (1.3))
 	  (agenda-structure . (variable-pitch light 1.8))
-	  (t . (1.1))))
+	  (t . (1.1)))
+
+	modus-themes-common-palette-overrides
+	'(
+	  ;; borderless mode line
+	  (border-mode-line-active bg-mode-line-active)
+          (border-mode-line-inactive bg-mode-line-inactive)
+	  )
+
+        ;; dark theme modus-vivendi
+	modus-vivendi-palette-overrides
+	'(
+	  (fg-main "#cccccc")
+	  (bg-line-number-inactive "#000000")
+	  (bg-line-number-active "#222222")
+	  )
+
+	;; light theme modus-operandi
+	modus-operandi-palette-overrides
+	'(
+	  (bg-line-number-inactive "#ffffff")
+	  )
+	)
+  (load-theme 'modus-vivendi :no-confirm)
+  (define-key global-map (kbd "<f5>") #'modus-themes-toggle)
   )
-
-(define-key global-map (kbd "<f5>") #'modus-themes-toggle)
-
-(setq modus-themes-common-palette-overrides
-      '(
-	;; borderless mode line
-	(border-mode-line-active bg-mode-line-active)
-        (border-mode-line-inactive bg-mode-line-inactive)
-	))
-
-(setq modus-vivendi-palette-overrides
-      '(
-	(fg-main "#cccccc")
-	))
-
-(load-theme 'modus-vivendi :no-confirm)
 
 (provide 'init-theme)
 ;;; init-theme.el ends here

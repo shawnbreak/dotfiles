@@ -15,12 +15,8 @@
 ;; sort apropos result by relevancy
 (setq apropos-sort-by-scores 1)
 
-(setq-default fill-column 120)
+(setq-default fill-column 100)
 
-;; relavent to C-x o, switch to other window
-(global-set-key (kbd "M-o") 'other-window)
-
-;; ibuffer
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
 ;; directional window selection: S-<left> S-<right> S-<up> S<down>
@@ -44,7 +40,6 @@
 
 (set-face-attribute 'default nil :font "JetBrainsMono Nerd Font" :height 140)
 (set-face-attribute 'fixed-pitch nil :font "JetBrainsMono Nerd Font" :height 135)
-
 
 (electric-pair-mode)
 
@@ -86,10 +81,12 @@
 
 (set-frame-size-according-to-resolution)
 
-(setq mac-option-key-is-meta nil
-      mac-command-key-is-meta t
-      mac-option-modifier 'none
-      mac-command-modifier 'meta)
+;; if macos
+(if (eq system-type 'darwin)
+    (setq mac-option-key-is-meta nil
+	  mac-command-key-is-meta t
+	  mac-option-modifier 'none
+	  mac-command-modifier 'meta))
 
 
 ;; typed text replaces the selection if selection is avtive
