@@ -6,11 +6,13 @@
   :ensure t
   :custom
   (markdown-hide-urls t)
-  :mode ("README\\.md\\'" . gfm-mode)
+  (markdown-hide-markup t)
+  (markdown-enable-math t)
+  ;; :mode ("README\\.md\\'" . gfm-mode)
   :init (setq markdown-command "pandoc")
   :config
   (setq markdown-fontify-code-blocks-natively t)
-  (markdown-display-inline-images)
+  (add-hook 'markdown-mode-hook  (lambda() (markdown-display-inline-images)))
   )
 
 (provide 'init-markdown)
