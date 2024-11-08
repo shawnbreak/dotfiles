@@ -59,7 +59,7 @@
   ;; config modus themes
   (setq modus-themes-mode-line  '(borderless)
 	modus-themes-paren-match '(bold)
-	modus-themes-syntax '(green-strings yellow-comment)
+	;; modus-themes-syntax '(green-strings yellow-comment)
 	modus-themes-mixed-fonts t
 	modus-themes-bold-constructs t  ;; bold keyword
 	modus-themes-italicp-constructs t  ;;  italic comment
@@ -83,7 +83,7 @@
 	;; borderless mode line
 	(border-mode-line-active bg-mode-line-active)
         (border-mode-line-inactive bg-mode-line-inactive)
-	)
+	))
 
 (setq modus-vivendi-palette-overrides
       '(

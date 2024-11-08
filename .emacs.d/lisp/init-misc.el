@@ -125,5 +125,10 @@
 (use-package dockerfile-mode
   :ensure t)
 
+(use-package exec-path-from-shell
+  :ensure t
+  :config
+  (exec-path-from-shell-initialize))
+
 (provide 'init-misc)
 ;;; init-misc.el ends here

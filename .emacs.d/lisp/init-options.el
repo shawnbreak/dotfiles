@@ -96,9 +96,11 @@
 (set-frame-parameter nil 'alpha-background 100)
 ;; (add-to-list 'default-frame-alist '(alpha-background . 70))
 
-(global-set-key (kbd "M-n") (kbd "C-u 10 C-n"))
-(global-set-key (kbd "M-p") (kbd "C-u 10 C-p"))
-(define-key Info-mode-map (kbd "M-n") (kbd "C-u 10 C-n"))
+;; (global-set-key (kbd "M-n") (kbd "C-u 10 C-n"))
+;; (global-set-key (kbd "M-p") (kbd "C-u 10 C-p"))
+;; (define-key Info-mode-map (kbd "M-n") (kbd "C-u 10 C-n"))
+(global-set-key (kbd "M-n") 'forward-paragraph)
+(global-set-key (kbd "M-p") 'backward-paragraph)
 
 (put 'upcase-region 'disabled nil)
 
