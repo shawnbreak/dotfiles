@@ -5,3 +5,16 @@
 	name = shawnbreak
 [diff]
 	tool = /home/shawn/Downloads/p4v-2024.2.2619912/bin/p4merge
+[push]
+	autoSetupRemote = true
+[alias]
+	co = checkout
+	s = status
+	a = "add -p"
+	b = "branch"
+	m = merge
+	p = push
+	c = "commit"
+	l = log
+	lp = "log --pretty=format:\"%h - %Cgreen %<(20) %an %Creset %<(16)%ci %s %Cred%d%Creset\""
+	r = "rebase -i origin/main"
