@@ -41,6 +41,27 @@
 (set-face-attribute 'default nil :font "JetBrainsMono Nerd Font" :height 140)
 (set-face-attribute 'fixed-pitch nil :font "JetBrainsMono Nerd Font" :height 135)
 
+(defun my-text-scale-reset ()
+  (interactive)
+  (set-face-attribute 'default nil :height 140)
+  (set-face-attribute 'fixed-pitch nil :height 135))
+
+(defun my-text-scale-increase ()
+  (interactive)
+  (set-face-attribute 'default nil :height (+ (face-attribute 'default :height) 10))
+  (set-face-attribute 'fixed-pitch nil :height (+ (face-attribute 'fixed-pitch :height) 10))
+  )
+
+(defun my-text-scale-decrease()
+  (interactive)
+  (set-face-attribute 'default nil :height (- (face-attribute 'default :height) 10))
+  (set-face-attribute 'fixed-pitch nil :height (- (face-attribute 'fixed-pitch :height) 10))
+  )
+
+(global-set-key (kbd "C-M-=") 'my-text-scale-increase)
+(global-set-key (kbd "C-M--") 'my-text-scale-decrease)
+(global-set-key (kbd "C-M-0") 'my-text-scale-reset)
+
 (electric-pair-mode)
 
 (setq backup-directory-alist `(("." . "~/.saves")))
