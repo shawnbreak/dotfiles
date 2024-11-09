@@ -104,10 +104,12 @@
 
 ;; if macos
 (if (eq system-type 'darwin)
-    (setq mac-option-key-is-meta nil
-	  mac-command-key-is-meta t
-	  mac-option-modifier 'none
-	  mac-command-modifier 'meta))
+    (progn
+     (menu-bar-mode 1)
+     (setq mac-option-key-is-meta nil
+	   mac-command-key-is-meta t
+	   mac-option-modifier 'none
+	   mac-command-modifier 'meta)))
 
 
 ;; typed text replaces the selection if selection is avtive
