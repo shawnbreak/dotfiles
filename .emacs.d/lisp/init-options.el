@@ -16,6 +16,7 @@
 (setq apropos-sort-by-scores 1)
 
 (setq-default fill-column 100)
+(setq-default show-trailing-whitespace t)
 
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
