@@ -11,6 +11,7 @@
   ;; :mode ("README\\.md\\'" . gfm-mode)
   :init (setq markdown-command "pandoc")
   :config
+  (setq markdown-max-image-size '(1000 . 800))
   (setq markdown-fontify-code-blocks-natively t)
   (add-hook 'markdown-mode-hook  (lambda() (markdown-display-inline-images)))
   )
