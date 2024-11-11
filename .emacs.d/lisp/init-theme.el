@@ -37,11 +37,9 @@
 ;;   ;;  Corrects (and improves) org-mode's native fontification.
 ;;   (doom-themes-org-config))
 
-;; (use-package doom-modeline
-;;   :ensure t
-;;   :init (doom-modeline-mode 1)
-;;   :custom ((doom-modeline-height 15)))
-
+(use-package doom-modeline
+  :ensure t
+  :init (doom-modeline-mode 1))
 
 ;; (enable-theme 'automata)
 ;; (load-theme 'zenburn t)
@@ -91,8 +89,11 @@
         ;; dark theme modus-vivendi
 	modus-vivendi-palette-overrides
 	'(
-	  (fg-main "#cccccc")
+	  (fg-main "#cdcecf")
+	  (bg-main  "#000000")
 	  (bg-line-number-inactive "#000000")
+	  ;; (bg-main  "#232627")
+	  ;; (bg-line-number-inactive "#232627")
 	  (bg-line-number-active "#222222")
 	  )
 
