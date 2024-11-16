@@ -55,6 +55,28 @@
 
 (use-package all-the-icons)
 
+
+(defun set-title-bar-dark ()
+  "Set title bar dark."
+  (interactive)
+  (progn
+    (set-frame-parameter nil 'ns-appearance 'dark)
+    (set-frame-parameter nil 'ns-transparent-titlebar nil)))
+
+(defun set-title-bar-light ()
+  "Set title bar light."
+  (interactive)
+  (progn
+    (set-frame-parameter nil 'ns-appearance 'light)
+    (set-frame-parameter nil 'ns-transparent-titlebar nil)))
+
+(defun modus-themes-toggle-post ()
+  "Run after modus-themes-toggle."
+  (interactive)
+  (if (member 'modus-operandi custom-enabled-themes)
+      (set-title-bar-light)
+    (set-title-bar-dark)))
+
 (use-package modus-themes
   :ensure t
   ;; :disabled t
@@ -70,7 +92,7 @@
 	(quote ((matches . (extrabold))
 		(selection . (extrabold accented intense))
 		(popup . (accented intense))))
-	
+
 	modus-themes-headings
 	'((1 . (variable-pitch 1.5))
 	  (2 . (1.3))
@@ -104,8 +126,11 @@
 	  )
 	)
   (load-theme 'modus-vivendi :no-confirm)
+  (set-title-bar-dark)
+  (add-hook 'modus-themes-post-load-hook 'modus-themes-toggle-post)
   (define-key global-map (kbd "<f5>") #'modus-themes-toggle)
   )
+
 
 (provide 'init-theme)
 ;;; init-theme.el ends here

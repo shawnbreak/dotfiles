@@ -25,6 +25,9 @@
   (define-key eglot-mode-map (kbd "C-c h") 'eldoc)
   (define-key eglot-mode-map (kbd "<f6>") 'xref-find-definitions))
 
+(use-package consult-eglot
+  :ensure t)
+
 (use-package rust-mode
   :ensure t)
 

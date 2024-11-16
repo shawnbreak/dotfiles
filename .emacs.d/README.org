@@ -7,7 +7,7 @@
 [[https://www.masteringemacs.org/article/speed-up-emacs-libjansson-native-elisp-compilation][Speed up Emacs with libjansson and native elisp compilation]]
 
 #+begin_src shell
-  sudo apt install libgccjit0 libgccjit-8-dev libjansson4 libjansson-dev
+  sudo apt install texinfo pkg-config libgccjit0 libgccjit-8-dev libjansson4 libjansson-dev libgnutls28-dev
   ./configure --with-native-compilation=yes   --with-json --without-compress-install
   make -j$(nproc)
 #+end_src
