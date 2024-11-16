@@ -8,7 +8,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="kolo" # set by `omz`
+ZSH_THEME="gianu" # set by `omz`
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -128,3 +128,33 @@ eval "$(zoxide init zsh)"
 alias e="emacsclient"
 alias grep="grep --color=auto --null"
 . "/home/shawn/.acme.sh/acme.sh.env"
+
+export PATH=~/go/bin:$PATH
+
+pandock() {
+    docker run --rm \
+	   -v "$(pwd):/data" \
+	   -v "/usr/share/fonts:/usr/share/fonts" \
+	   -v "/usr/share/fontconfig:/usr/share/fontcconfig" \
+	   -u $(id -u):$(id -g) \
+	   pandoc/extra:latest-ubuntu \
+	   --pdf-engine=xelatex \
+	   --toc \
+	   --toc-depth=2 \
+	   --number-sections \
+	   -f markdown+smart \
+	   -V colorlinks=true \
+	   -V urlcolor=blue \
+	   -V linkcolor=blue \
+	   -V toc-color=NavyBlue \
+	   -V titlepage=true \
+	   -V toc-own-page=true \
+	   -V mainfont="Noto Serif CJK SC" \
+	   -V sansfont="Noto Sans CJK SC" \
+	   -V monofont="JetBrainsMono Nerd Font" \
+	   -V CJKmainfont="Noto Serif CJK SC" \
+	   --template eisvogel \
+	   --highlight-style tango \
+	   -V lang=zh_CN.UTF-8 $@
+}
+

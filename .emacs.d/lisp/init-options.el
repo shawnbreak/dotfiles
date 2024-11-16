@@ -37,7 +37,13 @@
 		vterm-mode-hook
 		imenu-list-major-mode-hook
 		eshell-mode-hook))
-  (add-hook mode (lambda ()  (display-line-numbers-mode 0))))
+  (add-hook mode (lambda ()  (progn
+			       (display-line-numbers-mode 0)
+			       (visual-line-mode 1)))))
+
+(dolist (mode '(eldoc-mode-hook
+		special-mode-hook))
+  (add-hook mode (lambda ()  (visual-line-mode 1))))
 
 (set-face-attribute 'default nil :font "JetBrainsMono Nerd Font" :height 140)
 (set-face-attribute 'fixed-pitch nil :font "JetBrainsMono Nerd Font" :height 135)
