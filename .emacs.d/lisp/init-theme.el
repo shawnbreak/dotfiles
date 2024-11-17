@@ -116,7 +116,7 @@
 	  (bg-line-number-inactive "#000000")
 	  ;; (bg-main  "#232627")
 	  ;; (bg-line-number-inactive "#232627")
-	  ;; (bg-line-number-active "#222222")
+	  (bg-line-number-active "#000000")
 	  )
 
 	;; light theme modus-operandi

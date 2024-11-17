@@ -125,6 +125,12 @@
 (use-package dockerfile-mode
   :ensure t)
 
+(use-package json-mode
+  :ensure t)
+
+(use-package lua-mode
+  :ensure t)
+
 (use-package exec-path-from-shell
   :ensure t
   :config

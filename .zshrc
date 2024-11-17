@@ -125,7 +125,9 @@ alias open="xdg-open"
 
 [ -f "/home/shawn/.ghcup/env" ] && . "/home/shawn/.ghcup/env" # ghcup-env
 eval "$(zoxide init zsh)"
-alias e="emacsclient"
+alias e="emacsclient -n"
+alias ew="emacsclient"
+
 alias grep="grep --color=auto --null"
 . "/home/shawn/.acme.sh/acme.sh.env"
 

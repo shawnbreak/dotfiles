@@ -11,7 +11,7 @@
 
 ;; disable ring bell
 (setq ring-bell-function 'ignore)
- 
+
 ;; sort apropos result by relevancy
 (setq apropos-sort-by-scores 1)
 
@@ -45,6 +45,7 @@
 		special-mode-hook))
   (add-hook mode (lambda ()  (visual-line-mode 1))))
 
+(add-to-list 'default-frame-alist '(font . "JetBrainsMono Nerd Font")) ;; Font type & size
 (set-face-attribute 'default nil :font "JetBrainsMono Nerd Font" :height 140)
 (set-face-attribute 'fixed-pitch nil :font "JetBrainsMono Nerd Font" :height 135)
 
@@ -103,7 +104,7 @@
     ;; from the screen height (for panels, menubars and
     ;; whatnot), then divide by the height of a char to
     ;; get the height we want
-    (add-to-list 'default-frame-alist 
+    (add-to-list 'default-frame-alist
          (cons 'height (/ (- (x-display-pixel-height) 200)
                              (frame-char-height)))))))
 
