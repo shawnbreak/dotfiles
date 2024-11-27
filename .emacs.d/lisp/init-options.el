@@ -19,6 +19,7 @@
 (setq-default show-trailing-whitespace t)
 
 (global-set-key (kbd "C-x C-b") 'ibuffer)
+(global-set-key (kbd "C-^") 'mode-line-other-buffer)
 
 ;; directional window selection: S-<left> S-<right> S-<up> S<down>
 (windmove-default-keybindings)
