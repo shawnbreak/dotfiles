@@ -28,14 +28,16 @@
 (require 'init-org)
 (require 'init-markdown)
 
+(require 'init-gtags)
+
 ;; lsp-mode
 ;; (require 'init-lsp)
 ;; (require 'init-c)
 ;; (require 'init-python)
 
 ;; company completion
-;;(require 'init-company)
-;;(require 'init-yas)
+(require 'init-company)
+(require 'init-yas)
 
 ;; (require 'init-treemacs)
 (require 'init-git)
