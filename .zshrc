@@ -1,6 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-
+.
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -145,6 +145,7 @@ pandock() {
 	   --toc-depth=2 \
 	   --number-sections \
 	   -f markdown+smart \
+	   -V block-headings \
 	   -V colorlinks=true \
 	   -V urlcolor=blue \
 	   -V linkcolor=blue \
