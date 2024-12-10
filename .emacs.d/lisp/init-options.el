@@ -48,7 +48,7 @@
 
 (add-to-list 'default-frame-alist '(font . "JetBrainsMono Nerd Font")) ;; Font type & size
 (set-face-attribute 'default nil :font "JetBrainsMono Nerd Font" :height 140)
-(set-face-attribute 'fixed-pitch nil :font "JetBrainsMono Nerd Font" :height 135)
+(set-face-attribute 'fixed-pitch nil :font "JetBrainsMono Nerd Font" :height 130)
 
 (defun my-text-scale-reset ()
   (interactive)
@@ -67,6 +67,7 @@
   (set-face-attribute 'fixed-pitch nil :height (- (face-attribute 'fixed-pitch :height) 10))
   )
 
+(setq frame-inhibit-implied-resize t) ;; 禁止字体变动导致自动调整 Frame 大小
 (global-set-key (kbd "C-M-=") 'my-text-scale-increase)
 (global-set-key (kbd "C-M--") 'my-text-scale-decrease)
 (global-set-key (kbd "C-M-0") 'my-text-scale-reset)
