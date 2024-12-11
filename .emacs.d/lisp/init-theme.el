@@ -125,7 +125,7 @@
 	;;   (bg-line-number-inactive "#ffffff")
 	;;   )
 	)
-  (load-theme 'modus-vivendi :no-confirm)
+  (load-theme 'modus-operandi :no-confirm)
   (set-title-bar-dark)
   (add-hook 'modus-themes-post-load-hook 'modus-themes-toggle-post)
   (define-key global-map (kbd "<f5>") #'modus-themes-toggle)

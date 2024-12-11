@@ -45,7 +45,7 @@
 (require 'md-download)
 
 ;; start emacs in server mode
-;; (server-start)
+(server-start)
 
 (provide 'init)
 ;;; init.el ends here
