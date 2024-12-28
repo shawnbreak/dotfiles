@@ -20,6 +20,7 @@
 
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 (global-set-key (kbd "C-^") 'mode-line-other-buffer)
+(global-set-key (kbd "C-o") 'crux-smart-open-line)
 
 ;; directional window selection: S-<left> S-<right> S-<up> S<down>
 (windmove-default-keybindings)

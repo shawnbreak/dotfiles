@@ -34,6 +34,13 @@
               (sequence "WAITING(w@/!)" "SOMEDAY(S)" "|" "CANCELLED(c@/!)" "MEETING(m)" "PHONE(p)"))))
 
 
+(require 'org)
+(set-face-attribute 'org-level-1 nil :height 1.8)
+(set-face-attribute 'org-level-2 nil :height 1.5)
+(set-face-attribute 'org-level-3 nil :height 1.2)
+
+
+
 
 (provide 'init-org)
 ;;; init-org.el ends here

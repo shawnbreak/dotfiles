@@ -48,12 +48,12 @@
 (use-package vlf
   :ensure t)
 
-;; electric-pair-mode alternative 
+;; electric-pair-mode alternative
 ;; (use-package smartparens
 ;;   :ensure t
 ;;   :config
 ;;   (smartparens-global-mode))
- 	
+
 ;; (use-package tex
 ;;   :ensure auctex)
 

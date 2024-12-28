@@ -3,7 +3,12 @@
 ;;; Code:
 
 (when (eq system-type 'gnu/linux)
-  (load "/usr/share/emacs/site-lisp/global/gtags.el")
+  (let ((gtags-file-1 "/usr/share/emacs/site-lisp/gtags.el")
+	(gtags-file-2 "/usr/share/emacs/site-lisp/global/gtags.el"))
+    (cond ((file-exists-p gtags-file-1) (load gtags-file-1))
+	  ((file-exists-p gtags-file-2) (load gtags-file-2))
+	  (t (message "no gtags.el found")))
+    )
   (require 'gtags)
   (add-hook 'c-mode-common-hook
             (lambda ()

@@ -36,7 +36,7 @@
 ;; (require 'init-python)
 
 ;; company completion
-(require 'init-company)
+;; (require 'init-company)
 (require 'init-yas)
 
 ;; (require 'init-treemacs)
