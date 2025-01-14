@@ -18,3 +18,5 @@
 	l = log
 	lp = "log --pretty=format:\"%h - %Cgreen %<(20) %an %Creset %<(16)%ci %s %Cred%d%Creset\""
 	r = "rebase -i origin/main"
+[core]
+	quotepath = false
