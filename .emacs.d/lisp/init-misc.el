@@ -8,7 +8,12 @@
   :config
   (diminish 'yas-minor-mode)
   (diminish 'auto-revert-mode)
-  (diminish 'eldoc-mode))
+  (diminish 'eldoc-mode)
+  (diminish 'rainbow-mode)
+  (diminish 'auto-revert-mode)
+  (diminish 'visual-line-mode)
+  (diminish 'projectile-mode " P")
+  )
 
 ;; built-in alternative is flymake
 ;; (use-package flycheck

@@ -47,9 +47,11 @@
 		special-mode-hook))
   (add-hook mode (lambda ()  (visual-line-mode 1))))
 
-(add-to-list 'default-frame-alist '(font . "JetBrainsMono Nerd Font")) ;; Font type & size
-(set-face-attribute 'default nil :font "JetBrainsMono Nerd Font" :height 140)
-(set-face-attribute 'fixed-pitch nil :font "JetBrainsMono Nerd Font" :height 130)
+(add-to-list 'default-frame-alist '(font . "Comic Mono")) ;; Font type & size
+(set-face-attribute 'default nil :font "Comic Mono" :height 160)
+(set-face-attribute 'fixed-pitch nil :font "Comic Mono" :height 150)
+;; (set-face-attribute 'default nil :font "JetBrainsMono Nerd Font" :height 140)
+;; (set-face-attribute 'fixed-pitch nil :font "JetBrainsMono Nerd Font" :height 130)
 
 (defun my-text-scale-reset ()
   (interactive)
@@ -142,6 +144,14 @@
 (global-set-key (kbd "M-p") 'backward-paragraph)
 
 (put 'upcase-region 'disabled nil)
+
+;; set utf-8
+(setq locale-coding-system 'utf-8)
+(set-terminal-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
+(set-selection-coding-system 'utf-8)
+(prefer-coding-system 'utf-8)
+
 
 (provide 'init-options)
 ;;; init-options.el ends here

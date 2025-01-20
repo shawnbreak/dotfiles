@@ -13,6 +13,7 @@
 ;; clangd arguments
 (setq lsp-clients-clangd-args '("--header-insertion-decorators=0" "--clang-tidy" "--background-index=false"))
 
+(add-to-list 'auto-mode-alist '("\\.l\\'" . c-mode))
 
 (provide 'init-c)
 ;;; init-c.el ends here
