@@ -48,15 +48,15 @@
   (add-hook mode (lambda ()  (visual-line-mode 1))))
 
 (add-to-list 'default-frame-alist '(font . "Comic Mono")) ;; Font type & size
-(set-face-attribute 'default nil :font "Comic Mono" :height 160)
-(set-face-attribute 'fixed-pitch nil :font "Comic Mono" :height 150)
+(set-face-attribute 'default nil :family "Comic Mono" :height 160)
+(set-face-attribute 'fixed-pitch nil :family "Comic Mono" :height 150)
 ;; (set-face-attribute 'default nil :font "JetBrainsMono Nerd Font" :height 140)
 ;; (set-face-attribute 'fixed-pitch nil :font "JetBrainsMono Nerd Font" :height 130)
 
 (defun my-text-scale-reset ()
   (interactive)
-  (set-face-attribute 'default nil :height 140)
-  (set-face-attribute 'fixed-pitch nil :height 135))
+  (set-face-attribute 'default nil :height 160)
+  (set-face-attribute 'fixed-pitch nil :height 150))
 
 (defun my-text-scale-increase ()
   (interactive)
