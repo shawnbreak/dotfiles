@@ -2,7 +2,7 @@ return {
   'Mofiqul/vscode.nvim',
   lazy = false,
   priority = 1000,
-  enabled = false,
+  enabled = true,
   config = function(opts)
     local c = require('vscode.colors').get_colors()
     require('vscode').setup({
