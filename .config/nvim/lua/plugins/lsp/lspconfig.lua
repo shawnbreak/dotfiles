@@ -1,9 +1,9 @@
 return {
   'neovim/nvim-lspconfig',
   dependencies = {
+    'hrsh7th/cmp-nvim-lsp',
     { 'williamboman/mason.nvim', config = true }, -- NOTE: Must be loaded before dependants
     "williamboman/mason-lspconfig.nvim",
-    'WhoIsSethDaniel/mason-tool-installer.nvim',
 
     -- Useful status updates for LSP.
     -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
@@ -18,6 +18,7 @@ return {
     vim.api.nvim_create_autocmd("LspAttach", {
       group = vim.api.nvim_create_augroup("lsp-attach", { clear = true }),
       callback = function(event)
+          vim.opt.signcolumn = "yes"
         local map = function(keys, func, desc)
           vim.keymap.set('n', keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
         end
@@ -62,6 +63,7 @@ return {
     vim.api.nvim_create_autocmd("LspDetach", {
       group = vim.api.nvim_create_augroup('my-lsp-detach', { clear = true }),
       callback = function(event)
+          vim.opt.signcolumn = "no"
         vim.lsp.buf.clear_references()
         vim.api.nvim_clear_autocmds { group = 'my-lsp-highligth', buffer = event.buf }
       end
@@ -105,13 +107,15 @@ return {
     require("mason").setup()
 
     -- Auto install lsp server
-    local ensure_installed = vim.tbl_keys(servers or {})
-    vim.list_extend(ensure_installed, {
-      'stylua', -- Used to format Lua Code
-    })
-    require("mason-tool-installer").setup { ensure_installed }
+    -- local ensure_installed = vim.tbl_keys(servers or {})
+    -- vim.list_extend(ensure_installed, {
+    --   'stylua', -- Used to format Lua Code
+    -- })
+    -- require("mason-tool-installer").setup { ensure_installed }
 
     require("mason-lspconfig").setup({
+      ensure_installed = {"clangd", "rust_analyzer", "pyright", "gopls", "lua_ls"},
+      automatic_installation = true,
       handlers = {
         function(server_name)
           local server = servers[server_name] or {}

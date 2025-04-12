@@ -16,7 +16,7 @@ vim.opt.numberwidth = 2
 vim.opt.relativenumber = true
 
 -- signe column
-vim.opt.signcolumn = "yes"
+vim.opt.signcolumn = "no"
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
@@ -39,9 +39,6 @@ vim.opt.undofile = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
--- Keep signcolumn on by default
-vim.opt.signcolumn = 'yes'
-
 -- Decrease update time
 vim.opt.updatetime = 250
 
@@ -62,14 +59,15 @@ vim.opt.splitbelow = true
 -- ↲ U+21B2 DOWNWARDS ARROW WITH TIP LEFTWARDS
 -- ↩ U+21A9 LEFTWARDS ARROW WITH HOOK
 -- vim.opt.list = false
-vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣', eol = '↵' }
+-- vim.opt.listchars = { tab = '»·', trail = '■', nbsp = '␣', eol = '↵' }
+vim.opt.listchars = { tab = '»·', trail = '■', nbsp = '␣'  }
 
 
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = 'split'
 
 -- Show which line your cursor is on
-vim.opt.cursorline = true
+vim.opt.cursorline = fasle
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
@@ -78,8 +76,8 @@ vim.opt.scrolloff = 10
 vim.opt.fileencoding = "utf-8"
 vim.opt.backup = false
 vim.opt.expandtab = true
-vim.opt.tabstop = 2
-vim.opt.shiftwidth = 2
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
 
 vim.opt.termguicolors = true
 
@@ -94,7 +92,10 @@ vim.opt.suffixesadd = {""}
 
 
 vim.opt.laststatus = 0
-vim.cmd([[set laststatus=3]])
+vim.cmd([[
+    filetype indent on
+    filetype plugin on
+]])
 
 vim.api.nvim_set_hl(0, 'WinSeparator', { fg = 'gray', bold = true })
 
@@ -141,3 +142,12 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+-- Auto jump to the last location when open a file
+vim.api.nvim_create_autocmd("BufReadPost", {
+    callback = function()
+        local mark = vim.api.nvim_buf_get_mark(0, '"')
+        if mark[1] > 0 and mark[1] <= vim.api.nvim_buf_line_count(0) then
+            vim.api.nvim_win_set_cursor(0, mark)
+        end
+    end
+})
