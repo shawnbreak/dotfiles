@@ -14,9 +14,9 @@ vim.opt.rtp:prepend(lazypath)
 
 -- require("lazy").setup("plugins")
 require("lazy").setup({
-  require("plugins.colorscheme.tokyonight"),
-  require("plugins.colorscheme.onedark"),
-  require("plugins.colorscheme.catppuccin"),
+  -- require("plugins.colorscheme.tokyonight"),
+  -- require("plugins.colorscheme.onedark"),
+  -- require("plugins.colorscheme.catppuccin"),
   require("plugins.colorscheme.kanagawa"),
 
   require("plugins.ui.lualine"),
@@ -26,8 +26,8 @@ require("lazy").setup({
 
   -- require("plugins.editor.comment"),
   -- require("plugins.editor.todo-comments"),
-  require("plugins.editor.autopairs"),
-  require("plugins.editor.colorizer"),
+  -- require("plugins.editor.autopairs"),
+  -- require("plugins.editor.colorizer"),
   -- require("plugins.editor.autotag"),
   require("plugins.editor.oil"),
   require("plugins.editor.trouble"),
@@ -37,7 +37,7 @@ require("lazy").setup({
   -- require("plugins.editor.cscope"),
   -- require("plugins.editor.harpoon"),
 
-  require("plugins.editor.neotree"),
+  -- require("plugins.editor.neotree"),
   -- require("plugins.editor.nvimtree"),
 
   require("plugins.editor.whichkey"),
@@ -59,7 +59,8 @@ require("lazy").setup({
 
   require("plugins.lsp.lspconfig"),
   -- require("plugins.lsp.lspsaga"),
-  require("plugins.lsp.cmp"),
+  -- require("plugins.lsp.cmp"),
+  require("plugins.lsp.blink"),
   -- require("plugins.lsp.conform"),
   -- require("plugins.lsp.lint"),
   -- require("plugins.debug"),

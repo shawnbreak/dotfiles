@@ -1,4 +1,6 @@
+
 # My neovim plugins
+
 - tokyonigh
 - neotree
 - mini.nvim

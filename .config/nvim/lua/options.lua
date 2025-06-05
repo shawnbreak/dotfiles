@@ -13,7 +13,7 @@ vim.opt.number = true
 vim.opt.numberwidth = 2
 -- You can also add relative line numbers, to help with jumping.
 --  Experiment for yourself to see if you like it!
-vim.opt.relativenumber = true
+vim.opt.relativenumber = false
 
 -- signe column
 vim.opt.signcolumn = "no"
@@ -59,7 +59,7 @@ vim.opt.splitbelow = true
 -- ↲ U+21B2 DOWNWARDS ARROW WITH TIP LEFTWARDS
 -- ↩ U+21A9 LEFTWARDS ARROW WITH HOOK
 -- vim.opt.list = false
--- vim.opt.listchars = { tab = '»·', trail = '■', nbsp = '␣', eol = '↵' }
+-- vim.opt.listchars = { tab = '»·', trail = '■', nbsp = '␣', eol = '↵' }op
 vim.opt.listchars = { tab = '»·', trail = '■', nbsp = '␣'  }
 
 

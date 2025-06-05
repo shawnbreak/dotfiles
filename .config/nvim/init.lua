@@ -6,3 +6,4 @@ require("keymaps")
 
 -- Install lazy.nvim plugin manager
 require("lazyinit")
+
