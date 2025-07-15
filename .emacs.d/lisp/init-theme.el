@@ -28,7 +28,7 @@
         doom-themes-enable-italic t) ; if nil, italics is universally disabled
   (doom-themes-org-config)
   (doom-themes-visual-bell-config)
-  (load-theme 'doom-one t)
+  (load-theme 'doom-monokai-classic t)
   )
 
 (use-package doom-modeline

@@ -3,7 +3,9 @@ return {
     lazy = false,
     priority = 1000,
     enabled = true,
-    config = function(opts)
+    opts = {
+      transparent = false, -- Enable this to disable setting the background color
+    }
 
     -- vim.cmd([[colorscheme tokyonight]])
     -- vim.cmd([[colorscheme tokyonight]])
@@ -23,5 +25,4 @@ return {
 
     -- vim.api.nvim_set_hl(0, 'WinSeparator', { fg = 'gray', bold = true })
 
-    end
 }

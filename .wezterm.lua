@@ -40,6 +40,7 @@ config.font_size = 14
 config.initial_rows = 35
 config.initial_cols = 140
 
+-- config.window_background_image = '/path/to/wallpaper.jpg'
 
 -- launch menu
 local launch_menu = {}
@@ -87,12 +88,45 @@ config.window_padding = {
   bottom = "0cell",
 }
 
+local function resize_window(delta_w, delta_h)
+  return function(window, pane)
+    local dims = window:get_dimensions()
+    local new_width = dims.pixel_width + delta_w
+    local new_height = dims.pixel_height + delta_h
+    window:set_inner_size(new_width, new_height)
+  end
+end
+
 config.keys = {
   { key = 'l',  mods = 'ALT',      action = wezterm.action.ShowLauncher },
   { key = 'F9', mods = 'ALT',      action = wezterm.action.ShowTabNavigator },
   { key = '9',  mods = 'ALT',      action = wezterm.action.ShowLauncherArgs { flags = 'FUZZY|WORKSPACES' }, },
   { key = 'n',  mods = 'CTRL|ALT', action = wezterm.action.SwitchWorkspaceRelative(1) },
   { key = 'p',  mods = 'CTRL|ALT', action = wezterm.action.SwitchWorkspaceRelative(-1) },
+ -- 窗口变宽（右）
+    {
+      key = 'RightArrow',
+      mods = 'CTRL|SHIFT',
+      action = wezterm.action_callback(resize_window(50, 0)),
+    },
+    -- 窗口变窄（左）
+    {
+      key = 'LeftArrow',
+      mods = 'CTRL|SHIFT',
+      action = wezterm.action_callback(resize_window(-50, 0)),
+    },
+    -- 窗口变高（下）
+    {
+      key = 'DownArrow',
+      mods = 'CTRL|SHIFT',
+      action = wezterm.action_callback(resize_window(0, 30)),
+    },
+    -- 窗口变矮（上）
+    {
+      key = 'UpArrow',
+      mods = 'CTRL|SHIFT',
+      action = wezterm.action_callback(resize_window(0, -30)),
+    },
 }
 
 wezterm.on('gui-startup', function(cmd) -- set startup Window position

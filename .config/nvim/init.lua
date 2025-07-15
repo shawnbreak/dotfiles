@@ -4,6 +4,12 @@ require("options")
 -- Basic keymaps
 require("keymaps")
 
--- Install lazy.nvim plugin manager
-require("lazyinit")
+if vim.g.vscode then
+    -- VSCode extension
+else
+    -- ordinary Neovim
+    -- Install lazy.nvim plugin manager
+    require("lazyinit")
+end
+
 

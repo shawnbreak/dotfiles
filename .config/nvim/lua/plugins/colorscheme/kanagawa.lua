@@ -4,5 +4,4 @@ return {
   opts ={
     transparent = true
   }
-
 }

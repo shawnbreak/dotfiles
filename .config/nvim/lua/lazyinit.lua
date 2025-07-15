@@ -14,9 +14,9 @@ vim.opt.rtp:prepend(lazypath)
 
 -- require("lazy").setup("plugins")
 require("lazy").setup({
-  -- require("plugins.colorscheme.tokyonight"),
-  -- require("plugins.colorscheme.onedark"),
-  -- require("plugins.colorscheme.catppuccin"),
+  require("plugins.colorscheme.tokyonight"),
+  require("plugins.colorscheme.onedark"),
+  require("plugins.colorscheme.catppuccin"),
   require("plugins.colorscheme.kanagawa"),
 
   require("plugins.ui.lualine"),
@@ -67,4 +67,12 @@ require("lazy").setup({
 
 })
 
-vim.cmd("colorscheme kanagawa-dragon")
+vim.cmd("colorscheme kanagawa")
+
+vim.cmd([[
+  highlight LineNr guibg=NONE ctermbg=NONE
+  highlight CursorLineNr guibg=NONE ctermbg=NONE
+]])
+
+vim.api.nvim_set_hl(0, "SignColumn", { bg = "NONE" })
+
