@@ -18,7 +18,6 @@ return {
     vim.api.nvim_create_autocmd("LspAttach", {
       group = vim.api.nvim_create_augroup("lsp-attach", { clear = true }),
       callback = function(event)
-          vim.opt.signcolumn = "yes"
         local map = function(keys, func, desc)
           vim.keymap.set('n', keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
         end
@@ -63,7 +62,6 @@ return {
     vim.api.nvim_create_autocmd("LspDetach", {
       group = vim.api.nvim_create_augroup('my-lsp-detach', { clear = true }),
       callback = function(event)
-          vim.opt.signcolumn = "no"
         vim.lsp.buf.clear_references()
         vim.api.nvim_clear_autocmds { group = 'my-lsp-highligth', buffer = event.buf }
       end
