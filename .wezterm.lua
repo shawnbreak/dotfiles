@@ -20,16 +20,15 @@ end
 -- This is where you actually apply your config choices
 
 -- For example, changing the color scheme:
-config.color_scheme = 'Dracula'
 config.enable_tab_bar = true
 config.use_fancy_tab_bar = true
 config.hide_tab_bar_if_only_one_tab = true
 config.tab_bar_at_bottom = false
 config.tab_max_width = 20
-config.window_background_opacity = 1
+config.window_background_opacity = 0.9
 config.scrollback_lines = 3500
-config.window_decorations = "RESIZE" -- "TITLE | RESIZE", "RESIZE", "TITLE", "NONE"
-config.color_scheme = 'Dracula'
+config.window_decorations = "TITLE | RESIZE" -- "TITLE | RESIZE", "RESIZE", "TITLE", "NONE"
+config.color_scheme = 'Monokai (dark) (terminal.sexy)'
 config.font = wezterm.font {
   -- family = 'FiraCode Nerd Font',
   -- family = '3270 Nerd Font',
