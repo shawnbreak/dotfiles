@@ -44,6 +44,8 @@ require("lazy").setup({
 
   require("plugins.editor.telescope"),
 
+  require("plugins.editor.render-markdown"),
+
   require("plugins.editor.treesitter"),
   -- require("plugins.editor.illumincate"),
   -- require("plugins.editor.toggleterm"),
