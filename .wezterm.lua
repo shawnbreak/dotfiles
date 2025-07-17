@@ -40,7 +40,12 @@ config.font_size = 14
 config.initial_rows = 35
 config.initial_cols = 140
 
--- config.window_background_image = '/path/to/wallpaper.jpg'
+config.window_background_image = '/Users/shawn/wezterm-config/backdrops/5-cm.jpg'
+config.window_background_image_hsb = {
+    brightness = 0.06,
+    hue = 1.0,
+    saturation = 1.0
+}
 
 -- launch menu
 local launch_menu = {}
