@@ -243,7 +243,10 @@
   (setq-local corfu-auto-prefix 2)
   (global-corfu-mode)
   (corfu-popupinfo-mode)
-  (setq corfu-popupinfo-delay (cons 1.0 1.0)))
+  (setq corfu-popupinfo-delay (cons 1.0 1.0))
+  (add-hook 'markdown-mode-hook
+	    (lambda ()
+	      (corfu-mode -1))))
 
 
 ;; corfu use child frame to show popup, which does not support in terminal
