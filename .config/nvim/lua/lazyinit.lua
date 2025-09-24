@@ -37,7 +37,7 @@ require("lazy").setup({
   -- require("plugins.editor.cscope"),
   -- require("plugins.editor.harpoon"),
 
-  -- require("plugins.editor.neotree"),
+  require("plugins.editor.neotree"),
   -- require("plugins.editor.nvimtree"),
 
   require("plugins.editor.whichkey"),

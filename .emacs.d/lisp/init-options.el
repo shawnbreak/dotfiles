@@ -47,9 +47,9 @@
 		special-mode-hook))
   (add-hook mode (lambda ()  (visual-line-mode 1))))
 
-(add-to-list 'default-frame-alist '(font . "JetBrainsMono Nerd Font")) ;; Font type & size
-(set-face-attribute 'default nil :family "JetBrainsMono Nerd Font" :height 160)
-(set-face-attribute 'fixed-pitch nil :family "JetBrainsMono Nerd Font" :height 150)
+(add-to-list 'default-frame-alist '(font . "mononoki")) ;; Font type & size
+(set-face-attribute 'default nil :family "mononoki" :height 160)
+(set-face-attribute 'fixed-pitch nil :family "mononoki" :height 150)
 ;; (set-face-attribute 'default nil :font "JetBrainsMono Nerd Font" :height 140)
 ;; (set-face-attribute 'fixed-pitch nil :font "JetBrainsMono Nerd Font" :height 130)
 

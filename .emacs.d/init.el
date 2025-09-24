@@ -44,6 +44,8 @@
 
 (require 'md-download)
 
+(require 'my-utils)
+
 ;; start emacs in server mode
 (server-start)
 

@@ -32,7 +32,7 @@ config.color_scheme = 'Monokai (dark) (terminal.sexy)'
 config.font = wezterm.font {
   -- family = 'FiraCode Nerd Font',
   -- family = '3270 Nerd Font',
-  family = 'JetBrainsMono Nerd Font',
+  family = 'mononoki',
   -- family = 'BigBlueTerm437 Nerd Font',
   harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' } -- disalbe ligature
 }
@@ -42,7 +42,7 @@ config.initial_cols = 140
 
 config.window_background_image = '/Users/shawn/wezterm-config/backdrops/5-cm.jpg'
 config.window_background_image_hsb = {
-    brightness = 0.06,
+    brightness = 0.1,
     hue = 1.0,
     saturation = 1.0
 }
