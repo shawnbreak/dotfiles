@@ -27,7 +27,7 @@
 
 ;; relative line numbers
 (column-number-mode)
-(global-display-line-numbers-mode 1)
+;; (global-display-line-numbers-mode 1)
 ;; (setq display-line-numbers-type 'relative)
 
 ;; disable line numbers for some mode

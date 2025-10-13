@@ -8,12 +8,9 @@ vim.g.maplocalleader = ' '
 vim.g.have_nerd_font = true
 vim.o.guifont = "Rec Mono Custom"
 
--- Make line numbers default
 vim.opt.number = true
 vim.opt.numberwidth = 2
--- You can also add relative line numbers, to help with jumping.
---  Experiment for yourself to see if you like it!
-vim.opt.relativenumber = false
+vim.opt.relativenumber = true
 
 -- signe column
 vim.opt.signcolumn = "yes"
@@ -60,7 +57,7 @@ vim.opt.splitbelow = true
 -- ↩ U+21A9 LEFTWARDS ARROW WITH HOOK
 -- vim.opt.list = false
 -- vim.opt.listchars = { tab = '»·', trail = '■', nbsp = '␣', eol = '↵' }op
-vim.opt.listchars = { tab = '»·', trail = '■', nbsp = '␣'  }
+vim.opt.listchars = { tab = '»·', trail = '■', nbsp = '␣' }
 
 
 -- Preview substitutions live, as you type!
@@ -88,7 +85,13 @@ vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldenable = false
 vim.opt.foldcolumn = "0" -- 0 , 1, auto
 
-vim.opt.suffixesadd = {""}
+vim.opt.suffixesadd = { "" }
+
+-- when use Ctrl-x insert completion, do not auto insert first candiate
+-- ref: help completeopt
+-- ref: help ins-completion
+vim.opt.completeopt = "menu,menuone,noselect,noinsert,fuzzy"
+vim.opt.winborder = "rounded"
 
 
 vim.opt.laststatus = 0
@@ -109,15 +112,15 @@ vim.api.nvim_set_hl(0, 'WinSeparator', { fg = 'gray', bold = true })
 -- ]])
 
 -- local winbar_augroup = vim.api.nvim_create_augroup("winbar", { clear = false })
--- vim.api.nvim_create_autocmd({"WinResized"}, {
---   command = "exe winnr('$')>1 ? \"set winbar=%=%m%f%=\" : \"set winbar=\"",
---   group = winbar_augroup
+-- vim.api.nvim_create_autocmd({ "WinResized" }, {
+--     command = "exe winnr('$')>1 ? \"set winbar=%=%m%f%=\" : \"set winbar=\"",
+--     group = winbar_augroup
 -- })
 ---------------- end create set winbar autocmd --------------------
 
 -- auto change input method
-if vim.loop.os_uname().sysname == "Linux" then
-  vim.cmd([[
+if vim.uv.os_uname().sysname == "Linux" then
+    vim.cmd([[
   augroup imselect
     autocmd InsertLeave * :silent !fcitx-remote -c
     autocmd BufCreate *  :silent !fcitx-remote -c
@@ -135,11 +138,11 @@ end
 --  Try it with `yap` in normal mode
 --  See `:help vim.highlight.on_yank()`
 vim.api.nvim_create_autocmd('TextYankPost', {
-  desc = 'Highlight when yanking (copying) text',
-  group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
-  callback = function()
-    vim.highlight.on_yank()
-  end,
+    desc = 'Highlight when yanking (copying) text',
+    group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
+    callback = function()
+        vim.highlight.on_yank()
+    end,
 })
 
 -- Auto jump to the last location when open a file

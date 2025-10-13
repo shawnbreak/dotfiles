@@ -1,14 +1,14 @@
 -- Set keymap function
 local function keymap(mode, lhs, rhs, opts)
-  local default_opts = { noremap = true, silent = true }
-  local final_opts = {}
-  if opts ~= nil then
-    final_opts = vim.tbl_extend("force", default_opts, opts)
-  else
-    final_opts = default_opts
-  end
-  -- vim.api.nvim_set_keymap(mode, lhs, rhs, default_opts)
-  vim.keymap.set(mode, lhs, rhs, final_opts)
+    local default_opts = { noremap = true, silent = true }
+    local final_opts = {}
+    if opts ~= nil then
+        final_opts = vim.tbl_extend("force", default_opts, opts)
+    else
+        final_opts = default_opts
+    end
+    -- vim.api.nvim_set_keymap(mode, lhs, rhs, default_opts)
+    vim.keymap.set(mode, lhs, rhs, final_opts)
 end
 
 vim.g.mapleader = " "
@@ -28,18 +28,9 @@ keymap("v", "L", "$", { desc = "jump to line end" })
 keymap("i", "jk", "<esc>")
 keymap("v", "jk", "<esc>")
 
--- Navitage tabs
---keymap("n", "<TAB>", "gt")
---keymap("n", "<S-TAB>", "gt")
-
--- next error
-keymap("n", "cp", ":cpre<cr>", { desc = "quickfix previous" })
--- previous error
-keymap("n", "cn", ":cnext<cr>", { desc = "quickfix next" })
-
 -- Navigate buffers
--- keymap("n", "<S-l>", ":bnext<CR>", opts)
--- keymap("n", "<S-h>", ":bpre<CR>", opts)
+vim.keymap.set("n", "<M-l>", "<cmd>bnext<CR>")
+vim.keymap.set("n", "<M-h>", "<cmd>bpre<CR>")
 
 -- Visual --
 -- Stay in indent mode
@@ -82,4 +73,9 @@ keymap('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
 keymap('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 keymap('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 keymap('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+keymap("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
+
+vim.keymap.set("n", "<M-j>", "<cmd>cnext<cr>")
+vim.keymap.set("n", "<M-k>", "<cmd>cpre<cr>")
+-- vim.keymap.set("n", "<leader>q", vim.diagnostic.setqflist)
