@@ -1,7 +1,7 @@
 vim.diagnostic.config({
     underline = true,
-    virtual_text = false,
-    virtual_lines = true,
+    virtual_text = true,
+    virtual_lines = false,
     signs = true,
     severity_sort = true,
 })
@@ -9,6 +9,8 @@ vim.diagnostic.config({
 vim.lsp.enable("lua_ls")
 vim.lsp.enable("clangd")
 vim.lsp.enable("pyright")
+vim.lsp.enable("rust_analyzer")
+vim.lsp.enable("gopls")
 
 vim.api.nvim_create_autocmd('LspAttach', {
     callback = function(args)

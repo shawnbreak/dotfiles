@@ -188,9 +188,25 @@ return {
         opts_extend = { "sources.default" }
     },
     {
+        'neovim/nvim-lspconfig'
+    },
+    {
         "iamcco/markdown-preview.nvim",
         cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
         ft = { "markdown" },
         build = function() vim.fn["mkdp#util#install"]() end,
-    }
+    },
+    {
+        'nvim-mini/mini.nvim',
+        version = '*',
+        config = function()
+            local miniclue = require("mini.clue")
+            miniclue.setup({
+                triggers = {
+                    { mode = 'n', keys = '<leader>' },
+                    { mode = 'n', keys = 'g' }
+                }
+            })
+        end
+    },
 }
