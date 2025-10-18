@@ -11,8 +11,8 @@ return {
     },
     {
         'nvim-telescope/telescope.nvim',
-        tag = '0.1.8',
-        -- or branch = '0.1.x',
+        -- tag = '0.1.8',
+        branch = 'master',
         dependencies = {
             'nvim-lua/plenary.nvim',
             'nvim-telescope/telescope-ui-select.nvim',
@@ -48,7 +48,8 @@ return {
             vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
             vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
             vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
-            vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
+            vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[S] Find existing buffers' })
+            vim.keymap.set('n', '<leader>sc', builtin.commands, { desc = '[S]earch Commands' })
 
             vim.keymap.set('n', 'grt', builtin.lsp_type_definitions, { desc = 'lsp type definitions' })
             vim.keymap.set('n', 'grd', builtin.lsp_definitions, { desc = 'lsp definitions' })
@@ -166,10 +167,6 @@ return {
 
             -- (Default) Only show the documentation popup when manually triggered
             completion = { documentation = { auto_show = true } },
-
-            autocomplete = {
-                border = "rounded"
-            },
 
             signature = { enabled = true },
 
