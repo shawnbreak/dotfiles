@@ -25,23 +25,28 @@ config.use_fancy_tab_bar = true
 config.hide_tab_bar_if_only_one_tab = true
 config.tab_bar_at_bottom = false
 config.tab_max_width = 20
-config.window_background_opacity = 0.9
+config.window_background_opacity = 1
 config.scrollback_lines = 3500
 config.window_decorations = "TITLE | RESIZE" -- "TITLE | RESIZE", "RESIZE", "TITLE", "NONE"
-config.color_scheme = 'Monokai (dark) (terminal.sexy)'
-config.font = wezterm.font {
-    -- family = 'FiraCode Nerd Font',
-    -- family = '3270 Nerd Font',
-    -- family = 'JetBrainsMono Nerd Font',
-    family = 'mononoki',
-    -- family = 'BigBlueTerm437 Nerd Font',
-    harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' } -- disalbe ligature
+-- config.color_scheme = 'Monokai (dark) (terminal.sexy)'
+-- config.font = wezterm.font {
+--     -- family = 'FiraCode Nerd Font',
+--     -- family = '3270 Nerd Font',
+--     -- family = 'JetBrainsMono Nerd Font',
+--     family = 'Annotation Mono',
+--     -- family = 'BigBlueTerm437 Nerd Font',
+--     harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' } -- disalbe ligature
+-- }
+-- 但是
+config.font = wezterm.font_with_fallback {
+    "Annotation Mono",
+    "LXGW WenKai"
 }
 config.font_size = 14
 config.initial_rows = 35
 config.initial_cols = 140
 
-config.window_background_image = wezterm.home_dir .. '/dotfiles/images/5-cm.jpg'
+-- config.window_background_image = wezterm.home_dir .. '/dotfiles/images/5-cm.jpg'
 config.window_background_image_hsb = {
     brightness = 0.1,
     hue = 1.0,
