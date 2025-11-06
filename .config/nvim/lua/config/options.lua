@@ -154,3 +154,18 @@ vim.api.nvim_create_autocmd("BufReadPost", {
         end
     end
 })
+
+
+-- pure black background
+vim.api.nvim_create_autocmd("ColorScheme", {
+    callback = function()
+        vim.cmd [[
+      hi Normal guibg=#000000
+      hi NormalNC guibg=#000000
+      hi LineNr guibg=#000000
+      hi SignColumn guibg=#000000
+      hi NonText guibg=#000000
+      hi CursorLine guibg=#000000
+    ]]
+    end,
+})
