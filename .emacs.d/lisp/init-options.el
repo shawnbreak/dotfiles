@@ -47,11 +47,11 @@
 		special-mode-hook))
   (add-hook mode (lambda ()  (visual-line-mode 1))))
 
-(add-to-list 'default-frame-alist '(font . "Annotation Mono")) ;; Font type & size
+;; (add-to-list 'default-frame-alist '(font . "Annotation Mono")) ;; Font type & size
 (set-face-attribute 'default nil :family "Annotation Mono" :height 160)
-(set-face-attribute 'fixed-pitch nil :family "Annotation Mono" :height 150)
+(set-face-attribute 'fixed-pitch nil :family "Annotation Mono" :height 140)
 
-(set-fontset-font t 'han (font-spec :family "LXGW WenKai"))
+(set-fontset-font t 'han (font-spec :family "LXGW WenKai Mono"))
 
 
 ;; (set-face-attribute 'default nil :font "JetBrainsMono Nerd Font" :height 140)
