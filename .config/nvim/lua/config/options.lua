@@ -157,32 +157,32 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 
 
 -- pure black background
-vim.api.nvim_create_autocmd("ColorScheme", {
-    callback = function()
-        vim.cmd [[
-      hi Normal guibg=#000000
-      hi NormalNC guibg=#000000
-      hi LineNr guibg=#000000
-      hi SignColumn guibg=#000000
-      hi NonText guibg=#000000
-      hi CursorLine guibg=#000000
-      highlight NormalFloat guibg=#000000 guifg=#ffffff
-      highlight FloatBorder guibg=#000000 guifg=#ffffff
-      highlight LspFloatWinNormal guibg=#000000 guifg=#ffffff
-      highlight LspFloatWinBorder guibg=#000000 guifg=#ffffff
-      highlight TelescopeNormal guibg=#000000 guifg=#ffffff
-
-      highlight TelescopeBorder guibg=#000000 guifg=#ffffff
-      highlight TelescopePromptNormal guibg=#000000 guifg=#ffffff
-      highlight TelescopePromptBorder guibg=#000000 guifg=#ffffff
-
-      highlight BlinkCmpNormal guibg=#000000 guifg=#ffffff
-      highlight BlinkCmpMenu guibg=#000000 guifg=#ffffff
-      highlight BlinkCmpDoc guibg=#000000 guifg=#ffffff
-      highlight BlinkCmpDocBorder guibg=#000000 guifg=#ffffff
-      highlight BlinkCmpMenuBorder guibg=#000000 guifg=#ffffff
-      highlight BlinkCmpSignatureHelp guibg=#000000 guifg=#ffffff
-      highlight BlinkCmpSignatureHelpBorder guibg=#000000 guifg=#ffffff
-    ]]
-    end,
-})
+-- vim.api.nvim_create_autocmd("ColorScheme", {
+--     callback = function()
+--         vim.cmd [[
+--       hi Normal guibg=#000000
+--       hi NormalNC guibg=#000000
+--       hi LineNr guibg=#000000
+--       hi SignColumn guibg=#000000
+--       hi NonText guibg=#000000
+--       hi CursorLine guibg=#000000
+--       highlight NormalFloat guibg=#000000 guifg=#ffffff
+--       highlight FloatBorder guibg=#000000 guifg=#ffffff
+--       highlight LspFloatWinNormal guibg=#000000 guifg=#ffffff
+--       highlight LspFloatWinBorder guibg=#000000 guifg=#ffffff
+--       highlight TelescopeNormal guibg=#000000 guifg=#ffffff
+-- 
+--       highlight TelescopeBorder guibg=#000000 guifg=#ffffff
+--       highlight TelescopePromptNormal guibg=#000000 guifg=#ffffff
+--       highlight TelescopePromptBorder guibg=#000000 guifg=#ffffff
+-- 
+--       highlight BlinkCmpNormal guibg=#000000 guifg=#ffffff
+--       highlight BlinkCmpMenu guibg=#000000 guifg=#ffffff
+--       highlight BlinkCmpDoc guibg=#000000 guifg=#ffffff
+--       highlight BlinkCmpDocBorder guibg=#000000 guifg=#ffffff
+--       highlight BlinkCmpMenuBorder guibg=#000000 guifg=#ffffff
+--       highlight BlinkCmpSignatureHelp guibg=#000000 guifg=#ffffff
+--       highlight BlinkCmpSignatureHelpBorder guibg=#000000 guifg=#ffffff
+--     ]]
+--     end,
+-- })
