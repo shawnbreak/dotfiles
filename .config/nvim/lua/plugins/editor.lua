@@ -51,13 +51,13 @@ return {
             vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[S] Find existing buffers' })
             vim.keymap.set('n', '<leader>sc', builtin.commands, { desc = '[S]earch Commands' })
 
-            vim.keymap.set('n', 'grt', builtin.lsp_type_definitions, { desc = 'lsp type definitions' })
-            vim.keymap.set('n', 'grd', builtin.lsp_definitions, { desc = 'lsp definitions' })
-            vim.keymap.set('n', 'gri', builtin.lsp_implementations, { desc = 'lsp implementation' })
-            vim.keymap.set('n', 'grD', vim.lsp.buf.declaration, { desc = 'lsp declaration' })
+            --vim.keymap.set('n', 'gD', builtin.lsp_type_definitions, { desc = 'lsp type definitions' })
+            vim.keymap.set('n', 'gd', builtin.lsp_definitions, { desc = 'lsp definitions' })
+            -- vim.keymap.set('n', 'gr', builtin.lsp_implementations, { desc = 'lsp implementation' })
+            vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, { desc = 'lsp declaration' })
             vim.keymap.set('n', 'g0', builtin.lsp_document_symbols, { desc = 'lsp document symbos' })
             vim.keymap.set('n', 'gW', builtin.lsp_dynamic_workspace_symbols, { desc = 'lsp workspace symbos' })
-            vim.keymap.set('n', 'grr', builtin.lsp_references, { desc = 'lsp document symbos' })
+            vim.keymap.set('n', 'gr', builtin.lsp_references, { desc = 'lsp document symbos' })
 
             -- Slightly advanced example of overriding default behavior and theme
             vim.keymap.set('n', '<leader>/', function()
