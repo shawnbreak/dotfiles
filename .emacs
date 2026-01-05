@@ -1,0 +1,163 @@
+;; options
+(setq custom-file "~/.emacs.d/custom-file.el")
+(when (file-exists-p custom-file)  
+  (load-file custom-file))
+
+(setq inhibit-startup-message t)
+(menu-bar-mode 0)
+(tool-bar-mode 0)
+(scroll-bar-mode 0)
+(column-number-mode 1)
+(global-display-line-numbers-mode)
+(setq display-line-numbers-type t) ; 't 'relative
+(setq show-trailing-whitespace t)
+(windmove-default-keybindings)
+(delete-selection-mode 1)
+(setq auto-save-default nil)
+(setq make-backup-files nil)
+(setq c-basic-offset 4)
+
+(set-face-attribute 'default nil :family "Annotation Mono" :height 160)
+(set-face-attribute 'fixed-pitch nil :family "Annotation Mono" :height 160)
+(set-fontset-font t 'han (font-spec :family "LXGW WenKai Mono"))
+
+(global-set-key (kbd "M-j") 'delete-indentation)
+(global-set-key (kbd "<f5>") 'compile)
+(global-set-key (kbd "S-<f5>") 'recompile)
+(global-set-key (kbd "C-c h") 'eldoc)
+(global-set-key (kbd "M-s s") 'grep)
+(global-set-key (kbd "M-s M-s") 'consult-ripgrep)
+(global-set-key (kbd "C-c r") 'eglot-rename)
+(global-set-key (kbd "C-c c") 'eglot-code-actions)
+
+(global-set-key (kbd "C-c f") 'eglot-format)
+
+
+;; packages 
+
+(setq package-archives
+      '(("gnu"    . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
+        ("nongnu" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/nongnu/")
+        ("melpa"  . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")))
+
+(package-initialize)
+(unless package-archive-contents
+  (package-refresh-contents))
+
+(unless (package-installed-p 'use-package)
+  (package-install 'use-package))
+
+(require 'use-package)
+(setq use-package-always-ensure t)
+
+(use-package gruber-darker-theme
+  :ensure t
+  :config
+  (load-theme 'gruber-darker t))
+
+(use-package crux
+  :ensure t)
+
+(use-package projectile
+  :ensure t)
+
+(use-package multiple-cursors
+  :ensure t
+  :config
+  (global-set-key (kbd "C->") 'mc/mark-next-like-this)
+  (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+  (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this))
+
+(use-package expand-region
+  :ensure t
+  :config
+  (global-set-key (kbd "C-=") 'er/expand-region)
+  (global-set-key (kbd "C--") 'er/contract-region))
+
+(use-package magit
+  :ensure t)
+
+(use-package vertico
+  :ensure t
+  :init
+  (vertico-mode))
+
+(use-package orderless
+  :custom
+  ;; (orderless-style-dispatchers '(+orderless-consult-dispatch orderless-affix-dispatch))
+  ;; (orderless-component-separator #'orderless-escapable-split-on-space)
+  (completion-styles '(orderless basic))
+  (completion-category-overrides '((file (styles partial-completion))))
+  (completion-category-defaults nil) ;; Disable defaults, use our settings
+  (completion-pcm-leading-wildcard t)) ;; Emacs 31: partial-completion behaves like substring
+
+(use-package consult
+  :ensure t
+  )
+
+(use-package eglot
+  :ensure t
+  :init
+  (setq eglot-ignored-server-capabilities '(:inlayHintProvider))
+  (add-hook 'c-mode-hook 'eglot-ensure)
+  (add-hook 'python-mode-hook 'eglot-ensure)
+  :config
+  (setq-default eglot-inlay-hints-mode 0))
+
+(use-package corfu
+  :ensure t
+  :init
+  (global-corfu-mode)
+  :config
+  (setq corfu-auto t
+	corfu-auto-delay 0.2
+	))
+
+(use-package markdown-mode
+  :ensure t)
+
+(use-package ggtags
+  :ensure t)
+
+;; utils
+
+(defun my/copy-line (arg)
+  (interactive "p")
+  (kill-ring-save (line-beginning-position)
+		  (line-beginning-position (+ 1 arg))))
+
+(global-set-key (kbd "C-c C-l") 'my/copy-line)
+
+(defun my/md-download-clipboard (image_name)
+  "Capture the image from the clipboard and insert the resulting file."
+  (interactive "Mimage_name: ")
+  (let ((md-download-screenshot-method
+         (cl-case system-type
+           (gnu/linux
+            (if (string= "wayland" (getenv "XDG_SESSION_TYPE"))
+                (if (executable-find "wl-paste")
+                    "wl-paste -t image/png > %s"
+                  (user-error
+                   "Please install the \"wl-paste\" program included in wl-clipboard"))
+              (if (executable-find "xclip")
+                  "xclip -selection clipboard -t image/png -o > %s"
+                (user-error
+                 "Please install the \"xclip\" program"))))
+           ((windows-nt cygwin)
+            (if (executable-find "convert")
+                "convert clipboard: %s"
+              (user-error
+               "Please install the \"convert\" program included in ImageMagick")))
+           ((darwin berkeley-unix)
+            (if (executable-find "pngpaste")
+                "pngpaste %s"
+              (user-error
+               "Please install the \"pngpaste\" program from Homebrew.")))))
+	(md-download-dir (concat "./assets/" (file-name-base buffer-file-name)))
+	(md-download-filename
+	 (concat "./assets/" (file-name-base buffer-file-name) "/" image_name)))
+    (make-directory md-download-dir t)
+    (shell-command-to-string
+     (format md-download-screenshot-method md-download-filename))
+    (insert (format "![](%s)" md-download-filename))
+    (markdown-display-inline-images)))
