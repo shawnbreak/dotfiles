@@ -17,6 +17,10 @@
 (setq make-backup-files nil)
 (setq c-basic-offset 4)
 
+;; Meta key is CMD on macOS
+(setq mac-option-modifier nil)
+(setq mac-command-modifier 'meta)
+
 (set-face-attribute 'default nil :family "Annotation Mono" :height 160)
 (set-face-attribute 'fixed-pitch nil :family "Annotation Mono" :height 160)
 (set-fontset-font t 'han (font-spec :family "LXGW WenKai Mono"))
