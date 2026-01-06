@@ -44,6 +44,8 @@
 (global-set-key (kbd "S-C-<down>") 'enlarge-window)
 (global-set-key (kbd "S-C-<up>") 'shrink-window)
 
+(global-set-key (kbd "C-c d") 'crux-duplicate-current-line-or-region)
+
 ;; packages
 
 (setq package-archives
@@ -131,13 +133,6 @@
   :ensure t)
 
 ;; utils
-
-(defun my/copy-line (arg)
-  (interactive "p")
-  (kill-ring-save (line-beginning-position)
-		  (line-beginning-position (+ 1 arg))))
-
-(global-set-key (kbd "C-c C-l") 'my/copy-line)
 
 (defun my/md-download-clipboard (image_name)
   "Capture the image from the clipboard and insert the resulting file."
