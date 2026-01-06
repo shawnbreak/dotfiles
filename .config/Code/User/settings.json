@@ -1,0 +1,26 @@
+{
+    "editor.fontFamily": "'Annotation Mono', 'Droid Sans Mono', 'monospace', monospace",
+    "editor.minimap.enabled": false,
+    "editor.fontSize": 16,
+    "editor.tabSize": 4,
+    "editor.renderWhitespace": "trailing",
+    "editor.wordWrap": "on",
+    "editor.formatOnSave": true,
+    "workbench.colorTheme": "Monokai",
+    "workbench.settings.editor": "json",
+    "workdbench.keybindings.editor": "json",
+    "files.autoSave": "onFocusChange",
+    "files.trimTrailingWhitespace": true,
+    "files.exclude": {
+        "**/.venv": true,
+        "**/__pycache__": true,
+        "**/.pytest_cache": true,
+        "**/node_modules": true,
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true
+    },
+    "terminal.integrated.fontSize": 16,
+}
