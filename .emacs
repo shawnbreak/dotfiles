@@ -1,6 +1,6 @@
 ;; options
 (setq custom-file "~/.emacs.d/custom-file.el")
-(when (file-exists-p custom-file)  
+(when (file-exists-p custom-file)
   (load-file custom-file))
 
 (setq inhibit-startup-message t)
@@ -25,6 +25,7 @@
 (set-face-attribute 'fixed-pitch nil :family "Annotation Mono" :height 160)
 (set-fontset-font t 'han (font-spec :family "LXGW WenKai Mono"))
 
+(global-set-key (kbd "C-x C-b") 'ibuffer)
 (global-set-key (kbd "M-j") 'delete-indentation)
 (global-set-key (kbd "<f5>") 'compile)
 (global-set-key (kbd "S-<f5>") 'recompile)
@@ -32,12 +33,18 @@
 (global-set-key (kbd "M-s s") 'grep)
 (global-set-key (kbd "M-s M-s") 'consult-ripgrep)
 (global-set-key (kbd "C-c r") 'eglot-rename)
-(global-set-key (kbd "C-c c") 'eglot-code-actions)
+(global-set-key (kbd "C-c a") 'eglot-code-actions)
+(global-set-key (kbd "C-c C-c") 'compile)
+;; (global-set-key (kbd "C-<return>") 'execute-extended-command)
+
 
 (global-set-key (kbd "C-c f") 'eglot-format)
+(global-set-key (kbd "S-C-<right>") 'enlarge-window-horizontally)
+(global-set-key (kbd "S-C-<left>") 'shrink-window-horizontally)
+(global-set-key (kbd "S-C-<down>") 'enlarge-window)
+(global-set-key (kbd "S-C-<up>") 'shrink-window)
 
-
-;; packages 
+;; packages
 
 (setq package-archives
       '(("gnu"    . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
