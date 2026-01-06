@@ -26,15 +26,14 @@
 (set-fontset-font t 'han (font-spec :family "LXGW WenKai Mono"))
 
 (global-set-key (kbd "C-x C-b") 'ibuffer)
+(global-set-key (kbd "C-x k") 'kill-current-buffer)
 (global-set-key (kbd "M-j") 'delete-indentation)
-(global-set-key (kbd "<f5>") 'compile)
-(global-set-key (kbd "S-<f5>") 'recompile)
 (global-set-key (kbd "C-c h") 'eldoc)
 (global-set-key (kbd "M-s s") 'grep)
 (global-set-key (kbd "M-s M-s") 'consult-ripgrep)
 (global-set-key (kbd "C-c r") 'eglot-rename)
 (global-set-key (kbd "C-c a") 'eglot-code-actions)
-(global-set-key (kbd "C-c C-c") 'compile)
+(global-set-key (kbd "C-c c") 'compile)
 ;; (global-set-key (kbd "C-<return>") 'execute-extended-command)
 
 
