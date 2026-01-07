@@ -9,7 +9,7 @@
 (scroll-bar-mode 0)
 (column-number-mode 1)
 (global-display-line-numbers-mode)
-(setq display-line-numbers-type t) ; 't 'relative
+(setq display-line-numbers-type 'relative) ; 't 'relative
 (setq show-trailing-whitespace t)
 (windmove-default-keybindings)
 (delete-selection-mode 1)
@@ -27,6 +27,7 @@
 
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 (global-set-key (kbd "C-x k") 'kill-current-buffer)
+(global-set-key (kbd "C-x C-r") 'recentf)
 (global-set-key (kbd "M-j") 'delete-indentation)
 (global-set-key (kbd "C-c h") 'eldoc)
 (global-set-key (kbd "M-s s") 'grep)
@@ -95,6 +96,7 @@
   (vertico-mode))
 
 (use-package orderless
+  :ensure t
   :custom
   ;; (orderless-style-dispatchers '(+orderless-consult-dispatch orderless-affix-dispatch))
   ;; (orderless-component-separator #'orderless-escapable-split-on-space)
@@ -103,9 +105,20 @@
   (completion-category-defaults nil) ;; Disable defaults, use our settings
   (completion-pcm-leading-wildcard t)) ;; Emacs 31: partial-completion behaves like substring
 
-(use-package consult
+(use-package marginalia
   :ensure t
-  )
+  :config
+  (marginalia-mode))
+
+(use-package embark
+  :ensure t
+  :config
+  (global-set-key (kbd "C-.") 'embark-act))
+(use-package embark-consult
+  :ensure t)
+
+
+(use-package consult :ensure t)
 
 (use-package eglot
   :ensure t
