@@ -61,7 +61,7 @@ require("lazy").setup({
     checker = { enabled = false },
     spec = {
 
-        { 'folke/tokyonight.nvim' }, 
+        { 'folke/tokyonight.nvim' },
 
         { 'lewis6991/gitsigns.nvim' },
 
@@ -200,7 +200,7 @@ require("lazy").setup({
     }
 })
 
-vim.cmd( [[
+vim.cmd([[
 colorscheme tokyonight
 ]])
 
@@ -279,4 +279,4 @@ vim.keymap.set("n", "<M-p>", "<cmd>cpre<cr>")
 
 vim.keymap.set('n', '<C-x>b', "<cmd>Telescope buffers<CR>")
 vim.keymap.set('n', '<C-x><C-f>', "<cmd>Telescope find_files<CR>")
-vim.keymap.set('n', '<C-x>k', ":bdelete")
+vim.keymap.set('n', '<C-x>k', ":bdelete<CR>")
