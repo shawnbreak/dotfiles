@@ -141,6 +141,8 @@
 (use-package markdown-mode
   :ensure t)
 
+(use-package pyvenv :ensure t)
+
 (use-package ggtags
   :ensure t)
 
