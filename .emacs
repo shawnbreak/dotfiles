@@ -126,6 +126,7 @@
   (setq eglot-ignored-server-capabilities '(:inlayHintProvider))
   (add-hook 'c-mode-hook 'eglot-ensure)
   (add-hook 'python-mode-hook 'eglot-ensure)
+  (add-hook 'rust-mode-hook 'eglot-ensure)
   :config
   (setq-default eglot-inlay-hints-mode 0))
 
@@ -144,6 +145,9 @@
 (use-package pyvenv :ensure t)
 
 (use-package ggtags
+  :ensure t)
+
+(use-package rust-mode
   :ensure t)
 
 ;; utils
