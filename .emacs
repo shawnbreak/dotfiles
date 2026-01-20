@@ -32,6 +32,7 @@
 (global-set-key (kbd "C-c h") 'eldoc)
 (global-set-key (kbd "M-s s") 'grep)
 (global-set-key (kbd "M-s M-s") 'consult-ripgrep)
+(global-set-key (kbd "M-g i") 'consult-imenu)
 (global-set-key (kbd "C-c r") 'eglot-rename)
 (global-set-key (kbd "C-c a") 'eglot-code-actions)
 (global-set-key (kbd "C-c c") 'compile)
@@ -145,7 +146,11 @@
 	))
 
 (use-package markdown-mode
-  :ensure t)
+  :ensure t
+  :config
+  (set-face-attribute 'markdown-header-face-1 nil :height 1.8)
+  (set-face-attribute 'markdown-header-face-2 nil :height 1.5)
+  (set-face-attribute 'markdown-header-face-3 nil :height 1.2))
 
 (use-package pyvenv :ensure t)
 
@@ -190,3 +195,17 @@
      (format md-download-screenshot-method md-download-filename))
     (insert (format "![](%s)" md-download-filename))
     (markdown-display-inline-images)))
+
+(setq-default visual-fill-column-center-text t)
+(defun my/markdown-preview ()
+  (interactive)
+  (display-line-numbers-mode -1)
+  (visual-fill-column-mode 1)
+  (markdown-toggle-markup-hiding 1)
+  (markdown-toggle-url-hiding 1))
+(defun my/markdown-preview-off ()
+  (interactive)
+  (display-line-numbers-mode 1)
+  (visual-fill-column-mode -1)
+  (markdown-toggle-markup-hiding -1)
+  (markdown-toggle-url-hiding -1))
