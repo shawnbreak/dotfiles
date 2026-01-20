@@ -9,6 +9,7 @@
 (scroll-bar-mode 0)
 (column-number-mode 1)
 (global-display-line-numbers-mode)
+(savehist-mode 1)
 (setq display-line-numbers-type 'relative) ; 't 'relative
 (setq show-trailing-whitespace t)
 (windmove-default-keybindings)
@@ -150,7 +151,8 @@
   :config
   (set-face-attribute 'markdown-header-face-1 nil :height 1.8)
   (set-face-attribute 'markdown-header-face-2 nil :height 1.5)
-  (set-face-attribute 'markdown-header-face-3 nil :height 1.2))
+  (set-face-attribute 'markdown-header-face-3 nil :height 1.2)
+  (setq markdown-image-default-attributes '((width . "600") (height . "400"))))
 
 (use-package pyvenv :ensure t)
 
