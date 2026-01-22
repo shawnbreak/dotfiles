@@ -154,6 +154,8 @@
   (set-face-attribute 'markdown-header-face-3 nil :height 1.2)
   (setq markdown-image-default-attributes '((width . "600") (height . "400"))))
 
+(use-package visual-fill-column :ensure t)
+
 (use-package pyvenv :ensure t)
 
 (use-package ggtags
