@@ -3,6 +3,7 @@
 (when (file-exists-p custom-file)
   (load-file custom-file))
 
+(setq ring-bell-function 'ignore)
 (setq inhibit-startup-message t)
 (menu-bar-mode 0)
 (tool-bar-mode 0)
@@ -47,6 +48,8 @@
 (global-set-key (kbd "S-C-<up>") 'shrink-window)
 
 (global-set-key (kbd "C-c d") 'crux-duplicate-current-line-or-region)
+
+(global-eldoc-mode -1)
 
 ;; packages
 
@@ -134,8 +137,13 @@
   (add-hook 'c-mode-hook 'eglot-ensure)
   (add-hook 'python-mode-hook 'eglot-ensure)
   (add-hook 'rust-mode-hook 'eglot-ensure)
+  (add-hook 'zig-mode-hook 'eglot-ensure)
   :config
   (setq-default eglot-inlay-hints-mode 0))
+
+(add-hook 'eglot-managed-mode-hook
+	  (lambda ()
+	    (eldoc-mode -1)))
 
 (use-package corfu
   :ensure t
@@ -155,14 +163,10 @@
   (setq markdown-image-default-attributes '((width . "600") (height . "400"))))
 
 (use-package visual-fill-column :ensure t)
-
 (use-package pyvenv :ensure t)
-
-(use-package ggtags
-  :ensure t)
-
-(use-package rust-mode
-  :ensure t)
+(use-package ggtags :ensure t)
+(use-package rust-mode :ensure t)
+(use-package zig-mode :ensure t)
 
 ;; utils
 
