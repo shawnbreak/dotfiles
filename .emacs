@@ -204,6 +204,9 @@
     (insert (format "![](%s)" md-download-filename))
     (markdown-display-inline-images)))
 
+(with-eval-after-load 'markdown-mode
+  (define-key markdown-mode-map (kbd "C-c i") #'my/md-download-clipboard))
+
 (setq-default visual-fill-column-center-text t)
 (defun my/markdown-preview ()
   (interactive)
