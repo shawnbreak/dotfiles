@@ -197,7 +197,7 @@
                "Please install the \"pngpaste\" program from Homebrew.")))))
 	(md-download-dir (concat "./assets/" (file-name-base buffer-file-name)))
 	(md-download-filename
-	 (concat "./assets/" (file-name-base buffer-file-name) "/" image_name)))
+	 (concat "./assets/" (file-name-base buffer-file-name) "/" image_name ".png")))
     (make-directory md-download-dir t)
     (shell-command-to-string
      (format md-download-screenshot-method md-download-filename))
