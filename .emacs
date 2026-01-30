@@ -19,6 +19,9 @@
 (setq make-backup-files nil)
 (setq c-basic-offset 4)
 
+(put 'upcase-region 'disabled nil)  ; C-x C-u 
+(put 'downcase-region 'disabled nil)  ; C-x C-l
+
 ;; Meta key is CMD on macOS
 (setq mac-option-modifier nil)
 (setq mac-command-modifier 'meta)
