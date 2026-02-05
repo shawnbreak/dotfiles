@@ -28,6 +28,16 @@
 
 (set-face-attribute 'default nil :family "Annotation Mono" :height 160)
 (set-face-attribute 'fixed-pitch nil :family "Annotation Mono" :height 160)
+(dolist (face '(fixed-pitch
+                fixed-pitch-serif
+                variable-pitch
+                tooltip
+                mode-line
+                mode-line-inactive
+                header-line
+                minibuffer-prompt))
+  (set-face-attribute face nil
+                      :family "Annotation Mono"))
 (set-fontset-font t 'han (font-spec :family "LXGW WenKai Mono"))
 
 (global-set-key (kbd "C-x C-b") 'ibuffer)
@@ -53,6 +63,18 @@
 (global-set-key (kbd "C-c d") 'crux-duplicate-current-line-or-region)
 
 (global-eldoc-mode -1)
+
+;; ================ org mode config ================
+(setq org-directory "~/org")
+(setq org-default-notes-file "~/org/inbox.org")
+
+(setq org-todo-keywords
+      '((sequence "TODO(t)" "DOING(d)" "|" "DONE(x)")))
+
+(setq org-agenda-files
+      '("~/org"))
+
+;; ================ org mode config end ================
 
 ;; packages
 
