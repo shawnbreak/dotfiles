@@ -179,7 +179,8 @@
   :config
   (setq corfu-auto t
 	corfu-auto-delay 0.2
-	))
+	)
+  (corfu-popupinfo-mode))
 
 (use-package yasnippet
   :ensure t
