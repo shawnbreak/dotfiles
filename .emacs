@@ -181,6 +181,13 @@
 	corfu-auto-delay 0.2
 	))
 
+(use-package yasnippet
+  :ensure t
+  :config
+  (yas-global-mode 1))
+
+(use-package yasnippet-snippets :ensure t)
+
 (use-package markdown-mode
   :ensure t
   :config
