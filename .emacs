@@ -25,6 +25,8 @@
 ;; Meta key is CMD on macOS
 (setq mac-option-modifier nil)
 (setq mac-command-modifier 'meta)
+(setq scroll-margin 2)
+(setq compilation-scroll-output t)
 
 (set-face-attribute 'default nil :family "Annotation Mono" :height 160)
 (set-face-attribute 'fixed-pitch nil :family "Annotation Mono" :height 160)
@@ -180,7 +182,8 @@
   (setq corfu-auto t
 	corfu-auto-delay 0.2
 	)
-  (corfu-popupinfo-mode))
+  (corfu-popupinfo-mode)
+  (setq corfu-popupinfo-delay 0.3))
 
 (use-package yasnippet
   :ensure t
