@@ -11,6 +11,7 @@
 (column-number-mode 1)
 (global-display-line-numbers-mode)
 (savehist-mode 1)
+(electric-pair-mode)
 (setq display-line-numbers-type 'relative) ; 't 'relative
 (setq show-trailing-whitespace t)
 (windmove-default-keybindings)
@@ -28,8 +29,8 @@
 (setq scroll-margin 2)
 (setq compilation-scroll-output t)
 
-(set-face-attribute 'default nil :family "Annotation Mono" :height 160)
-(set-face-attribute 'fixed-pitch nil :family "Annotation Mono" :height 160)
+(set-face-attribute 'default nil :family "Annotation Mono" :height 180)
+(set-face-attribute 'fixed-pitch nil :family "Annotation Mono" :height 180)
 (dolist (face '(fixed-pitch
                 fixed-pitch-serif
                 variable-pitch
@@ -258,3 +259,6 @@
   (visual-fill-column-mode -1)
   (markdown-toggle-markup-hiding -1)
   (markdown-toggle-url-hiding -1))
+
+(when (eq system-type 'darwin)
+  (add-to-list 'exec-path "/Users/shawn/.local/bin"))
