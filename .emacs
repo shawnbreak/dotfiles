@@ -19,6 +19,7 @@
 (setq auto-save-default nil)
 (setq make-backup-files nil)
 (setq c-basic-offset 4)
+(setq use-short-answers t)
 
 (put 'upcase-region 'disabled nil)  ; C-x C-u 
 (put 'downcase-region 'disabled nil)  ; C-x C-l
