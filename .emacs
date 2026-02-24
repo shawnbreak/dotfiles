@@ -51,19 +51,21 @@
 (global-set-key (kbd "M-s s") 'grep)
 (global-set-key (kbd "M-s M-s") 'consult-ripgrep)
 (global-set-key (kbd "M-g i") 'consult-imenu)
-(global-set-key (kbd "C-c r") 'eglot-rename)
-(global-set-key (kbd "C-c a") 'eglot-code-actions)
-(global-set-key (kbd "C-c c") 'compile)
-;; (global-set-key (kbd "C-<return>") 'execute-extended-command)
 
-
-(global-set-key (kbd "C-c f") 'eglot-format)
 (global-set-key (kbd "S-C-<right>") 'enlarge-window-horizontally)
 (global-set-key (kbd "S-C-<left>") 'shrink-window-horizontally)
 (global-set-key (kbd "S-C-<down>") 'enlarge-window)
 (global-set-key (kbd "S-C-<up>") 'shrink-window)
 
-(global-set-key (kbd "C-c d") 'crux-duplicate-current-line-or-region)
+(global-set-key (kbd "C-c C-d") 'crux-duplicate-current-line-or-region)
+
+(global-set-key (kbd "C-c c") 'compile)
+;; (global-set-key (kbd "C-<return>") 'execute-extended-command)
+
+(with-eval-after-load 'prog-mode
+  (keymap-set prog-mode-map "C-c C-r" #'eglot-rename)
+  (keymap-set prog-mode-map "C-c C-a" #'eglot-code-actions)
+  (keymap-set prog-mode-map "C-c C-f" #'eglot-format))
 
 (global-eldoc-mode -1)
 
@@ -259,6 +261,30 @@
   (visual-fill-column-mode -1)
   (markdown-toggle-markup-hiding -1)
   (markdown-toggle-url-hiding -1))
+
+(defun my/dired-copy-file-to-clipboard ()
+  (interactive)
+  (let* ((files (dired-get-marked-files))
+         (uris (mapconcat
+                (lambda (f)
+                  (concat "file://" (expand-file-name f)))
+                files
+                "\n")))
+    (with-temp-buffer
+      (insert uris)
+      (cond
+       ((getenv "WAYLAND_DISPLAY")
+        (call-process-region
+         (point-min) (point-max)
+         "wl-copy" nil nil nil
+         "-t" "text/uri-list"))
+       (t
+        (call-process-region
+         (point-min) (point-max)
+         "xclip" nil nil nil
+         "-selection" "clipboard"
+         "-t" "text/uri-list"))))
+    (message "Copied %d file(s)." (length files))))
 
 (when (eq system-type 'darwin)
   (add-to-list 'exec-path "/Users/shawn/.local/bin"))
