@@ -286,5 +286,9 @@
          "-t" "text/uri-list"))))
     (message "Copied %d file(s)." (length files))))
 
+(with-eval-after-load 'dired
+  (define-key dired-mode-map (kbd "C-c C-w")
+    #'my/dired-copy-file-to-clipboard))
+
 (when (eq system-type 'darwin)
   (add-to-list 'exec-path "/Users/shawn/.local/bin"))
