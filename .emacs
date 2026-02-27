@@ -204,6 +204,14 @@
   (set-face-attribute 'markdown-header-face-3 nil :height 1.2)
   (setq markdown-image-default-attributes '((width . "600") (height . "400"))))
 
+(use-package org-download
+  :ensure t
+  ;; Drag-and-drop to `dired`
+  :config
+  (setq-default org-download-image-dir "./assets")
+  (setq-default org-download-heading-lvl nil)
+  (add-hook 'dired-mode-hook 'org-download-enable))
+
 (use-package visual-fill-column :ensure t)
 (use-package pyvenv :ensure t)
 (use-package ggtags :ensure t)
@@ -248,6 +256,11 @@
 
 (with-eval-after-load 'markdown-mode
   (define-key markdown-mode-map (kbd "C-c i") #'my/md-download-clipboard))
+
+(with-eval-after-load 'org
+  (define-key org-mode-map (kbd "C-c i") #'org-download-clipboard)
+  (define-key org-mode-map (kbd "C-c r") #'org-download-rename-at-point))
+
 
 (setq-default visual-fill-column-center-text t)
 (defun my/markdown-preview ()
