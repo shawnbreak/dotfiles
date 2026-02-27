@@ -30,8 +30,8 @@
 (setq scroll-margin 2)
 (setq compilation-scroll-output t)
 
-(set-face-attribute 'default nil :family "Annotation Mono" :height 160)
-(set-face-attribute 'fixed-pitch nil :family "Annotation Mono" :height 160)
+(set-face-attribute 'default nil :family "Annotation Mono" :height 140)
+(set-face-attribute 'fixed-pitch nil :family "Annotation Mono" :height 140)
 (dolist (face '(fixed-pitch
                 fixed-pitch-serif
                 variable-pitch
