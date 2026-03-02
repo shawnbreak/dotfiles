@@ -49,7 +49,7 @@
 (global-set-key (kbd "C-x C-r") 'recentf)
 (global-set-key (kbd "M-j") 'delete-indentation)
 (global-set-key (kbd "C-c h") 'eldoc)
-(global-set-key (kbd "M-s s") 'grep)
+(global-set-key (kbd "M-s s") 'consult-line)
 (global-set-key (kbd "M-s M-s") 'consult-ripgrep)
 (global-set-key (kbd "M-g i") 'consult-imenu)
 
@@ -160,6 +160,8 @@
 (use-package embark-consult
   :ensure t)
 
+(with-eval-after-load 'embark
+  (define-key minibuffer-local-map (kbd "C-q") #'embark-export))
 
 (use-package consult :ensure t)
 
