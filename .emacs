@@ -29,6 +29,7 @@
 (setq mac-command-modifier 'meta)
 (setq scroll-margin 2)
 (setq compilation-scroll-output t)
+(setq dired-listing-switches "-alh") ;; ls -lah
 
 (set-face-attribute 'default nil :family "Annotation Mono" :height 140)
 (set-face-attribute 'fixed-pitch nil :family "Annotation Mono" :height 140)
@@ -45,6 +46,7 @@
 (set-fontset-font t 'han (font-spec :family "LXGW WenKai Mono"))
 
 (global-set-key (kbd "C-x C-b") 'ibuffer)
+(global-set-key (kbd "C-x b") 'switch-to-buffer)
 (global-set-key (kbd "C-x k") 'kill-current-buffer)
 (global-set-key (kbd "C-x C-r") 'recentf)
 (global-set-key (kbd "M-j") 'delete-indentation)
@@ -52,14 +54,11 @@
 (global-set-key (kbd "M-s s") 'consult-line)
 (global-set-key (kbd "M-s M-s") 'consult-ripgrep)
 (global-set-key (kbd "M-g i") 'consult-imenu)
-
 (global-set-key (kbd "S-C-<right>") 'enlarge-window-horizontally)
 (global-set-key (kbd "S-C-<left>") 'shrink-window-horizontally)
 (global-set-key (kbd "S-C-<down>") 'enlarge-window)
 (global-set-key (kbd "S-C-<up>") 'shrink-window)
-
-(global-set-key (kbd "C-c C-d") 'crux-duplicate-current-line-or-region)
-
+(global-set-key (kbd "C-c d") 'crux-duplicate-current-line-or-region)
 (global-set-key (kbd "C-c c") 'compile)
 ;; (global-set-key (kbd "C-<return>") 'execute-extended-command)
 
@@ -219,6 +218,7 @@
 (use-package ggtags :ensure t)
 (use-package rust-mode :ensure t)
 (use-package zig-mode :ensure t)
+(use-package cmake-mode :ensure t)
 
 ;; utils
 
