@@ -60,6 +60,7 @@
 (global-set-key (kbd "S-C-<up>") 'shrink-window)
 (global-set-key (kbd "C-c d") 'crux-duplicate-current-line-or-region)
 (global-set-key (kbd "C-c c") 'compile)
+(global-set-key (kbd "C-c a") 'org-agenda)
 ;; (global-set-key (kbd "C-<return>") 'execute-extended-command)
 
 (with-eval-after-load 'prog-mode
@@ -308,3 +309,5 @@
 
 (when (eq system-type 'darwin)
   (add-to-list 'exec-path "/Users/shawn/.local/bin"))
+
+(load-file "~/.local.el")
