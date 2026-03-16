@@ -11,7 +11,7 @@
 (column-number-mode 1)
 (global-display-line-numbers-mode)
 (savehist-mode 1)
-(electric-pair-mode)
+;; (electric-pair-mode)
 (setq display-line-numbers-type 'relative) ; 't 'relative
 (setq show-trailing-whitespace t)
 (windmove-default-keybindings)
