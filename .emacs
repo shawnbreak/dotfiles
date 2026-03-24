@@ -31,6 +31,7 @@
 (setq compilation-scroll-output t)
 (setq dired-listing-switches "-alh") ;; ls -lah
 
+(set-face-attribute 'default nil :height 160)
 (dolist (face '(default
 		fixed-pitch
                 fixed-pitch-serif
@@ -41,7 +42,7 @@
                 header-line
                 minibuffer-prompt))
   (set-face-attribute face nil
-                      :family "JetBrainsMono Nerd Font"))
+                      :family "Iosevka Term"))
 (set-fontset-font t 'han (font-spec :family "LXGW WenKai Mono"))
 
 (global-set-key (kbd "C-x C-b") 'ibuffer)
