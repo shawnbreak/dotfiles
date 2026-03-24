@@ -31,9 +31,8 @@
 (setq compilation-scroll-output t)
 (setq dired-listing-switches "-alh") ;; ls -lah
 
-(set-face-attribute 'default nil :family "Annotation Mono" :height 140)
-(set-face-attribute 'fixed-pitch nil :family "Annotation Mono" :height 140)
-(dolist (face '(fixed-pitch
+(dolist (face '(default
+		fixed-pitch
                 fixed-pitch-serif
                 variable-pitch
                 tooltip
@@ -42,7 +41,7 @@
                 header-line
                 minibuffer-prompt))
   (set-face-attribute face nil
-                      :family "Annotation Mono"))
+                      :family "JetBrainsMono Nerd Font"))
 (set-fontset-font t 'han (font-spec :family "LXGW WenKai Mono"))
 
 (global-set-key (kbd "C-x C-b") 'ibuffer)
