@@ -34,11 +34,16 @@ bakwht='\e[47m'   # White
 txtrst='\e[0m'    # Text Reset
 
 ################ Git Prompt ################
-source /usr/share/git-core/contrib/completion/git-prompt.sh
+if [[ $(uname -s) == "Darwin" ]]; then
+    source /opt/homebrew/etc/bash_completion.d/git-prompt.sh
+else
+    source /usr/share/git-core/contrib/completion/git-prompt.sh
+fi
 export GIT_PS1_SHOWDIRTYSTATE=1
 export GIT_PS1_SHOWUNTRACKEDFILES=1
 export GIT_PS1_SHOWUPSTREAM=auto
 export GIT_PS1_SHOWCONFLICTSTATE=yes
 export GIT_PS1_SHOWCOLORHINTS=1
-export PS1='[\u@'"${bldred}"'\h'"${txtrst}"' \W$(__git_ps1 " (%s)")]\$ '
+#export PS1='[\u@'"${bldred}"'\h'"${txtrst}"' \W$(__git_ps1 " (%s)")]\$ '
+export PS1='\w $(__git_ps1 "(%s)")> '
 ################ Git Promt end ################
