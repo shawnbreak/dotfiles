@@ -39,8 +39,11 @@ config.window_decorations = "TITLE | RESIZE" -- "TITLE | RESIZE", "RESIZE", "TIT
 -- }
 -- 但是
 config.font = wezterm.font_with_fallback {
-    "Annotation Mono",
+    "Iosevka Term",
     "LXGW WenKai"
+}
+config.colors = {
+    cursor_bg = 'yellow'
 }
 config.font_size = 14
 config.initial_rows = 35
