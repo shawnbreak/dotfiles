@@ -74,8 +74,11 @@
 (setq org-directory "~/org")
 (setq org-default-notes-file "~/org/inbox.org")
 
+;; (setq org-todo-keywords
+;;       '((sequence "TODO(t)" "DOING(d)" "|" "DONE(x)")))
 (setq org-todo-keywords
-      '((sequence "TODO(t)" "DOING(d)" "|" "DONE(x)")))
+      '((sequence "TODO(t)" "NEXT(n)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)")
+        (sequence "SOMEDAY(s)" "|")))
 
 (setq org-agenda-files
       '("~/org"))
