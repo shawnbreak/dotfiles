@@ -47,3 +47,18 @@ export GIT_PS1_SHOWCOLORHINTS=1
 #export PS1='[\u@'"${bldred}"'\h'"${txtrst}"' \W$(__git_ps1 " (%s)")]\$ '
 export PS1='\w $(__git_ps1 "(%s)")> '
 ################ Git Promt end ################
+
+
+
+# 多终端共享 history
+shopt -s histappend
+PROMPT_COMMAND="history -a; history -n"
+
+
+################ Alias ################
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+alias open="xdg-open"
+alias o="xdg-open"
+################ Alias end ################
