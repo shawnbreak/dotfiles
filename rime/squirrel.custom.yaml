@@ -1,0 +1,5 @@
+patch:
+  "style/candidate_list_layout": linear # 横排
+  "style/color_scheme": starcraft
+  "style/color_scheme_dark": starcraft
+  "style/font_face": 'Iosevka Term, LXGW WenKai Mono'

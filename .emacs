@@ -83,7 +83,7 @@
 (setq org-agenda-files
       '("~/org"))
 
-(add-hook 'org-mode-hook #'org-indent-mode)
+;; (add-hook 'org-mode-hook #'org-indent-mode)
 
 ;; ================ org mode config end ================
 
