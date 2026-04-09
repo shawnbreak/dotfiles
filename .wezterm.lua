@@ -37,9 +37,9 @@ config.window_decorations = "TITLE | RESIZE" -- "TITLE | RESIZE", "RESIZE", "TIT
 --     -- family = 'BigBlueTerm437 Nerd Font',
 --     harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' } -- disalbe ligature
 -- }
--- 但是
 config.font = wezterm.font_with_fallback {
     "Iosevka Term",
+    -- "Fantasque Sans Mono",
     "LXGW WenKai"
 }
 config.colors = {
@@ -48,6 +48,9 @@ config.colors = {
 config.font_size = 14
 config.initial_rows = 35
 config.initial_cols = 140
+config.colors = {
+    cursor_bg = 'yellow'
+}
 
 -- config.window_background_image = wezterm.home_dir .. '/dotfiles/images/5-cm.jpg'
 config.window_background_image_hsb = {
