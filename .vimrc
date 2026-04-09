@@ -1,4 +1,4 @@
-syntax off
+syntax on
 filetype indent on
 filetype plugin on
 set number
@@ -10,5 +10,6 @@ set tabstop=4
 set shiftwidth=4
 
 nnoremap - :Ex<CR>
+inoremap jk <ESC>
 nmap <M-l> :bn<CR>
 nmap <M-h> :bp<CR>

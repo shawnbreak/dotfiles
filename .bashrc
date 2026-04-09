@@ -62,3 +62,6 @@ alias mv='mv -i'
 alias open="xdg-open"
 alias o="xdg-open"
 ################ Alias end ################
+
+
+export FZF_DEFAULT_OPTS="--height=40% --layout=reverse"
