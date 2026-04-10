@@ -38,8 +38,8 @@ config.window_decorations = "TITLE | RESIZE" -- "TITLE | RESIZE", "RESIZE", "TIT
 --     harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' } -- disalbe ligature
 -- }
 config.font = wezterm.font_with_fallback {
-    "Iosevka Term",
-    -- "Fantasque Sans Mono",
+    -- "Iosevka Term",
+    "Fantasque Sans Mono",
     "LXGW WenKai"
 }
 config.colors = {
