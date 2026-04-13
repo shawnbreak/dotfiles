@@ -61,6 +61,7 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias open="xdg-open"
 alias o="xdg-open"
+alias e='emacsclient'
 ################ Alias end ################
 
 
