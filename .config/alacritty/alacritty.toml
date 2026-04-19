@@ -4,13 +4,17 @@
 
 [env]
 
+[general]
+import = [ 
+    "~/.config/alacritty/themes/themes/linux.toml"
+]
 
 [font]
 size = 14.0
-normal = { family = "Rec Mono Custom3", style = "Regular" }
+normal = { family = "Iosevka Term", style = "Regular" }
 
 [window]
-opacity = 0.9
+opacity = 1
 blur = false
 decorations = "Full" # Full None Transparent Buttonless
 padding = { x = 5, y = 0 }
