@@ -11,7 +11,7 @@ import = [
 
 [font]
 size = 14.0
-normal = { family = "Iosevka Term", style = "Regular" }
+normal = { family = "Victor Mono", style = "Regular" }
 
 [window]
 opacity = 1

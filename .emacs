@@ -179,6 +179,10 @@
   :config
   (setq-default eglot-inlay-hints-mode 0))
 
+(with-eval-after-load 'eglot
+  (add-to-list 'eglot-server-programs
+               '(python-base-mode . ("ty" "server"))))
+
 (add-hook 'eglot-managed-mode-hook
 	  (lambda ()
 	    (eldoc-mode -1)))
