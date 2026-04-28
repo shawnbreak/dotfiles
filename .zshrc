@@ -29,7 +29,7 @@ zstyle ':vcs_info:git:*' unstagedstr '*'
 zstyle ':vcs_info:git:*' stagedstr '+'
 zstyle ':vcs_info:*' enable git 
 
-export PROMPT='%~ ${vcs_info_msg_0_}> '
+export PROMPT='${vcs_info_msg_0_} %~/ : '
 
 alias grep="grep --color=auto --null"
 alias ls='ls --color=auto'
