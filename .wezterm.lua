@@ -38,7 +38,8 @@ config.color_scheme = 'GitHub Dark'
 --     harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' } -- disalbe ligature
 -- }
 config.font = wezterm.font_with_fallback {
-    "Iosevka Term",
+    "Victor Mono",
+    -- "Iosevka Term",
     -- "Fantasque Sans Mono",
     "LXGW WenKai"
 }

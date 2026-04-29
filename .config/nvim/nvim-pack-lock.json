@@ -4,6 +4,10 @@
       "rev": "aba065c3a79b58cc3863d5c9db319255abd1258a",
       "src": "https://github.com/blazkowolf/gruber-darker.nvim"
     },
+    "mini.base16": {
+      "rev": "800f107b27a00978b0dadd672d6da21a5b12fa9a",
+      "src": "https://github.com/nvim-mini/mini.base16"
+    },
     "mini.pick": {
       "rev": "437d44eb57312f23e6b931704694fc294922cd88",
       "src": "https://github.com/nvim-mini/mini.pick"

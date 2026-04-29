@@ -131,10 +131,10 @@
 (use-package magit
   :ensure t)
 
-(use-package diff-hl :ensure t
-  :hook ((prog-mode . diff-hl-mode)
-	 (dired-mode . diff-hl-dired-mode))
-  :config (diff-hl-flydiff-mode 1))
+;; (use-package diff-hl :ensure t
+;;   :hook ((prog-mode . diff-hl-mode)
+;; 	 (dired-mode . diff-hl-dired-mode))
+;;   :config (diff-hl-flydiff-mode 1))
 
 (use-package vertico
   :ensure t
@@ -193,10 +193,10 @@
   (global-corfu-mode)
   :config
   (setq corfu-auto t
-	corfu-auto-delay 0.2
+	corfu-auto-delay 0.5
 	)
   (corfu-popupinfo-mode)
-  (setq corfu-popupinfo-delay 0.3))
+  (setq corfu-popupinfo-delay 0.5))
 
 (use-package yasnippet
   :ensure t
