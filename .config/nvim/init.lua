@@ -8,16 +8,19 @@ vim.o.expandtab = true
 vim.o.laststatus = 1
 vim.o.completeopt = "menu,menuone,noselect,noinsert,fuzzy"
 
+vim.opt.fillchars:append({ eob = " " })
+
 vim.pack.add({
     { src='https://github.com/nvim-mini/mini.pick' },
     { src='https://github.com/neovim/nvim-lspconfig' },
-    { src='https://github.com/blazkowolf/gruber-darker.nvim' }
+    { src='https://github.com/bluz71/vim-moonfly-colors' },
 })
 
-vim.cmd("colorscheme gruber-darker")
+vim.cmd("colorscheme default")
 require("mini.pick").setup()
 
 vim.lsp.enable("pyright")
+vim.lsp.enable("clangd")
 vim.lsp.enable("rust_analyzer")
 vim.lsp.enable("gopls")
 
