@@ -16,7 +16,7 @@ vim.pack.add({
     { src='https://github.com/bluz71/vim-moonfly-colors' },
 })
 
-vim.cmd("colorscheme default")
+vim.cmd("colorscheme moonfly")
 require("mini.pick").setup()
 
 vim.lsp.enable("pyright")

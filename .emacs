@@ -177,7 +177,8 @@
   (add-hook 'rust-mode-hook 'eglot-ensure)
   (add-hook 'zig-mode-hook 'eglot-ensure)
   :config
-  (setq-default eglot-inlay-hints-mode 0))
+  (setq-default eglot-inlay-hints-mode 0)
+  (setq eglot-autoshutdown t))
 
 (with-eval-after-load 'eglot
   (add-to-list 'eglot-server-programs
