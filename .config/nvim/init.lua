@@ -14,10 +14,16 @@ vim.pack.add({
     { src='https://github.com/nvim-mini/mini.pick' },
     { src='https://github.com/neovim/nvim-lspconfig' },
     { src='https://github.com/bluz71/vim-moonfly-colors' },
+    { src='https://github.com/saghen/blink.lib' }, 
+    { src='https://github.com/saghen/blink.cmp' },
 })
 
 vim.cmd("colorscheme moonfly")
 require("mini.pick").setup()
+
+local cmp = require('blink.cmp')
+cmp.build():wait(60000)
+cmp.setup()
 
 vim.lsp.enable("pyright")
 vim.lsp.enable("clangd")
