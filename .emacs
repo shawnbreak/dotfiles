@@ -270,8 +270,13 @@
 
 (with-eval-after-load 'org
   (define-key org-mode-map (kbd "C-c i") #'org-download-clipboard)
-  (define-key org-mode-map (kbd "C-c r") #'org-download-rename-at-point))
-
+  (define-key org-mode-map (kbd "C-c r") #'org-download-rename-at-point)
+  (setq org-fontify-whole-heading-line t)
+  (dolist (face '((org-level-1 . 1.3)
+		  (org-level-2 . 1.2)
+		  (org-level-3 . 1.1)
+		  (org-level-4 . 1.0)))
+    (set-face-attribute (car face) nil :height (cdr face))))
 
 (setq-default visual-fill-column-center-text t)
 (defun my/markdown-preview ()
