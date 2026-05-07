@@ -114,6 +114,8 @@
 (require 'use-package)
 (setq use-package-always-ensure t)
 
+(use-package sicp :ensure t)
+
 (use-package gruber-darker-theme
   :ensure t
   :config
