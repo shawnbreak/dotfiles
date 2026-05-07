@@ -29,18 +29,10 @@ config.window_background_opacity = 1
 config.scrollback_lines = 3500
 config.window_decorations = "TITLE | RESIZE" -- "TITLE | RESIZE", "RESIZE", "TITLE", "NONE"
 config.color_scheme = 'GitHub Dark'
--- config.font = wezterm.font {
---     -- family = 'FiraCode Nerd Font',
---     -- family = '3270 Nerd Font',
---     -- family = 'JetBrainsMono Nerd Font',
---     family = 'Annotation Mono',
---     -- family = 'BigBlueTerm437 Nerd Font',
---     harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' } -- disalbe ligature
--- }
 config.font = wezterm.font_with_fallback {
-    "Victor Mono",
+    -- "Victor Mono",
     -- "Iosevka Term",
-    -- "Fantasque Sans Mono",
+    "Fantasque Sans Mono",
     "LXGW WenKai"
 }
 config.colors = {
