@@ -31,6 +31,9 @@
 (setq compilation-scroll-output t)
 (setq dired-listing-switches "-alh") ;; ls -lah
 
+(set-face-attribute 'default nil
+                    :foreground "#BFC7D5"
+		    :background "#181818")
 (set-face-attribute 'default nil :height 160)
 (dolist (face '(default
 		fixed-pitch

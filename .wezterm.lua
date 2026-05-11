@@ -31,8 +31,8 @@ config.window_decorations = "TITLE | RESIZE" -- "TITLE | RESIZE", "RESIZE", "TIT
 config.color_scheme = 'GitHub Dark'
 config.font = wezterm.font_with_fallback {
     -- "Victor Mono",
-    -- "Iosevka Term",
-    "Fantasque Sans Mono",
+    "Iosevka Term",
+    -- "Fantasque Sans Mono",
     "LXGW WenKai"
 }
 config.colors = {
