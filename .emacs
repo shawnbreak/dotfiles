@@ -328,4 +328,12 @@
 (when (eq system-type 'darwin)
   (add-to-list 'exec-path "/Users/shawn/.local/bin"))
 
+(defun my-large-file-optimizations ()
+  (when (> (buffer-size) (* 1024 1024))
+    (display-line-numbers-mode -1)
+    (font-lock-mode -1)
+    (flymake-mode -1)))
+
+(add-hook 'find-file-hook #'my-large-file-optimizations)
+
 (load-file "~/.local.el")
