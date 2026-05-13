@@ -252,6 +252,7 @@
    ;; Info
    `(info-xref ((t (:foreground ,gruber-darker-niagara))))
    `(info-visited ((t (:foreground ,gruber-darker-wisteria))))
+   `(header-line ((t (:background ,gruber-darker-bg+1 :foreground ,gruber-darker-fg))))
 
    ;; Jabber
    `(jabber-chat-prompt-foreign ((t ,(list :foreground gruber-darker-quartz
