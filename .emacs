@@ -31,9 +31,6 @@
 (setq compilation-scroll-output t)
 (setq dired-listing-switches "-alh") ;; ls -lah
 
-(set-face-attribute 'default nil
-                    :foreground "#BFC7D5"
-		    :background "#181818")
 (set-face-attribute 'default nil :height 160)
 (dolist (face '(default
 		fixed-pitch
@@ -118,11 +115,6 @@
 (setq use-package-always-ensure t)
 
 (use-package sicp :ensure t)
-
-(use-package gruber-darker-theme
-  :ensure t
-  :config
-  (load-theme 'gruber-darker t))
 
 (use-package crux
   :ensure t)
@@ -335,5 +327,8 @@
     (flymake-mode -1)))
 
 (add-hook 'find-file-hook #'my-large-file-optimizations)
+
+(load-file "~/.emacs.d/gruber-darker-theme.el")
+(load-theme 'gruber-darker t)
 
 (load-file "~/.local.el")
