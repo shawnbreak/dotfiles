@@ -35,14 +35,11 @@ config.font = wezterm.font_with_fallback {
     -- "Fantasque Sans Mono",
     "LXGW WenKai"
 }
-config.colors = {
-    cursor_bg = 'yellow'
-}
 config.font_size = 14
 config.initial_rows = 35
 config.initial_cols = 140
 config.colors = {
-    cursor_bg = 'yellow'
+    cursor_bg = '#ffdd33'
 }
 
 -- config.window_background_image = wezterm.home_dir .. '/dotfiles/images/5-cm.jpg'

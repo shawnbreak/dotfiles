@@ -11,6 +11,7 @@
 (column-number-mode 1)
 (global-display-line-numbers-mode)
 (savehist-mode 1)
+(repeat-mode 1)
 ;; (electric-pair-mode)
 (setq display-line-numbers-type 'relative) ; 't 'relative
 (setq show-trailing-whitespace t)
@@ -23,6 +24,7 @@
 
 (put 'upcase-region 'disabled nil)  ; C-x C-u 
 (put 'downcase-region 'disabled nil)  ; C-x C-l
+(put 'narrow-to-region 'disabled nil) ; C-x n n
 
 ;; Meta key is CMD on macOS
 (setq mac-option-modifier nil)
