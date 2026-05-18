@@ -32,6 +32,7 @@
 (setq scroll-margin 2)
 (setq compilation-scroll-output t)
 (setq dired-listing-switches "-alh") ;; ls -lah
+(setq ediff-window-setup-function #'ediff-setup-windows-plain)
 
 (set-face-attribute 'default nil :height 160)
 (dolist (face '(default
