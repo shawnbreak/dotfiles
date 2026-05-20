@@ -239,6 +239,20 @@
 (use-package zig-mode :ensure t)
 (use-package cmake-mode :ensure t)
 
+(use-package move-text
+  :ensure t
+  :config
+  (move-text-default-bindings)
+
+  ;; repeat-mode support
+  (defvar-keymap move-text-repeat-map
+    :repeat t
+    "<up>" #'move-text-up
+    "<down>" #'move-text-down)
+
+  (put 'move-text-up 'repeat-map 'move-text-repeat-map)
+  (put 'move-text-down 'repeat-map 'move-text-repeat-map))
+
 ;; utils
 
 (defun my/md-download-clipboard (image_name)
