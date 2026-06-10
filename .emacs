@@ -10,8 +10,11 @@
 (scroll-bar-mode 0)
 (column-number-mode 1)
 (global-display-line-numbers-mode)
+(recentf-mode 1)
 (savehist-mode 1)
+(save-place-mode 1)
 (repeat-mode 1)
+(setq-default abbrev-mode t)
 ;; (electric-pair-mode)
 (setq display-line-numbers-type 'relative) ; 't 'relative
 (setq show-trailing-whitespace t)
@@ -48,6 +51,7 @@
                       :family "Iosevka Term"))
 (set-fontset-font t 'han (font-spec :family "LXGW WenKai Mono"))
 
+(global-set-key (kbd "M-/") #'hippie-expand)
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 (global-set-key (kbd "C-x b") 'switch-to-buffer)
 (global-set-key (kbd "C-x k") 'kill-current-buffer)
