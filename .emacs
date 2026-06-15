@@ -36,6 +36,7 @@
 (setq compilation-scroll-output t)
 (setq dired-listing-switches "-alh") ;; ls -lah
 (setq ediff-window-setup-function #'ediff-setup-windows-plain)
+(setq project-switch-commands 'project-dired)
 
 (set-face-attribute 'default nil :height 160)
 (dolist (face '(default
