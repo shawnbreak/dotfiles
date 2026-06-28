@@ -1,6 +1,6 @@
 vim.g.mapleader = ' '
-vim.o.number = true
-vim.o.relativenumber = true
+vim.o.number = false
+vim.o.relativenumber = false
 vim.o.signcolumn = 'yes'
 vim.o.tabstop = 4
 vim.o.shiftwidth = 4
