@@ -46,7 +46,8 @@ export GIT_PS1_SHOWCONFLICTSTATE=yes
 export GIT_PS1_SHOWCOLORHINTS=1
 #export PS1='[\u@'"${bldred}"'\h'"${txtrst}"' \W$(__git_ps1 " (%s)")]\$ '
 #export PS1='\w $(__git_ps1 "(%s)")> '
-export PS1='$(__git_ps1 "(git:%s) ")\w/ : '
+#export PS1='$(__git_ps1 "(git:%s) ")\w/ : '
+export PS1='$(__git_ps1 "(git:%s) ")\w/ \n'"\[${bldgrn}\]|\[${txtrst}\]"' '
 ################ Git Promt end ################
 
 
