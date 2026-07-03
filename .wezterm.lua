@@ -28,14 +28,14 @@ config.tab_max_width = 20
 config.window_background_opacity = 1
 config.scrollback_lines = 3500
 config.window_decorations = "TITLE | RESIZE" -- "TITLE | RESIZE", "RESIZE", "TITLE", "NONE"
-config.color_scheme = 'GitHub Dark'
+-- config.color_scheme = 'Gruber (base16)'
 config.font = wezterm.font_with_fallback {
     -- "Victor Mono",
     "Iosevka Term",
     -- "Fantasque Sans Mono",
     "LXGW WenKai"
 }
-config.font_size = 14
+config.font_size = 16
 config.initial_rows = 35
 config.initial_cols = 140
 config.colors = {
@@ -137,10 +137,12 @@ config.keys = {
 }
 
 wezterm.on('gui-startup', function(cmd) -- set startup Window position
-    local tab, pane, window = wezterm.mux.spawn_window(cmd or {
-        position = { x = 60, y = 60 }
-    })
+    -- local tab, pane, window = wezterm.mux.spawn_window(cmd or {
+    --     position = { x = 60, y = 60 }
+    -- })
+    local tab, pane, window = wezterm.mux.spawn_window(cmd or {})
     -- window:gui_window():set_position(50, -50)
+    window:gui_window():maximize()
 end)
 -- and finally, return the configuration to wezterm
 return config

@@ -38,6 +38,8 @@
 (setq ediff-window-setup-function #'ediff-setup-windows-plain)
 (setq project-switch-commands 'project-dired)
 
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
+
 (set-face-attribute 'default nil :height 160)
 (dolist (face '(default
 		fixed-pitch
