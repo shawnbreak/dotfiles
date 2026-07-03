@@ -87,8 +87,18 @@
 ;; (setq org-todo-keywords
 ;;       '((sequence "TODO(t)" "DOING(d)" "|" "DONE(x)")))
 (setq org-todo-keywords
-      '((sequence "TODO(t)" "NEXT(n)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)")
+      '((sequence "IDEA(i)" "TODO(t)" "NEXT(n)" "DOING(g)" "WAITING(w)" "REVIEW(r)" "|" "DONE(d)" "CANCELLED(c)")
         (sequence "SOMEDAY(s)" "|")))
+
+(setq org-todo-keyword-faces
+      '(("IDEA"   . (:foreground "#7f8c8d" :weight bold))
+        ("TODO"   . (:foreground "#3498db" :weight bold))
+        ("NEXT"   . (:foreground "#f39c12" :weight bold))
+        ("DOING"    . (:foreground "#e74c3c" :weight bold))
+        ("WAITING"   . (:foreground "#9b59b6" :weight bold))
+        ("REVIEW" . (:foreground "#1abc9c" :weight bold))
+        ("DONE"   . (:foreground "#2ecc71" :weight bold))
+        ("CANCELLED"   . (:foreground "#95a5a6" :weight bold))))
 
 (setq org-agenda-files
       '("~/org"))
