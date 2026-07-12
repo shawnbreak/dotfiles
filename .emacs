@@ -255,6 +255,7 @@
 (use-package rust-mode :ensure t)
 (use-package zig-mode :ensure t)
 (use-package cmake-mode :ensure t)
+(use-package typescript-mode :ensure t)
 
 (use-package move-text
   :ensure t
