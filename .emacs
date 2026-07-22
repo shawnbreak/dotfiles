@@ -37,6 +37,7 @@
 (setq dired-listing-switches "-alh") ;; ls -lah
 (setq ediff-window-setup-function #'ediff-setup-windows-plain)
 (setq project-switch-commands 'project-dired)
+(setq find-ls-option '("-exec ls -ldh {} +" . "-ldh")) ;; 解决 find-dired中文乱码问题
 
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
