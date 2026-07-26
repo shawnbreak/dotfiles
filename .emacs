@@ -258,6 +258,9 @@
 (use-package cmake-mode :ensure t)
 (use-package typescript-mode :ensure t)
 
+;; emacs exec-path 和 PATH 统一读取shell环境的PATH
+(use-package exec-path-from-shell :ensure t :config (exec-path-from-shell-initialize))
+
 (use-package move-text
   :ensure t
   :config
@@ -352,9 +355,6 @@
 (with-eval-after-load 'dired
   (define-key dired-mode-map (kbd "C-c C-w")
     #'my/dired-copy-file-to-clipboard))
-
-(when (eq system-type 'darwin)
-  (add-to-list 'exec-path "/Users/shawn/.local/bin"))
 
 (defun my-large-file-optimizations ()
   (when (> (buffer-size) (* 1024 1024))
