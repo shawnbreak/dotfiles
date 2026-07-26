@@ -277,6 +277,30 @@
    `(linum ((t `(list :foreground gruber-darker-quartz
                       :background gruber-darker-bg))))
 
+   ;; Markdown
+   `(markdown-code-face ((t (:background ,gruber-darker-bg-1 :extend t))))
+   `(markdown-pre-face ((t (:inherit 'markdown-code-face))))
+   `(markdown-inline-code-face ((t (:foreground ,gruber-darker-green :background ,gruber-darker-bg-1))))
+   ;; headers: different color per level, height controlled by set-face-attribute
+   `(markdown-header-face-1 ((t (:foreground ,gruber-darker-niagara :weight bold))))
+   `(markdown-header-face-2 ((t (:foreground ,gruber-darker-wisteria :weight bold))))
+   `(markdown-header-face-3 ((t (:foreground ,gruber-darker-green :weight bold))))
+   `(markdown-header-face-4 ((t (:foreground ,gruber-darker-yellow :weight bold))))
+   `(markdown-header-face-5 ((t (:foreground ,gruber-darker-quartz :weight bold))))
+   `(markdown-header-face-6 ((t (:foreground ,gruber-darker-brown :weight bold))))
+   `(markdown-blockquote-face ((t (:foreground ,gruber-darker-quartz :inherit 'italic))))
+   `(markdown-link-face ((t (:foreground ,gruber-darker-niagara :underline t))))
+   `(markdown-url-face ((t (:foreground ,gruber-darker-wisteria))))
+   `(markdown-italic-face ((t (:inherit 'italic))))
+   `(markdown-bold-face ((t (:inherit 'bold))))
+   `(markdown-markup-face ((t (:foreground ,gruber-darker-quartz))))
+   `(markdown-metadata-key-face ((t (:foreground ,gruber-darker-niagara))))
+   `(markdown-metadata-value-face ((t (:foreground ,gruber-darker-green))))
+   `(markdown-language-keyword-face ((t (:foreground ,gruber-darker-quartz))))
+   `(markdown-list-face ((t (:foreground ,gruber-darker-yellow))))
+   `(markdown-header-delimiter-face ((t (:foreground ,gruber-darker-quartz))))
+   `(markdown-header-rule-face ((t (:foreground ,gruber-darker-quartz))))
+
    ;; Magit
    `(magit-branch ((t (:foreground ,gruber-darker-niagara))))
    `(magit-diff-hunk-header ((t (:background ,gruber-darker-bg+2))))
@@ -312,6 +336,9 @@
    `(neo-dir-link-face ((t (:foreground ,gruber-darker-niagara))))
 
    ;; Org Mode
+   `(org-block ((t (:background ,gruber-darker-bg-1 :extend t))))
+   `(org-block-begin-line ((t (:foreground ,gruber-darker-quartz :background ,gruber-darker-bg-1 :extend t))))
+   `(org-block-end-line ((t (:foreground ,gruber-darker-quartz :background ,gruber-darker-bg-1 :extend t))))
    `(org-agenda-structure ((t (:foreground ,gruber-darker-niagara))))
    `(org-column ((t (:background ,gruber-darker-bg-1))))
    `(org-column-title ((t (:background ,gruber-darker-bg-1 :underline t :weight bold))))

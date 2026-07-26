@@ -210,7 +210,8 @@
 
 (with-eval-after-load 'eglot
   (add-to-list 'eglot-server-programs
-               '(python-base-mode . ("ty" "server"))))
+               '(python-base-mode . ("pyright-langserver" "--stdio"))))
+               ;; '(python-base-mode . ("ty" "server"))))
 
 (add-hook 'eglot-managed-mode-hook
 	  (lambda ()
@@ -236,11 +237,18 @@
 
 (use-package markdown-mode
   :ensure t
+  :custom
+  (markdown-fontify-code-blocks-natively t)
   :config
   (set-face-attribute 'markdown-header-face-1 nil :height 1.8)
   (set-face-attribute 'markdown-header-face-2 nil :height 1.5)
   (set-face-attribute 'markdown-header-face-3 nil :height 1.2)
-  (setq markdown-image-default-attributes '((width . "600") (height . "400"))))
+  (setq markdown-image-default-attributes '((width . "600") (height . "400")))
+  (add-hook 'markdown-mode-hook #'markdown-display-inline-images)
+  (add-hook 'markdown-mode-hook
+            (lambda ()
+              (when markdown-fontify-code-blocks-natively
+                (markdown-fontify-buffer)))))
 
 (use-package org-download
   :ensure t
