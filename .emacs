@@ -250,11 +250,7 @@
   ;; 代码块背景色（仅默认主题生效，gruber-darker 等主题会覆盖）
   (set-face-attribute 'markdown-code-face nil :background "#f0f0f0" :extend t)
   (setq markdown-image-default-attributes '((width . "600") (height . "400")))
-  (add-hook 'markdown-mode-hook #'markdown-display-inline-images)
-  (add-hook 'markdown-mode-hook
-            (lambda ()
-              (when markdown-fontify-code-blocks-natively
-                (markdown-fontify-buffer)))))
+  (add-hook 'markdown-mode-hook #'markdown-display-inline-images))
 
 (use-package org-download
   :ensure t
