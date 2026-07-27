@@ -267,6 +267,8 @@
 (use-package zig-mode :ensure t)
 (use-package cmake-mode :ensure t)
 (use-package typescript-mode :ensure t)
+(use-package yaml-mode :ensure t)
+(use-package rg :ensure t)
 
 ;; emacs exec-path 和 PATH 统一读取shell环境的PATH
 (use-package exec-path-from-shell :ensure t :config (exec-path-from-shell-initialize))
