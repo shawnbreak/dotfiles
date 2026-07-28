@@ -29,8 +29,8 @@ zstyle ':vcs_info:git:*' unstagedstr '*'
 zstyle ':vcs_info:git:*' stagedstr '+'
 zstyle ':vcs_info:*' enable git 
 
-PROMPT='${vcs_info_msg_0_} %~/ 
-%B%F{green}|%b %f'
+#PROMPT='${vcs_info_msg_0_} %~/ 
+#%B%F{green}|%b %f'
 
 alias grep="grep --color=auto --null"
 alias ls='ls --color=auto'
