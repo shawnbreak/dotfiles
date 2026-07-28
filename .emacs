@@ -14,6 +14,7 @@
 (savehist-mode 1)
 (save-place-mode 1)
 (repeat-mode 1)
+(global-display-line-numbers-mode -1)
 (setq-default abbrev-mode t)
 ;; (electric-pair-mode)
 (setq display-line-numbers-type 'relative) ; 't 'relative
@@ -171,7 +172,8 @@
 (use-package vertico
   :ensure t
   :init
-  (vertico-mode))
+  (vertico-mode)
+  (vertico-flat-mode 1))
 
 (use-package orderless
   :ensure t
