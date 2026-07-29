@@ -380,6 +380,10 @@
 
 (add-hook 'find-file-hook #'my-large-file-optimizations)
 
+(defun ssh-home()
+  (interactive)
+  (find-file "/ssh:shawn@local.shawnbreak.top#2222:"))
+
 (load-file "~/.emacs.d/gruber-darker-theme.el")
 (load-theme 'gruber-darker t)
 
