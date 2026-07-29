@@ -39,6 +39,7 @@
 (setq ediff-window-setup-function #'ediff-setup-windows-plain)
 (setq project-switch-commands 'project-dired)
 (setq find-ls-option '("-exec ls -ldh {} +" . "-ldh")) ;; 解决 find-dired中文乱码问题
+(setq-default fill-column 120)
 
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
@@ -120,6 +121,7 @@
   (set-face-attribute 'org-block-end-line nil :background "#e8e8e8"))
 
 ;; (add-hook 'org-mode-hook #'org-indent-mode)
+(add-hook 'org-mode-hook #'visual-fill-column-mode)
 
 ;; ================ org mode config end ================
 
