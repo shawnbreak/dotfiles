@@ -40,7 +40,6 @@
 (setq project-switch-commands 'project-dired)
 (setq find-ls-option '("-exec ls -ldh {} +" . "-ldh")) ;; 解决 find-dired中文乱码问题
 (setq-default fill-column 120)
-(setq-default truncate-lines t)
 
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
