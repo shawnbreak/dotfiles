@@ -128,9 +128,9 @@
 ;; packages
 
 (setq package-archives
-      '(("gnu"    . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
-        ("nongnu" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/nongnu/")
-        ("melpa"  . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")))
+      '(("gnu"    . "https://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
+        ("nongnu" . "https://mirrors.tuna.tsinghua.edu.cn/elpa/nongnu/")
+        ("melpa"  . "https://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")))
 
 (package-initialize)
 (unless package-archive-contents
@@ -290,6 +290,8 @@
 
   (put 'move-text-up 'repeat-map 'move-text-repeat-map)
   (put 'move-text-down 'repeat-map 'move-text-repeat-map))
+
+(use-package ghostel :ensure t)
 
 ;; utils
 
