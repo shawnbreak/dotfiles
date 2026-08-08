@@ -17,7 +17,7 @@
 (global-display-line-numbers-mode -1)
 (setq-default abbrev-mode t)
 ;; (electric-pair-mode)
-(setq display-line-numbers-type 'relative) ; 't 'relative
+(setq display-line-numbers-type 't) ; 't 'relative
 (setq show-trailing-whitespace t)
 (windmove-default-keybindings)
 (delete-selection-mode 1)
@@ -116,9 +116,10 @@
 		  (org-level-4 . 1.0)))
     (set-face-attribute (car face) nil :height (cdr face)))
   ;; 代码块背景色（仅默认主题生效，gruber-darker 等主题会覆盖）
-  (set-face-attribute 'org-block nil :background "#f0f0f0")
-  (set-face-attribute 'org-block-begin-line nil :background "#e8e8e8")
-  (set-face-attribute 'org-block-end-line nil :background "#e8e8e8"))
+  ;; (set-face-attribute 'org-block nil :background "#f0f0f0")
+  ;; (set-face-attribute 'org-block-begin-line nil :background "#e8e8e8")
+  ;; (set-face-attribute 'org-block-end-line nil :background "#e8e8e8")
+  )
 
 ;; (add-hook 'org-mode-hook #'org-indent-mode)
 (add-hook 'org-mode-hook #'visual-fill-column-mode)
@@ -252,7 +253,7 @@
   (set-face-attribute 'markdown-header-face-2 nil :height 1.5)
   (set-face-attribute 'markdown-header-face-3 nil :height 1.2)
   ;; 代码块背景色（仅默认主题生效，gruber-darker 等主题会覆盖）
-  (set-face-attribute 'markdown-code-face nil :background "#f0f0f0" :extend t)
+  ;; (set-face-attribute 'markdown-code-face nil :background "#f0f0f0" :extend t)
   (setq markdown-image-default-attributes '((width . "600") (height . "400")))
   (add-hook 'markdown-mode-hook #'markdown-display-inline-images))
 
