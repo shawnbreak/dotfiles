@@ -40,6 +40,7 @@
 (setq project-switch-commands 'project-dired)
 (setq find-ls-option '("-exec ls -ldh {} +" . "-ldh")) ;; 解决 find-dired中文乱码问题
 (setq-default fill-column 120)
+(setq vc-handled-backends '(Git))
 
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
@@ -376,12 +377,25 @@
     #'my/dired-copy-file-to-clipboard))
 
 (defun my-large-file-optimizations ()
-  (when (> (buffer-size) (* 1024 1024))
+  (when (> (buffer-size) (* 1024 100))
     (display-line-numbers-mode -1)
     (font-lock-mode -1)
     (flymake-mode -1)))
 
 (add-hook 'find-file-hook #'my-large-file-optimizations)
+
+
+(defun my-readonly-directories()
+  (when (or
+	 (string-match-p "/usr/include/" (file-local-name buffer-file-name))
+	 (string-match-p "/usr/local/include/" (file-local-name buffer-file-name))
+	 (string-match-p "/site-packages" (file-local-name buffer-file-name))
+	 (string-match-p "/etc" (file-local-name buffer-file-name))
+	 )
+    (read-only-mode 1)))
+
+(add-hook 'find-file-hook #'my-readonly-directories)
+
 
 (defun ssh-home()
   (interactive)
