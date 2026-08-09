@@ -276,6 +276,15 @@
 (use-package yaml-mode :ensure t)
 (use-package rg :ensure t)
 
+;; (use-package vterm :ensure t
+;;   :config
+;;   (setq vterm-max-scrollback 40960))
+
+(use-package ghostel :ensure t
+  :config
+  (setq ghostel-readonly-fast-exit nil))
+
+
 ;; emacs exec-path 和 PATH 统一读取shell环境的PATH
 (use-package exec-path-from-shell :ensure t :config (exec-path-from-shell-initialize))
 

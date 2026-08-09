@@ -51,6 +51,9 @@
    `(org-block-begin-line ((t (:background ,custom-bg+1 :extend t))))
    `(org-block-end-line ((t (:background ,custom-bg+1 :extend t))))
 
+   ;; font lock
+   `(font-lock-keyword-face ((t (:foreground "purple" :bold t))))
+   
    ))
 
 ;;;###autoload
