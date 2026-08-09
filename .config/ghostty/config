@@ -1,0 +1,5 @@
+font-family = Iosevka Term
+font-size = 20
+theme = Gruber Darker
+shell-integration-features = no-cursor
+cursor-style = block
