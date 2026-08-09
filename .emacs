@@ -127,6 +127,12 @@
 
 ;; ================ org mode config end ================
 
+
+(add-hook 'text-mode-hook #'visual-line-mode)
+(add-hook 'org-mode-hook #'visual-line-mode)
+(add-hook 'prog-mode-hook (lambda ()
+			    (setq-local truncate-lines t)))
+
 ;; packages
 
 (setq package-archives
@@ -210,7 +216,7 @@
   :ensure t
   :init
   (setq eglot-ignored-server-capabilities '(:inlayHintProvider))
-  (add-hook 'c-mode-hook 'eglot-ensure)
+  ;; (add-hook 'c-mode-hook 'eglot-ensure)
   (add-hook 'python-mode-hook 'eglot-ensure)
   (add-hook 'rust-mode-hook 'eglot-ensure)
   (add-hook 'zig-mode-hook 'eglot-ensure)
