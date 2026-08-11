@@ -1,7 +1,6 @@
 ;; options
 (setq custom-file "~/.emacs.d/custom-file.el")
 (set-language-environment "UTF-8")
-(prefer-coding-system "utf-8")
 (when (file-exists-p custom-file)
   (load-file custom-file))
 
