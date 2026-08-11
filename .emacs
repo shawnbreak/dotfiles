@@ -1,5 +1,7 @@
 ;; options
 (setq custom-file "~/.emacs.d/custom-file.el")
+(set-language-environment "UTF-8")
+(prefer-coding-system "utf-8")
 (when (file-exists-p custom-file)
   (load-file custom-file))
 
@@ -9,12 +11,10 @@
 (tool-bar-mode 0)
 (scroll-bar-mode 0)
 (column-number-mode 1)
-(global-display-line-numbers-mode)
 (recentf-mode 1)
 (savehist-mode 1)
 (save-place-mode 1)
 (repeat-mode 1)
-(global-display-line-numbers-mode -1)
 (setq-default abbrev-mode t)
 ;; (electric-pair-mode)
 (setq display-line-numbers-type 't) ; 't 'relative
@@ -60,7 +60,6 @@
 
 (global-set-key (kbd "M-/") #'hippie-expand)
 (global-set-key (kbd "C-x C-b") 'ibuffer)
-(global-set-key (kbd "C-x b") 'switch-to-buffer)
 (global-set-key (kbd "C-x k") 'kill-current-buffer)
 (global-set-key (kbd "C-x C-r") 'recentf)
 (global-set-key (kbd "M-j") 'delete-indentation)
@@ -144,14 +143,10 @@
   (package-install 'use-package))
 
 (require 'use-package)
-(setq use-package-always-ensure t)
 
 (use-package sicp :ensure t)
 
 (use-package crux
-  :ensure t)
-
-(use-package projectile
   :ensure t)
 
 (use-package multiple-cursors
