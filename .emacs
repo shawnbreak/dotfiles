@@ -16,7 +16,7 @@
 (repeat-mode 1)
 (setq-default abbrev-mode t)
 ;; (electric-pair-mode)
-(setq display-line-numbers-type 't) ; 't 'relative
+;; (setq display-line-numbers-type 't) ; 't 'relative
 (setq show-trailing-whitespace t)
 (windmove-default-keybindings)
 (delete-selection-mode 1)
