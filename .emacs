@@ -297,6 +297,9 @@
   (put 'move-text-down 'repeat-map 'move-text-repeat-map))
 
 (use-package ghostel :ensure t)
+(use-package rg :ensure t)
+(use-package fzf :ensure t)
+(use-package fd-dired :ensure t)
 
 ;; utils
 
