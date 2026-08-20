@@ -126,6 +126,7 @@
 (add-hook 'org-mode-hook #'visual-line-mode)
 (add-hook 'prog-mode-hook (lambda ()
 			    (setq-local truncate-lines t)))
+(add-hook 'prog-mode-hook #'display-line-numbers-mode)
 
 ;; packages
 
