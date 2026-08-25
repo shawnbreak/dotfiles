@@ -142,7 +142,7 @@ wezterm.on('gui-startup', function(cmd) -- set startup Window position
     -- })
     local tab, pane, window = wezterm.mux.spawn_window(cmd or {})
     -- window:gui_window():set_position(50, -50)
-    window:gui_window():maximize()
+    -- window:gui_window():maximize()
 end)
 -- and finally, return the configuration to wezterm
 return config

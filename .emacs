@@ -25,7 +25,7 @@
 (setq c-basic-offset 4)
 (setq use-short-answers t)
 
-(put 'upcase-region 'disabled nil)  ; C-x C-u 
+(put 'upcase-region 'disabled nil)  ; C-x C-u
 (put 'downcase-region 'disabled nil)  ; C-x C-l
 (put 'narrow-to-region 'disabled nil) ; C-x n n
 
@@ -56,6 +56,27 @@
   (set-face-attribute face nil
                       :family "Iosevka Term"))
 (set-fontset-font t 'han (font-spec :family "LXGW WenKai Mono"))
+
+
+;;;;;;;;;;;;;;;; whitespace-mode config ;;;;;;;;;;;;;;;;
+(setq whitespace-line-column 120)
+(setq whitespace-style
+      '(face
+	tabs
+	spaces
+	trailing
+	;; lines
+	lines-tail ;; highlight chars exceed whitespace-line-column
+	;; space-before-tab
+	;; indentation
+	;; empty
+	;; space-after-tab
+	space-mark
+	tab-mark
+	;; missing-newline-at-eof
+	))
+(add-hook 'prog-mode-hook #'whitespace-mode)
+;;;;;;;;;;;;;;;; whitespace-mode config end ;;;;;;;;;;;;;;;;
 
 (global-set-key (kbd "M-/") #'hippie-expand)
 (global-set-key (kbd "C-x C-b") 'ibuffer)
@@ -386,7 +407,8 @@
   (when (> (buffer-size) (* 1024 100))
     (display-line-numbers-mode -1)
     (font-lock-mode -1)
-    (flymake-mode -1)))
+    (flymake-mode -1)
+    (whitespace-mode -1)))
 
 (add-hook 'find-file-hook #'my-large-file-optimizations)
 
