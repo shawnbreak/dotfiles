@@ -41,7 +41,7 @@
 (setq-default fill-column 120)
 (setq vc-handled-backends '(Git))
 
-(add-to-list 'default-frame-alist '(fullscreen . maximized))
+;; (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
 (set-face-attribute 'default nil :height 160)
 (dolist (face '(default
