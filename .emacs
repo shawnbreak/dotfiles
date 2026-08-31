@@ -46,13 +46,13 @@
 (set-face-attribute 'default nil :height 160)
 (dolist (face '(default
 		fixed-pitch
-                fixed-pitch-serif
-                variable-pitch
-                tooltip
-                mode-line
-                mode-line-inactive
-                header-line
-                minibuffer-prompt))
+		fixed-pitch-serif
+		variable-pitch
+		tooltip
+		mode-line
+		mode-line-inactive
+		header-line
+		minibuffer-prompt))
   (set-face-attribute face nil
                       :family "Iosevka Term"))
 (set-fontset-font t 'han (font-spec :family "LXGW WenKai Mono"))
@@ -63,7 +63,7 @@
 (setq whitespace-style
       '(face
 	tabs
-	spaces
+	;; spaces
 	trailing
 	;; lines
 	lines-tail ;; highlight chars exceed whitespace-line-column
@@ -71,7 +71,7 @@
 	;; indentation
 	;; empty
 	;; space-after-tab
-	space-mark
+	;; space-mark
 	tab-mark
 	;; missing-newline-at-eof
 	))
