@@ -24,6 +24,7 @@
 (setq make-backup-files nil)
 (setq c-basic-offset 4)
 (setq use-short-answers t)
+(setq-default truncate-lines t)
 
 (put 'upcase-region 'disabled nil)  ; C-x C-u
 (put 'downcase-region 'disabled nil)  ; C-x C-l
@@ -145,8 +146,6 @@
 
 (add-hook 'text-mode-hook #'visual-line-mode)
 (add-hook 'org-mode-hook #'visual-line-mode)
-(add-hook 'prog-mode-hook (lambda ()
-			    (setq-local truncate-lines t)))
 
 ;; packages
 
