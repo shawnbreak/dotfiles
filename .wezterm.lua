@@ -31,11 +31,15 @@ config.window_decorations = "TITLE | RESIZE" -- "TITLE | RESIZE", "RESIZE", "TIT
 -- config.color_scheme = 'Gruber (base16)'
 config.font = wezterm.font_with_fallback {
     -- "Victor Mono",
-    "Iosevka Term",
+    -- "Iosevka Term",
     -- "Fantasque Sans Mono",
-    "LXGW WenKai"
+    -- "Annotation Mono",
+    -- "MonoLisa"
+    -- "Monaspace Krypton Frozen",
+    -- "LXGW WenKai"
+    "Maple Mono NL"
 }
-config.font_size = 16
+config.font_size = 14
 config.initial_rows = 35
 config.initial_cols = 140
 config.colors = {

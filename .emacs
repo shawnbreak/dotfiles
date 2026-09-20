@@ -45,19 +45,51 @@
 ;; (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
 (set-face-attribute 'default nil :height 160)
-(dolist (face '(default
-		fixed-pitch
-		fixed-pitch-serif
-		variable-pitch
-		tooltip
-		mode-line
-		mode-line-inactive
-		header-line
-		minibuffer-prompt))
-  (set-face-attribute face nil
-                      :family "Iosevka Term"))
-(set-fontset-font t 'han (font-spec :family "LXGW WenKai Mono"))
+(defun my/set-font-Iosveka()
+  (interactive)
+  (dolist (face '(default
+		  fixed-pitch
+                  fixed-pitch-serif
+                  variable-pitch
+                  tooltip
+                  mode-line
+                  mode-line-inactive
+                  header-line
+                  minibuffer-prompt))
+    (set-face-attribute face nil
+			:family "Iosevka Term"))
+  (set-fontset-font t 'han (font-spec :family "LXGW WenKai")))
 
+(defun my/set-font-monaspace-krypton()
+  (interactive)
+  (dolist (face '(default
+		  fixed-pitch
+                  fixed-pitch-serif
+                  variable-pitch
+                  tooltip
+                  mode-line
+                  mode-line-inactive
+                  header-line
+                  minibuffer-prompt))
+    (set-face-attribute face nil
+			:family "Monaspace Krypton Frozen"))
+  (set-fontset-font t 'han (font-spec :family "LXGW WenKai")))
+
+(defun my/set-font-maple()
+  (interactive)
+  (dolist (face '(default
+		  fixed-pitch
+                  fixed-pitch-serif
+                  variable-pitch
+                  tooltip
+                  mode-line
+                  mode-line-inactive
+                  header-line
+                  minibuffer-prompt))
+    (set-face-attribute face nil
+			:family "Maple Mono NL"))
+  (set-fontset-font t 'han (font-spec :family "Maple Mono NL")))
+(my/set-font-maple)
 
 ;;;;;;;;;;;;;;;; whitespace-mode config ;;;;;;;;;;;;;;;;
 (setq whitespace-line-column 120)
