@@ -352,6 +352,7 @@
 (use-package rg :ensure t)
 (use-package fzf :ensure t)
 (use-package fd-dired :ensure t)
+(use-package ef-themes :ensure t)
 
 ;; utils
 
