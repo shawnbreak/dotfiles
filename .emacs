@@ -465,4 +465,4 @@
 (load-file "~/.emacs.d/custom-default-theme.el")
 (load-theme 'gruber-darker t)
 
-(load-file "~/.local.el")
+(load-file "~/.emacs.local.el")
