@@ -29,22 +29,21 @@ config.window_background_opacity = 1
 config.scrollback_lines = 3500
 config.window_decorations = "TITLE | RESIZE" -- "TITLE | RESIZE", "RESIZE", "TITLE", "NONE"
 -- config.color_scheme = 'Gruber (base16)'
+config.color_scheme = 'Grape'
 config.font = wezterm.font_with_fallback {
     -- "Victor Mono",
-    -- "Iosevka Term",
+    "Iosevka Term",
     -- "Fantasque Sans Mono",
     -- "Annotation Mono",
     -- "MonoLisa"
     -- "Monaspace Krypton Frozen",
-    -- "LXGW WenKai"
-    "Maple Mono NL"
+    -- "Maple Mono NL"
+    "LXGW WenKai"
+
 }
 config.font_size = 14
 config.initial_rows = 35
 config.initial_cols = 140
-config.colors = {
-    cursor_bg = '#ffdd33'
-}
 
 -- config.window_background_image = wezterm.home_dir .. '/dotfiles/images/5-cm.jpg'
 config.window_background_image_hsb = {

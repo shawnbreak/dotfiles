@@ -92,7 +92,7 @@
     (set-face-attribute face nil
 			:family "Maple Mono NL"))
   (set-fontset-font t 'han (font-spec :family "Maple Mono NL")))
-(my/set-font-maple)
+(my/set-font-Iosveka)
 
 ;;;;;;;;;;;;;;;; whitespace-mode config ;;;;;;;;;;;;;;;;
 (setq whitespace-line-column 120)
