@@ -49,7 +49,7 @@ export GIT_PS1_SHOWCOLORHINTS=1
 #export PS1='$(__git_ps1 "(git:%s) ")\w/ : '
 #export PS1='$(__git_ps1 "(git:%s) ")\w/ \n'"\[${bldgrn}\]|\[${txtrst}\]"' '
 #export PS1="[\u@\h ${bldred}\W${txtrst}]"'$(__git_ps1 "(git:%s)")'"\$ "
-export PS1="[\u@\h ${bldred}\W${txtrst}]""\$ "
+export PS1="${bldred}\W${txtrst} \$ "
 ################ Git Promt end ################
 
 
