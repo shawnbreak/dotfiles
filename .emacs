@@ -357,6 +357,20 @@
 (use-package fd-dired :ensure t)
 (use-package ef-themes :ensure t)
 
+(use-package elfeed
+  :ensure t
+  :bind ("C-x w" . elfeed)
+  :config
+  (setq elfeed-feeds
+        '(("https://lwn.net/headlines/rss" linux)
+	  ("https://lobste.rs/rss" lobster)
+	  ("https://news.ycombinator.com/rss" HN)
+	  ("https://blog.rust-lang.org/feed.xml" rust)
+	  ("https://simonwillison.net/atom/everything/" simonwillison)
+	  ("https://jvns.ca/atom.xml" Julia Evans)
+	  ("https://www.ruanyifeng.com/blog/atom.xml" ruanyifeng))))
+
+
 ;; utils
 
 (defun my/md-download-clipboard (image_name)
