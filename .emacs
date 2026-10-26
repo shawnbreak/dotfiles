@@ -48,6 +48,23 @@
 ;; (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
 (set-face-attribute 'default nil :height 160)
+
+(defun my/set-font-victor()
+  (interactive)
+  (dolist (face '(default
+		  fixed-pitch
+                  fixed-pitch-serif
+                  variable-pitch
+                  tooltip
+                  mode-line
+                  mode-line-inactive
+                  header-line
+                  minibuffer-prompt))
+    (set-face-attribute face nil
+			:family "Victor Mono"))
+  (set-fontset-font t 'han (font-spec :family "LXGW WenKai")))
+
+
 (defun my/set-font-Iosveka()
   (interactive)
   (dolist (face '(default
@@ -363,8 +380,6 @@
   :config
   (setq elfeed-feeds
         '(("https://lwn.net/headlines/rss" linux)
-	  ("https://lobste.rs/rss" lobster)
-	  ("https://news.ycombinator.com/rss" HN)
 	  ("https://blog.rust-lang.org/feed.xml" rust)
 	  ("https://simonwillison.net/atom/everything/" simonwillison)
 	  ("https://jvns.ca/atom.xml" Julia Evans)
