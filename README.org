@@ -1,0 +1,26 @@
+* .dotfiles
+
+- .bashrc
+- .zshrc
+- .gitconfig
+- .tmux.conf
+- .emacs
+- .vimrc
+- .config/alacritty
+- .config/clash
+- .config/Code
+- .config/fontconfig
+- .config/ghostty
+- .config/kitty
+- .config/nvim
+- .config/waybar
+- .config/sway
+- .config/starship.toml
+- .config/wofi
+
+
+* Install
+
+#+begin_src shell
+./install.sh
+#+end_src
