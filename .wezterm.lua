@@ -25,14 +25,14 @@ config.use_fancy_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = true
 config.tab_bar_at_bottom = false
 config.tab_max_width = 20
-config.window_background_opacity = 1
+config.window_background_opacity = 0.9
 config.scrollback_lines = 3500
 config.window_decorations = "TITLE | RESIZE" -- "TITLE | RESIZE", "RESIZE", "TITLE", "NONE"
 -- config.color_scheme = 'Gruber (base16)'
 config.color_scheme = 'Grape'
 config.font = wezterm.font_with_fallback {
-    -- "Victor Mono",
-    "Iosevka Term",
+    "Victor Mono",
+    -- "Iosevka Term",
     -- "Fantasque Sans Mono",
     -- "Annotation Mono",
     -- "MonoLisa"
