@@ -79,6 +79,7 @@ output * bg /usr/share/backgrounds/default.jxl fill
 
     # Start your launcher
     bindsym $mod+d exec $menu
+    bindsym $mod+m exec rofi -show window
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
