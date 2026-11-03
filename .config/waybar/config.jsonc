@@ -1,215 +1,121 @@
 // -*- mode: jsonc -*-
+// ~/.config/waybar/config.jsonc
+// 底本：Waybar 0.15.0 上游 resources/config.jsonc
+// 改造：只留常驻模块；窗口标题不显示 class；状态用图标+数字；不做任何模块底色。
 {
-    "layer": "top", // Waybar at top layer
-    "position": "top", // Waybar position (top|bottom|left|right)
-    "height": 10, // Waybar height (to be removed for auto height)
-    // "width": 1280, // Waybar width
-    "spacing": 4, // Gaps between modules (4px)
-    "relaod_style_on_change": true,
-    // Choose the order of the modules
+    "layer": "top",
+    "position": "top",
+    "height": 26,
+    "spacing": 10,
+    "reload_style_on_change": true,
+
     "modules-left": [
-        "hyprland/workspaces",
-        // "hyprland/submap",
-        "hyprland/scratchpad",
-        "custom/media"
+        "sway/workspaces"
     ],
     "modules-center": [
-        "hyprland/window"
+        "sway/window"
     ],
     "modules-right": [
         "tray",
-        "mpd",
-        // "idle_inhibitor",
         "pulseaudio",
         "network",
-        // "power-profiles-daemon",
-        // "cpu",
-        // "memory",
-        // "temperature",
         "backlight",
-        "keyboard-state",
-        // "hyprland/language",
-        // "battery",
-        // "battery#bat2",
+        "battery",
+        "idle_inhibitor",
         "clock"
-
     ],
-    // Modules configuration
-    // "hyprland/workspaces": {
-    //     "disable-scroll": true,
-    //     "all-outputs": true,
-    //     "warp-on-scroll": false,
-    //     "format": "{name}: {icon}",
-    //     "format-icons": {
-    //         "1": "",
-    //         "2": "",
-    //         "3": "",
-    //         "4": "",
-    //         "5": "",
-    //         "urgent": "",
-    //         "focused": "",
-    //         "default": ""
-    //     },
-    // },
-    "hyprland/window": {
-        "format": "{title} | {class}"
+
+    // 工作区：只显示编号，不用图标、不用底色
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "format": "{name}",
+        "on-click": "activate"
     },
-    "hyprland/submap": {
-        "format": "{}",
-        "always-on":  true
+
+    // 中间标题：压暗显示，滚轮下压时会被截断，避免长标题把整条撑乱
+    "sway/window": {
+        "format": "{title}",
+        "max-length": 60,
+        "tooltip": false
     },
-    "keyboard-state": {
-        // "numlock": true,
-        "capslock": true,
-        "format": "{name} {icon}",
-        // "format": {
-        //     "capslock": "{name} {icon}"
-        // },
+
+    "tray": {
+        "icon-size": 16,
+        "spacing": 8
+    },
+
+    // 音量：喇叭图标随音量变化（\uf026 静音 / \uf027 低 / \uf028 高）
+    // 左键静音、右键开 pavucontrol（没装就弹提示）、滚轮 ±2%
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "{icon} muted",
         "format-icons": {
-            "locked": "",
-            "unlocked": ""
-        }
+            "default": ["\uf026", "\uf027", "\uf028"]
+        },
+        "scroll-step": 2,
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-click-right": "sh -c 'command -v pavucontrol >/dev/null && exec pavucontrol || notify-send \"pavucontrol 未安装：sudo dnf install pavucontrol\"'"
     },
-    "sway/mode": {
-        "format": "<span style=\"italic\">{}</span>"
-    },
-    "sway/scratchpad": {
-        "format": "{icon} {count}",
-        "show-empty": false,
-        "format-icons": ["", ""],
-        "tooltip": true,
-        "tooltip-format": "{app}: {title}"
-    },
-    "mpd": {
-        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
-        "format-disconnected": "Disconnected ",
-        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
-        "unknown-tag": "N/A",
+
+    // 网络：平时只有一个图标，细节都在 tooltip 里
+    // 左键 = 弹出 nmtui 菜单（选网/输密码/802.1X），右键 = 开关 Wi-Fi 开关
+    "network": {
+        "format-wifi": "\uf1eb",
+        "format-ethernet": "\uf1e6",
+        "format-linked": "\uf1eb",
+        "format-disconnected": "\uf071",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%)\n{ifname} {ipaddr}/{cidr}",
+        "tooltip-format-ethernet": "{ifname} {ipaddr}/{cidr}",
+        "tooltip-format-disconnected": "offline",
         "interval": 5,
-        "consume-icons": {
-            "on": " "
-        },
-        "random-icons": {
-            "off": "<span color=\"#f53c3c\"></span> ",
-            "on": " "
-        },
-        "repeat-icons": {
-            "on": " "
-        },
-        "single-icons": {
-            "on": "1 "
-        },
-        "state-icons": {
-            "paused": "",
-            "playing": ""
-        },
-        "tooltip-format": "MPD (connected)",
-        "tooltip-format-disconnected": "MPD (disconnected)"
+        "on-click": "foot --app-id=nmtui --title=Wi-Fi nmtui",
+        "on-click-right": "sh -c 'nmcli radio wifi | grep -q enabled && nmcli radio wifi off || nmcli radio wifi on'"
     },
+
+    // 亮度：滚轮直接调（±5%），左键不变
+    "backlight": {
+        "format": "\uf185 {percent}%",
+        "tooltip": false,
+        "on-scroll-up": "brightnessctl -q set 5%+",
+        "on-scroll-down": "brightnessctl -q set 5%-"
+    },
+
+    // 电池：图标分五档（空→满），充电时换成闪电
+    "battery": {
+        "states": {
+            "warning": 20,
+            "critical": 10
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": "\uf0e7 {capacity}%",
+        "format-plugged": "\uf0e7 {capacity}%",
+        "format-icons": ["\uf244", "\uf243", "\uf242", "\uf241", "\uf240"],
+        "tooltip-format": "{timeTo}\n{capacity}%"
+    },
+
+    // 时间：默认只显示时分，点击/滚轮切到「月-日 周几 时:分」
+    "clock": {
+        "format": "{:%Y-%m-%d %H:%M %a}",
+        "format-alt": "{:%m-%d %a %H:%M}",
+        "tooltip-format": "<tt>{calendar}</tt>"
+    },
+
+    // 空闲抑制开关：点一下暂停「空闲 5 分钟自动锁屏」（swayidle 的 idle 计时就不再触发）。
+    // 只挡 idle 锁屏；合盖 / 睡眠前的锁屏来自 swayidle 的 before-sleep 钩子，仍然有效。
+    // 图标：fa-lock-open 琥珀 = 锁屏已暂停（记得点回来），fa-lock 压暗 = 正常自动锁。
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
-            "activated": "",
-            "deactivated": ""
-        }
-    },
-    "tray": {
-        // "icon-size": 21,
-        "spacing": 10
-    },
-    "clock": {
-        "format": "{:%a %b %d %H:%M}",
-        // "timezone": "America/New_York",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
-    },
-    "cpu": {
-        "format": "{usage}% ",
-        "tooltip": false
-    },
-    "memory": {
-        "format": "{}% "
-    },
-    "temperature": {
-        // "thermal-zone": 2,
-        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-        "critical-threshold": 80,
-        // "format-critical": "{temperatureC}°C {icon}",
-        "format": "{temperatureC}°C {icon}",
-        "format-icons": ["", "", ""]
-    },
-    "backlight": {
-        // "device": "acpi_video1",
-        "format": "{percent}% {icon}",
-        "format-icons": ["", "", "", "", "", "", "", "", ""]
-    },
-    "battery": {
-        "states": {
-            // "good": 95,
-            "warning": 30,
-            "critical": 15
+            "activated": "\uf3c1",
+            "deactivated": "\uf023"
         },
-        "format": "{capacity}% {icon}",
-        "format-full": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
-        "format-alt": "{time} {icon}",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
-        "format-icons": ["", "", "", "", ""]
-    },
-    "battery#bat2": {
-        "bat": "BAT2"
-    },
-    "power-profiles-daemon": {
-      "format": "{icon}",
-      "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
-      "tooltip": true,
-      "format-icons": {
-        "default": "",
-        "performance": "",
-        "balanced": "",
-        "power-saver": ""
-      }
-    },
-    "network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "({signalStrength}%)  ",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{essid}: {ifname} via {gwaddr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}({essid})"
-    },
-    "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon}   {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
-        },
-        "on-click": "pavucontrol"
-    },
-    "custom/media": {
-        "format": "{icon} {}",
-        "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": "",
-            "default": "🎜"
-        },
-        "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+        "tooltip-format-activated": "锁屏已暂停：空闲不锁屏、不关显示器\n合盖 / 睡眠前仍会锁屏\n点击恢复自动锁屏",
+        "tooltip-format-deactivated": "空闲 5 分钟自动锁屏（swayidle）\n点击临时暂停"
     }
+
+    // 可选模块：需要时把 "cpu" / "memory" / "temperature"
+    // 加进上面的 modules-right 数组即可，配色样式已在 style.css 里备好。
+    //   "cpu":         { "format": "\uf2db {usage}%", "tooltip": false },
+    //   "memory":      { "format": "\uf1c0 {percentage}%", "tooltip": false },
+    //   "temperature": { "format": "\uf2c9 {temperatureC}°C", "critical-threshold": 80 },
 }

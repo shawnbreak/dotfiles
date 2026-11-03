@@ -1,0 +1,8 @@
+configuration {
+	modi: "window,drun,run,ssh";
+	combi-modes: "window,drun,run,ssh";
+	show-icons: true;
+	font: "Iosevka Term 18";
+}
+
+@import "/usr/share/rofi/themes/DarkBlue.rasi"

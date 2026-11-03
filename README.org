@@ -6,6 +6,7 @@
 - .tmux.conf
 - .emacs
 - .vimrc
+- .config/foot
 - .config/alacritty
 - .config/clash
 - .config/Code
