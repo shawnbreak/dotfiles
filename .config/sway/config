@@ -211,6 +211,8 @@ bindsym $mod+r mode "resize"
 bindsym $mod+Shift+r exec swaymsg reload
 
 
+# 只有一个窗口时隐藏边框
+# hide_edge_borders smart
 
 # 平铺窗口：只保留 2px 边框，不显示标题栏
 default_border pixel 2
