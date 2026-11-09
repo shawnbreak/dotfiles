@@ -14,6 +14,7 @@
 (savehist-mode 1)
 (save-place-mode 1)
 (repeat-mode 1)
+(electric-pair-mode 1)
 (setq-default abbrev-mode t)
 ;; (electric-pair-mode)
 ;; (setq display-line-numbers-type 't) ; 't 'relative
