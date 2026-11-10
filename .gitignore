@@ -6,4 +6,5 @@
 .emacs.d/.lsp-session-v1
 .emacs.d/bookmarks
 .emacs.d/projectile.cache
+.config/sway/config.local.d/
 
