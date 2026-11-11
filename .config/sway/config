@@ -79,7 +79,7 @@ output * bg /usr/share/backgrounds/default.jxl fill
 
     # Start your launcher
     bindsym $mod+d exec $menu
-    bindsym $mod+m exec rofi -show window
+    # bindsym $mod+m exec rofi -show window
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -210,6 +210,8 @@ bindsym $mod+r mode "resize"
 
 bindsym $mod+Shift+r exec swaymsg reload
 
+bindsym $mod+m move workspace to output right
+# bindsym $mod+Shift+m move workspace to output left
 
 # 只有一个窗口时隐藏边框
 # hide_edge_borders smart
