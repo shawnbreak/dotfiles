@@ -32,7 +32,8 @@ set $menu $rofi_cmd -show drun
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 # Requires: desktop-backgrounds-compat, swaybg, jxl-pixbuf-loader
-output * bg /usr/share/backgrounds/default.jxl fill
+# output * bg /usr/share/backgrounds/default.jxl fill
+
 #
 # Example configuration:
 #
@@ -211,7 +212,7 @@ bindsym $mod+r mode "resize"
 bindsym $mod+Shift+r exec swaymsg reload
 
 bindsym $mod+m move workspace to output right
-# bindsym $mod+Shift+m move workspace to output left
+bindsym $mod+Shift+m move workspace to output up
 
 # 只有一个窗口时隐藏边框
 # hide_edge_borders smart
