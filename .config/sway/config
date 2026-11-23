@@ -96,6 +96,8 @@ set $menu $rofi_cmd -show drun
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 
     bindsym $mod+a exec flameshot gui
+
+    bindsym $mod+Escape exec swaylock
 #
 # Moving around:
 #

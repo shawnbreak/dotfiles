@@ -22,6 +22,7 @@ config_files=(
     .config/foot
     .config/waybar
     .config/sway
+    .config/swaylock
     .config/rofi
 )
 
