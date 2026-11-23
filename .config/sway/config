@@ -73,7 +73,7 @@ set $menu $rofi_cmd -show drun
 # Basics:
 #
     # Start a terminal
-    bindsym $mod+Return exec $term
+    bindsym $mod+Return exec $term tmux attach
 
     # Kill focused window
     bindsym $mod+Shift+q kill
