@@ -37,3 +37,5 @@ for config_file in ${config_files[@]}; do
 done
 
 
+# rime
+ln -sf $cur_dir/.config/rime/default.custom.yaml ~/.local/share/fcitx5/rime/default.custom.yaml
