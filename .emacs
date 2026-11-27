@@ -193,6 +193,7 @@
 
 ;; (add-hook 'org-mode-hook #'org-indent-mode)
 (add-hook 'org-mode-hook #'visual-fill-column-mode)
+(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 
 ;; ================ org mode config end ================
 
